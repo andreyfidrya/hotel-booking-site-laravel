@@ -23,37 +23,37 @@
 		<link id="googleFonts" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800%7CShadows+Into+Light&display=swap" rel="stylesheet" type="text/css">
 
 		<!-- Vendor CSS -->
-		<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
-		<link rel="stylesheet" href="vendor/fontawesome-free/css/all.min.css">
-		<link rel="stylesheet" href="vendor/animate/animate.compat.css">
-		<link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.min.css">
-		<link rel="stylesheet" href="vendor/owl.carousel/assets/owl.carousel.min.css">
-		<link rel="stylesheet" href="vendor/owl.carousel/assets/owl.theme.default.min.css">
-		<link rel="stylesheet" href="vendor/magnific-popup/magnific-popup.min.css">
-		<link rel="stylesheet" href="vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css">
+		<link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
+		<link rel="stylesheet" href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}">
+		<link rel="stylesheet" href="{{ asset('vendor/animate/animate.compat.css') }}">
+		<link rel="stylesheet" href="{{ asset('vendor/simple-line-icons/css/simple-line-icons.min.css') }}">
+		<link rel="stylesheet" href="{{ asset('vendor/owl.carousel/assets/owl.carousel.min.css') }}">
+		<link rel="stylesheet" href="{{ asset('vendor/owl.carousel/assets/owl.theme.default.min.css') }}">
+		<link rel="stylesheet" href="{{ asset('vendor/magnific-popup/magnific-popup.min.css') }}">
+		<link rel="stylesheet" href="{{ asset('vendor/bootstrap-datepicker/css/bootstrap-datepicker3.css') }}">
 
 		<!-- Theme CSS -->
-		<link rel="stylesheet" href="css/theme.css">
-		<link rel="stylesheet" href="css/theme-elements.css">
-		<link rel="stylesheet" href="css/theme-blog.css">
-		<link rel="stylesheet" href="css/theme-shop.css">
+		<link rel="stylesheet" href="{{ asset('css/theme.css') }}">
+		<link rel="stylesheet" href="{{ asset('css/theme-elements.css') }}">
+		<link rel="stylesheet" href="{{ asset('css/theme-blog.css') }}">
+		<link rel="stylesheet" href="{{ asset('css/theme-shop.css') }}">
 
 		<!-- Revolution Slider CSS -->
-		<link rel="stylesheet" href="vendor/rs-plugin/css/settings.css">
-		<link rel="stylesheet" href="vendor/rs-plugin/css/layers.css">
-		<link rel="stylesheet" href="vendor/rs-plugin/css/navigation.css">
+		<link rel="stylesheet" href="{{ asset('vendor/rs-plugin/css/settings.css') }}">
+		<link rel="stylesheet" href="{{ asset('vendor/rs-plugin/css/layers.css') }}">
+		<link rel="stylesheet" href="{{ asset('vendor/rs-plugin/css/navigation.css') }}">
 
 		<!-- Demo CSS -->
-		<link rel="stylesheet" href="css/demos/demo-hotel.css">
+		<link rel="stylesheet" href="{{ asset('css/demos/demo-hotel.css') }}">
 
 		<!-- Skin CSS -->
-		<link id="skinCSS" rel="stylesheet" href="css/skins/skin-hotel.css">
+		<link id="skinCSS" rel="stylesheet" href="{{ asset('css/skins/skin-hotel.css') }}">
 
 		<!-- Theme Custom CSS -->
-		<link rel="stylesheet" href="css/custom.css">
+		<link rel="stylesheet" href="{{ asset('css/custom.css') }}">
 
 		<!-- Head Libs -->
-		<script src="vendor/modernizr/modernizr.min.js"></script>
+		<script src="{{ asset('vendor/modernizr/modernizr.min.js') }}"></script>
 
 	</head>
 	<body>
@@ -107,7 +107,7 @@
 								<div class="header-row">
 									<div class="header-logo">
 										<a href="demo-hotel.html">
-											<img alt="Porto" width="122" height="50" src="img/demos/hotel/logo.png">
+											<img alt="Porto" width="122" height="50" src="{{ asset('img/demos/hotel/logo.png') }}">
 										</a>
 									</div>
 								</div>
@@ -220,7 +220,7 @@
 						<ul>
 							<li data-transition="boxfade">
 
-								<img src="img/demos/hotel/slides/slide-hotel-1.jpg"  
+								<img src="{{ asset('img/demos/hotel/slides/slide-hotel-1.jpg') }}"  
 									  alt=""
 									  data-bgposition="center bottom"
 									  data-bgfit="cover"
@@ -231,7 +231,7 @@
 							</li>
 							<li data-transition="boxfade">
 
-								<img src="img/demos/hotel/slides/slide-hotel-2.jpg"  
+								<img src="{{ asset('img/demos/hotel/slides/slide-hotel-2.jpg') }}"  
 									  alt=""
 									  data-bgposition="center bottom"
 									  data-bgfit="cover"
@@ -311,10 +311,10 @@
 
 								<div class="owl-carousel owl-carousel-mini-dots owl-theme dots-inside box-shadow-custom mt-4" data-plugin-options="{'items': 1, 'margin': 10, 'animateOut': 'fadeOut', 'autoplay': true, 'autoplayTimeout': 3000}">
 									<div>
-										<img alt="" class="img-fluid" src="img/demos/hotel/gallery/gallery-1.jpg">
+										<img alt="" class="img-fluid" src="{{ asset('img/demos/hotel/gallery/gallery-1.jpg') }}">
 									</div>
 									<div>
-										<img alt="" class="img-fluid" src="img/demos/hotel/gallery/gallery-2.jpg">
+										<img alt="" class="img-fluid" src="{{ asset('img/demos/hotel/gallery/gallery-2.jpg') }}">
 									</div>
 								</div>
 
@@ -537,7 +537,7 @@
 						<div class="row align-items-center my-3">
 							<div class="col-lg-3">
 								<a href="demo-hotel.html">
-									<img alt="Porto" class="img-fluid logo" style="max-width: 122px;" src="img/demos/hotel/logo-footer.png">
+									<img alt="Porto" class="img-fluid logo" style="max-width: 122px;" src="{{ asset('img/demos/hotel/logo-footer.png') }}">
 								</a>
 							</div>
 							<div class="col-lg-6">
@@ -604,42 +604,42 @@
 		</div>
 
 		<!-- Vendor -->
-		<script src="vendor/jquery/jquery.min.js"></script>
-		<script src="vendor/jquery.appear/jquery.appear.min.js"></script>
-		<script src="vendor/jquery.easing/jquery.easing.min.js"></script>
-		<script src="vendor/jquery.cookie/jquery.cookie.min.js"></script>
-		<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-		<script src="vendor/jquery.validation/jquery.validate.min.js"></script>
-		<script src="vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
-		<script src="vendor/jquery.gmap/jquery.gmap.min.js"></script>
-		<script src="vendor/lazysizes/lazysizes.min.js"></script>
-		<script src="vendor/isotope/jquery.isotope.min.js"></script>
-		<script src="vendor/owl.carousel/owl.carousel.min.js"></script>
-		<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-		<script src="vendor/vide/jquery.vide.min.js"></script>
-		<script src="vendor/vivus/vivus.min.js"></script>
-		<script src="vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+		<script src="{{ asset('vendor/jquery/jquery.min.js') }}"></script>
+		<script src="{{ asset('vendor/jquery.appear/jquery.appear.min.js') }}"></script>
+		<script src="{{ asset('vendor/jquery.easing/jquery.easing.min.js') }}"></script>
+		<script src="{{ asset('vendor/jquery.cookie/jquery.cookie.min.js') }}"></script>
+		<script src="{{ asset('vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+		<script src="{{ asset('vendor/jquery.validation/jquery.validate.min.js') }}"></script>
+		<script src="{{ asset('vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js') }}"></script>
+		<script src="{{ asset('vendor/jquery.gmap/jquery.gmap.min.js') }}"></script>
+		<script src="{{ asset('vendor/lazysizes/lazysizes.min.js') }}"></script>
+		<script src="{{ asset('vendor/isotope/jquery.isotope.min.js') }}"></script>
+		<script src="{{ asset('vendor/owl.carousel/owl.carousel.min.js') }}"></script>
+		<script src="{{ asset('vendor/magnific-popup/jquery.magnific-popup.min.js') }}"></script>
+		<script src="{{ asset('vendor/vide/jquery.vide.min.js') }}"></script>
+		<script src="{{ asset('vendor/vivus/vivus.min.js') }}"></script>
+		<script src="{{ asset('vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}"></script>
 
 		<!-- Theme Base, Components and Settings -->
 		<script src="js/theme.js"></script>
 
 		<!-- Revolution Slider Scripts -->
-		<script src="vendor/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
-		<script src="vendor/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+		<script src="{{ asset('vendor/rs-plugin/js/jquery.themepunch.tools.min.js') }}"></script>
+		<script src="{{ asset('vendor/rs-plugin/js/jquery.themepunch.revolution.min.js') }}"></script>
 
 		<!-- Current Page Vendor and Views -->
-		<script src="js/views/view.contact.js"></script>
+		<script src="{{ asset('js/views/view.contact.js') }}"></script>
 
 		<!-- Demo -->
-		<script src="js/demos/demo-hotel.js"></script>
+		<script src="{{ asset('js/demos/demo-hotel.js') }}"></script>
 
 		<!-- Theme Custom -->
-		<script src="js/custom.js"></script>
+		<script src="{{ asset('js/custom.js') }}"></script>
 
 		<!-- Theme Initialization Files -->
-		<script src="js/theme.init.js"></script>
+		<script src="{{ asset('js/theme.init.js') }}"></script>
 
-	<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+	<script src="{{ asset('https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY') }}"></script>
 		<script>
 
 			function initializeGoogleMaps() {
