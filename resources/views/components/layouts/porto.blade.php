@@ -388,7 +388,7 @@
 								<div class="owl-carousel owl-theme nav-style-1 nav-arrows-thin nav-outside nav-light nav-font-size-lg bg-light box-shadow-4 py-5 py-lg-0 mb-0" data-plugin-options="{'responsive': {'0': {'items': 1, 'dots': true}, '768': {'items': 1}, '992': {'items': 1, 'nav': true, 'dots': false}, '1200': {'items': 1, 'nav': true, 'dots': false}}, 'loop': true, 'autoHeight': true}">
 									<div class="py-3 py-lg-5 px-lg-5">
 										<div class="custom-testimonial-style-1 testimonial testimonial-style-2 testimonial-with-quotes testimonial-remove-right-quote px-0 px-md-4 mx-xl-3 my-3">
-											<img width="56" height="56" src="img/demos/hotel/icons/tripadvisor.svg" alt="Tripadvisor Icon" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-dark', 'fadeIn': false}" />
+											<img width="56" height="56" src="{{ asset('img/demos/hotel/icons/tripadvisor.svg') }}" alt="Tripadvisor Icon" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-dark', 'fadeIn': false}" />
 											<blockquote class="pt-3 pb-2 px-0 px-md-3">
 												<p class="text-color-dark text-3-5 line-height-8 alternative-font-4 mb-0">Cras a elit sit amet leo accumsan volutpat. Suspendisse hendreriast ehicula leo, vel efficitur felis ultrices non. Cras a elit sit amet leo acun volutpat. </p>
 											</blockquote>
@@ -400,7 +400,7 @@
 									</div>
 									<div class="py-3 py-lg-5 px-lg-5">
 										<div class="custom-testimonial-style-1 testimonial testimonial-style-2 testimonial-with-quotes testimonial-remove-right-quote px-0 px-md-4 mx-xl-3 my-3">
-											<img width="56" height="56" src="img/demos/hotel/icons/tripadvisor.svg" alt="Tripadvisor Icon" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-dark', 'fadeIn': false}" />
+											<img width="56" height="56" src="{{ asset('img/demos/hotel/icons/tripadvisor.svg') }}" alt="Tripadvisor Icon" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-dark', 'fadeIn': false}" />
 											<blockquote class="pt-3 pb-2 px-0 px-md-3">
 												<p class="text-color-dark text-3-5 line-height-8 alternative-font-4 mb-0">Cras a elit sit amet leo accumsan volutpat. Suspendisse hendreriast ehicula leo, vel efficitur felis ultrices non. Cras a elit sit amet leo acun volutpat. </p>
 											</blockquote>
@@ -621,7 +621,7 @@
 		<script src="{{ asset('vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js') }}"></script>
 
 		<!-- Theme Base, Components and Settings -->
-		<script src="js/theme.js"></script>
+		<script src="{{ asset('js/theme.js') }}"></script>
 
 		<!-- Revolution Slider Scripts -->
 		<script src="{{ asset('vendor/rs-plugin/js/jquery.themepunch.tools.min.js') }}"></script>
