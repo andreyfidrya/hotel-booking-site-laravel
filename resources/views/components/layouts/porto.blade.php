@@ -72,18 +72,16 @@
 												<div class="header-extra-info-icon">
 													<i class="icon-phone icons text-color-primary"></i>
 												</div>
-												<div class="header-extra-info-text">
-													<label class="text-light opacity-7">CALL US</label>
-													<strong class="text-uppercase"><a href="tel:8001234567" class="text-light">(800) 123-4567</a></strong>
+												<div class="header-extra-info-text">													
+													<strong class="text-uppercase"><a href="tel:0684979884" class="text-light">+38 (068) 497-98-84</a></strong>
 												</div>
 											</li>
 											<li class="d-none d-md-inline-flex">
 												<div class="header-extra-info-icon">
 													<i class="icon-location-pin icons text-color-primary"></i>
 												</div>
-												<div class="header-extra-info-text">
-													<label class="text-light opacity-7">ADDRESS</label>
-													<strong class="text-light">1234 Street Name, Los Angeles - CA<a class="font-weight-bold text-color-primary text-color-hover-secondary text-uppercase ms-2 text-1 p-relative bottom-1" href="#"><u>Get Directions</u></a></strong>
+												<div class="header-extra-info-text">													
+													<strong class="text-light">вул. Курортна, Задонецьке, Харківська область, Украина, 63436</strong>
 												</div>
 											</li>
 										</ul>
@@ -92,9 +90,8 @@
 								<div class="header-column justify-content-end">
 									<div class="header-row">
 										<ul class="header-social-icons social-icons social-icons-clean social-icons-icon-light d-lg-flex m-0 ms-lg-2">
-											<li class="social-icons-instagram mx-1"><a href="http://www.instagram.com/" target="_blank" class="text-3" title="Instagram"><i class="fab fa-instagram"></i></a></li>
-											<li class="social-icons-twitter mx-1"><a href="http://www.twitter.com/" target="_blank" class="text-3" title="Twitter"><i class="fab fa-twitter"></i></a></li>
-											<li class="social-icons-facebook mx-1"><a href="http://www.facebook.com/" target="_blank" class="text-3" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+											<li class="social-icons-instagram mx-1"><a href="https://www.instagram.com/zadinetska_dacha/" target="_blank" class="text-3" title="Instagram"><i class="fab fa-instagram"></i></a></li>											
+											<li class="social-icons-facebook mx-1"><a href="https://www.facebook.com/160508477643758/" target="_blank" class="text-3" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
 										</ul>
 									</div>
 								</div>
@@ -344,7 +341,7 @@
 							</div>
 							<div class="col-lg-8">
 
-								<h3 class="mt-4 pt-1 mb-0 pb-0">Эко курорт "Задонецкая дача"</h3>
+								<h3 class="mt-4 pt-1 mb-0 pb-0">База отдыха под Харьковом. Садиба «Задонецкая дача»</h3>
 								<div class="divider divider-primary divider-small my-3">
 									<hr class="mt-2 me-auto">
 								</div>
@@ -517,9 +514,8 @@
 										<div class="feature-box-icon p-0 m-0">
 											<i class="icon-phone icons text-color-light text-8"></i>
 										</div>
-										<div class="feature-box-info p-0 ms-2">
-											<label class="text-light opacity-7 d-block line-height-5">CALL US</label>
-											<strong class="text-uppercase text-5"><a href="tel:8001234567" class="text-light ws-nowrap">(800) 123-4567</a></strong>
+										<div class="feature-box-info p-0 ms-2">											
+											<strong class="text-uppercase text-5"><a href="tel:8001234567" class="text-light ws-nowrap">+38 (068) 497-98-84</a></strong>
 										</div>
 									</div>
 
