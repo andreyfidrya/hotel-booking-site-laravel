@@ -104,7 +104,7 @@
 								<div class="header-row">
 									<div class="header-logo">
 										<a href="demo-hotel.html">
-											<img alt="Porto" width="122" height="50" src="{{ asset('img/demos/hotel/logo.png') }}">
+											<img alt="Porto" width="150" height="100" src="{{ asset('img/demos/hotel/logodacha.jpg') }}">
 										</a>
 									</div>
 								</div>
