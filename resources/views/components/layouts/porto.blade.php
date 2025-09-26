@@ -441,7 +441,6 @@
 											</div>
 										</article>
 									</div>
-
 								</div>
 
 								<div class="text-center pt-2">
