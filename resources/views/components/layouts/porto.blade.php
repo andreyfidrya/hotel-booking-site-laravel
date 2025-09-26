@@ -120,32 +120,42 @@
 												<ul class="nav nav-pills" id="mainNav">
 													<li>
 														<a class="nav-link font-weight-bold active" href="demo-hotel.html">
-															Home
+															Главная
 														</a>
 													</li>
 													<li>
 														<a class="nav-link font-weight-bold" href="demo-hotel-hotel.html">
-															Hotel
+															Домики
 														</a>
 													</li>
 													<li>
 														<a class="nav-link font-weight-bold" href="demo-hotel-rooms-rates.html">
-															Rooms &amp; Rates
+															Активиный отдых
 														</a>
 													</li>
 													<li>
 														<a class="nav-link font-weight-bold" href="demo-hotel-special-offers.html">
-															Special Offers
+															Ресторан
 														</a>
 													</li>
 													<li>
 														<a class="nav-link font-weight-bold" href="demo-hotel-location.html">
-															Location
+															Галерея
+														</a>
+													</li>
+													<li>
+														<a class="nav-link font-weight-bold" href="demo-hotel-location.html">
+															Цены
+														</a>
+													</li>
+													<li>
+														<a class="nav-link font-weight-bold" href="demo-hotel-location.html">
+															Контакты
 														</a>
 													</li>
 													<li class="dropdown dropdown-full-color dropdown-primary dropdown-mega dropdown-mega-book-now" id="headerBookNow">
 														<a class="nav-link font-weight-bold dropdown-toggle pe-0" href="demo-hotel-book.html">
-															<span class="d-block px-lg-4 py-lg-2">Book Now <i class="fas fa-angle-down d-none d-lg-inline-block ms-2"></i></span>
+															<span class="d-block px-lg-4 py-lg-2">Забронировать <i class="fas fa-angle-down d-none d-lg-inline-block ms-2"></i></span>
 														</a>
 														<ul class="dropdown-menu">
 															<li>
@@ -154,14 +164,14 @@
 																		<div class="row">
 																			<div class="form-group col">
 																				<div class="form-control-custom form-control-datepicker-custom">
-																					<input type="text" value="" class="form-control text-uppercase text-1 font-weight-semi-bold" data-msg-required="This field is required." placeholder="Arrival" name="bookNowArrivalHeader" id="bookNowArrivalHeader" autocomplete="off" required>
+																					<input type="text" value="" class="form-control text-uppercase text-1 font-weight-semi-bold" data-msg-required="This field is required." placeholder="Дата Заезда" name="bookNowArrivalHeader" id="bookNowArrivalHeader" autocomplete="off" required>
 																				</div>
 																			</div>
 																		</div>
 																		<div class="row">
 																			<div class="form-group col">
 																				<div class="form-control-custom form-control-datepicker-custom">
-																					<input type="text" value="" class="form-control text-uppercase text-1 font-weight-semi-bold" data-msg-required="This field is required." placeholder="Departure" name="bookNowDepartureHeader" id="bookNowDepartureHeader" autocomplete="off" required>
+																					<input type="text" value="" class="form-control text-uppercase text-1 font-weight-semi-bold" data-msg-required="This field is required." placeholder="Дата Выезда" name="bookNowDepartureHeader" id="bookNowDepartureHeader" autocomplete="off" required>
 																				</div>
 																			</div>
 																		</div>
@@ -169,30 +179,41 @@
 																			<div class="form-group col-lg-6">
 																				<div class="form-control-custom">
 																					<select class="form-select form-control text-uppercase text-1 font-weight-semi-bold" name="bookNowAdults" data-msg-required="This field is required." id="bookNowAdults" required>
-																						<option value="">Adults</option>
+																						<option value="">Взрослых</option>
 																						<option value="1">1</option>
 																						<option value="2">2</option>
 																						<option value="3">3</option>
 																						<option value="4">4</option>
+																						<option value="5">5</option>
+																						<option value="6">6</option>
+																						<option value="7">7</option>
+																						<option value="8">8</option>
+																						<option value="9">9</option>
+																						<option value="10">10</option>
 																					</select>
 																				</div>
 																			</div>
 																			<div class="form-group col-lg-6">
 																				<div class="form-control-custom">
 																					<select class="form-select form-control text-uppercase text-1 font-weight-semi-bold" name="bookNowKids" data-msg-required="This field is required." id="bookNowKids" required>
-																						<option value="">Kids</option>
+																						<option value="">Детей</option>
 																						<option value="1">0</option>
 																						<option value="1">1</option>
 																						<option value="2">2</option>
 																						<option value="3">3</option>
 																						<option value="4">4</option>
+																						<option value="5">5</option>
+																						<option value="6">6</option>
+																						<option value="7">7</option>
+																						<option value="8">8</option>
+																						<option value="9">9</option>																																												
 																					</select>
 																				</div>
 																			</div>
 																		</div>
 																		<div class="row">
 																			<div class="form-group col mb-0 pt-1">
-																				<input type="submit" value="Check availability" class="btn btn-tertiary btn-lg w-100 mt-2 text-uppercase py-3 text-1 font-weight-semi-bold">
+																				<input type="submit" value="Доступные домики" class="btn btn-tertiary btn-lg w-100 mt-2 text-uppercase py-3 text-1 font-weight-semi-bold">
 																			</div>
 																		</div>
 																	</form>
@@ -220,7 +241,7 @@
 						<ul>
 							<li data-transition="boxfade">
 
-								<img src="{{ asset('img/demos/hotel/slides/slide-hotel-1.jpg') }}"  
+								<img src="{{ asset('img/demos/hotel/slides/1.jpg') }}"  
 									  alt=""
 									  data-bgposition="center bottom"
 									  data-bgfit="cover"
@@ -231,7 +252,29 @@
 							</li>
 							<li data-transition="boxfade">
 
-								<img src="{{ asset('img/demos/hotel/slides/slide-hotel-2.jpg') }}"  
+								<img src="{{ asset('img/demos/hotel/slides/2.jpg') }}"  
+									  alt=""
+									  data-bgposition="center bottom"
+									  data-bgfit="cover"
+									  data-bgrepeat="no-repeat"
+									  data-bgparallax="10"
+									  class="rev-slidebg"
+									  data-no-retina>
+							</li>
+							<li data-transition="boxfade">
+
+								<img src="{{ asset('img/demos/hotel/slides/3.jpg') }}"  
+									  alt=""
+									  data-bgposition="center bottom"
+									  data-bgfit="cover"
+									  data-bgrepeat="no-repeat"
+									  data-bgparallax="10"
+									  class="rev-slidebg"
+									  data-no-retina>
+							</li>
+							<li data-transition="boxfade">
+
+								<img src="{{ asset('img/demos/hotel/slides/4.jpg') }}"  
 									  alt=""
 									  data-bgposition="center bottom"
 									  data-bgfit="cover"
@@ -249,16 +292,15 @@
 						<div class="row">
 							<div class="col-lg-6">
 
-								<h3 class="mt-4 mb-0 pb-0">In the Heart of Porto</h3>
+								<h3 class="mt-4 mb-0 pb-0">Усадьба "Задонецкая дача"</h3>
 								<div class="divider divider-primary divider-small my-3">
 									<hr class="mt-2 me-auto">
 								</div>
 
-								<p class="lead font-weight-regular">Lorem ipsum dolor sit amet, <span class="highlight highlight-primary highlight-bg-opacity highlight-animated px-0" data-appear-animation="highlight-animated-start" data-appear-animation-delay="200" data-plugin-options="{'flagClassOnly': true}">nisi elit consequat ipsum</span> dolor sit amet. Lorem ipsum dolor sit amet.</p>
+								<p class="lead font-weight-regular">Жителям Харькова не нужно ехать далеко, чтобы отдохнуть в выходные дни или во время отпуска. Усадьба «Задонецкая дача» в Коробовых Хуторах, расположенная в 40 км. от Харькова, предлагает отдых и европейский уровень обслуживания своим дорогим гостям.</p>
 
-								<p class="mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultrices malesuada ante quis pharetra. Nullam non bibendum dolor. Ut vel turpis accumsan, efficitur dolor fermentum.</p>
-
-								<a class="font-weight-bold text-2 text-decoration-none mt-2 mb-4" href="#">Learn More <i class="fas fa-angle-right p-relative top-1 ms-1"></i></a>
+								<p class="mt-4">Изысканный отдых в Усадьбе в Харьковской области, в соответствии с пожеланиями и предпочтения посетителей, предлагает пять Коричневых домиков площадью 60м2, один Белый домик на 110м2 с баней и бассейном и три Больших домика по 165м2 со своей баней и большой территорией. Все домики с теплыми полами, отоплением, кондиционерами, спутниковым ТВ, интернетом.</p>
+								
 							</div>
 							<div class="col-lg-6">
 
@@ -283,26 +325,7 @@
 
 						</div>
 					</div>
-				</section>
-
-				<section class="section section-parallax section-height-3 overlay overlay-show overlay-op-5 border-0 m-0 appear-animation" data-appear-animation="fadeIn" data-plugin-parallax data-plugin-options="{'speed': 1.1, 'parallaxHeight': '200%'}" data-image-src="img/demos/hotel/backgrounds/background-1.jpg">
-					<div class="container">
-						<div class="row">
-							<div class="col text-center">
-
-								<h3 class="mt-4 mb-0 pb-0 text-color-light">Enjoy The Best Of Porto</h3>
-								<div class="divider divider-primary divider-small my-3">
-									<hr class="mt-2 m-auto">
-								</div>
-
-								<p class="lead font-weight-regular text-color-light opacity-7">Make your reservation right now with the best price!</p>
-
-								<a href="#" class="btn btn-primary font-weight-bold text-uppercase px-5 py-3 mt-2 mb-2 appear-animation" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="350">Book Now</a>
-
-							</div>
-						</div>
-					</div>
-				</section>
+				</section>				
 
 				<section class="section section-no-background section-no-border m-0">
 					<div class="container">
@@ -321,13 +344,15 @@
 							</div>
 							<div class="col-lg-8">
 
-								<h3 class="mt-4 pt-1 mb-0 pb-0">Hotel Overview</h3>
+								<h3 class="mt-4 pt-1 mb-0 pb-0">Эко курорт "Задонецкая дача"</h3>
 								<div class="divider divider-primary divider-small my-3">
 									<hr class="mt-2 me-auto">
 								</div>
 
-								<p class="mt-4 mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ultrices malesuada ante quis pharetra. Nullam non bibendum dolor. Ut vel turpis accumsan, efficitur dolor fermentum, tincidunt metus ut vel turpis accumsan, efficitur dolor fermentum, tincidunt metus. Etiam ut.</p>
+								<p class="mt-4 mb-2">Для всех посетителей усадьбы «Задонецкая дача» в Харьковской области работает бассейн с подогревом с мая по октябрь, где можно окунуться после городской суеты в теплую водичку. Персонал «Задонецкой дачи» всегда заботится об удобствах и комфорте своих гостей. Посетителям предоставляются персональные полотенца, тапочки и средства личной гигиены.</p>
 
+								<p class="mt-4 mb-2">Все домики имеют свою современную кухня с техникой и посудой.</p>
+								
 								<div class="row mt-4 pt-2">
 									<div class="col-lg-4">
 										<ul class="list list-icons list-primary text-uppercase font-weight-bold text-color-dark text-2">
@@ -357,66 +382,7 @@
 						</div>
 					</div>
 				</section>
-
-				<section class="section section-background section-height-5 overlay overlay-show overlay-op-5 border-0 m-0" style="background-image: url(img/demos/hotel/backgrounds/background-2.jpg); background-size: cover;">
-					<div class="container">
-						<div class="row">
-							<div class="col text-center">
-
-								<a class="text-decoration-none lightbox" href="https://vimeo.com/45830194" data-plugin-options="{'type':'iframe'}">
-									<i class="fas fa-play featured-icon featured-icon-style-2 featured-icon-hover-effect-1 rounded-circle pulseAnim pulseAnimAnimated animation-infinite bg-primary right-4 top-0 m-0"></i>
-								</a>
-
-							</div>
-						</div>
-					</div>
-				</section>
-
-				<section class="section section-parallax bg-color-primary border-0 m-0" data-plugin-parallax data-plugin-options="{'speed': 1.1, 'parallaxHeight': '200%'}" data-image-src="img/demos/hotel/backgrounds/background-3.png">
-					<div class="container">
-						<div class="row">
-							<div class="col-lg-12 text-center">
-								<h3 class="mt-4 mb-0 pb-0 text-light">Guest Reviews</h3>
-								<div class="divider divider-light divider-small divider-small-center my-3">
-									<hr class="mt-2">
-								</div>
-							</div>
-						</div>
-						<div class="row pt-2 px-3">
-							<div class="col px-5 mb-4 pb-2">
-
-								<div class="owl-carousel owl-theme nav-style-1 nav-arrows-thin nav-outside nav-light nav-font-size-lg bg-light box-shadow-4 py-5 py-lg-0 mb-0" data-plugin-options="{'responsive': {'0': {'items': 1, 'dots': true}, '768': {'items': 1}, '992': {'items': 1, 'nav': true, 'dots': false}, '1200': {'items': 1, 'nav': true, 'dots': false}}, 'loop': true, 'autoHeight': true}">
-									<div class="py-3 py-lg-5 px-lg-5">
-										<div class="custom-testimonial-style-1 testimonial testimonial-style-2 testimonial-with-quotes testimonial-remove-right-quote px-0 px-md-4 mx-xl-3 my-3">
-											<img width="56" height="56" src="{{ asset('img/demos/hotel/icons/tripadvisor.svg') }}" alt="Tripadvisor Icon" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-dark', 'fadeIn': false}" />
-											<blockquote class="pt-3 pb-2 px-0 px-md-3">
-												<p class="text-color-dark text-3-5 line-height-8 alternative-font-4 mb-0">Cras a elit sit amet leo accumsan volutpat. Suspendisse hendreriast ehicula leo, vel efficitur felis ultrices non. Cras a elit sit amet leo acun volutpat. </p>
-											</blockquote>
-											<p class="text-color-grey opacity-6">TRIP ADVISOR - NOV 2020</p>
-											<div class="testimonial-author">
-												<strong class="font-weight-bold text-4 negative-ls-1">John Doe</strong>
-											</div>
-										</div>
-									</div>
-									<div class="py-3 py-lg-5 px-lg-5">
-										<div class="custom-testimonial-style-1 testimonial testimonial-style-2 testimonial-with-quotes testimonial-remove-right-quote px-0 px-md-4 mx-xl-3 my-3">
-											<img width="56" height="56" src="{{ asset('img/demos/hotel/icons/tripadvisor.svg') }}" alt="Tripadvisor Icon" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-dark', 'fadeIn': false}" />
-											<blockquote class="pt-3 pb-2 px-0 px-md-3">
-												<p class="text-color-dark text-3-5 line-height-8 alternative-font-4 mb-0">Cras a elit sit amet leo accumsan volutpat. Suspendisse hendreriast ehicula leo, vel efficitur felis ultrices non. Cras a elit sit amet leo acun volutpat. </p>
-											</blockquote>
-											<p class="text-color-grey opacity-6">TRIP ADVISOR - NOV 2020</p>
-											<div class="testimonial-author">
-												<strong class="font-weight-bold text-4 negative-ls-1">John Doe</strong>
-											</div>
-										</div>
-									</div>
-								</div>
-
-							</div>
-						</div>
-					</div>
-				</section>
-
+				
 				<section class="section section-no-background section-no-border m-0">
 					<div class="container">
 						<div class="row">
@@ -491,46 +457,50 @@
 					</div>
 				</section>
 
-				<section class="section section-tertiary section-no-border m-0">
+				<section class="section section-parallax bg-color-primary border-0 m-0" data-plugin-parallax data-plugin-options="{'speed': 1.1, 'parallaxHeight': '200%'}" data-image-src="img/demos/hotel/backgrounds/background-3.png">
 					<div class="container">
-						<div class="row align-items-center">
-							<div class="col-lg-3 mt-1 pt-2">
-
-								<p class="lead p-0 m-0 text-3 opacity-7 text-uppercase">Sign Up Now For</p>
-								<h4 class="mb-1 mt-0 text-light font-weight-bold text-5-5 p-relative bottom-4">Exclusive Special Offers:</h4>
-
-							</div>
-							<div class="col-lg-9">
-
-								<div class="alert alert-success d-none" id="newsletterSuccess">
-									<strong>Success!</strong> You've been added to our email list.
+						<div class="row">
+							<div class="col-lg-12 text-center">
+								<h3 class="mt-4 mb-0 pb-0 text-light">Guest Reviews</h3>
+								<div class="divider divider-light divider-small divider-small-center my-3">
+									<hr class="mt-2">
 								</div>
+							</div>
+						</div>
+						<div class="row pt-2 px-3">
+							<div class="col px-5 mb-4 pb-2">
 
-								<div class="alert alert-danger d-none" id="newsletterError"></div>
-
-								<form id="newsletterForm" action="php/newsletter-subscribe.php" method="POST">
-									<div class="row">
-										<div class="form-group col-md-5">
-											<div class="form-control-custom">
-												<input type="text" class="form-control form-control-lg py-3 text-2 mt-2" id="newsletterName" placeholder="Full Name *" required>
+								<div class="owl-carousel owl-theme nav-style-1 nav-arrows-thin nav-outside nav-light nav-font-size-lg bg-light box-shadow-4 py-5 py-lg-0 mb-0" data-plugin-options="{'responsive': {'0': {'items': 1, 'dots': true}, '768': {'items': 1}, '992': {'items': 1, 'nav': true, 'dots': false}, '1200': {'items': 1, 'nav': true, 'dots': false}}, 'loop': true, 'autoHeight': true}">
+									<div class="py-3 py-lg-5 px-lg-5">
+										<div class="custom-testimonial-style-1 testimonial testimonial-style-2 testimonial-with-quotes testimonial-remove-right-quote px-0 px-md-4 mx-xl-3 my-3">
+											<img width="56" height="56" src="{{ asset('img/demos/hotel/icons/tripadvisor.svg') }}" alt="Tripadvisor Icon" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-dark', 'fadeIn': false}" />
+											<blockquote class="pt-3 pb-2 px-0 px-md-3">
+												<p class="text-color-dark text-3-5 line-height-8 alternative-font-4 mb-0">Cras a elit sit amet leo accumsan volutpat. Suspendisse hendreriast ehicula leo, vel efficitur felis ultrices non. Cras a elit sit amet leo acun volutpat. </p>
+											</blockquote>
+											<p class="text-color-grey opacity-6">TRIP ADVISOR - NOV 2020</p>
+											<div class="testimonial-author">
+												<strong class="font-weight-bold text-4 negative-ls-1">John Doe</strong>
 											</div>
-										</div>
-										<div class="form-group col-md-4">
-											<div class="form-control-custom">
-												<input type="email" class="form-control form-control-lg py-3 text-2 mt-2" id="newsletterEmail" placeholder="Email Address *" 
-												required>
-											</div>
-										</div>
-										<div class="form-group col-md-3">
-											<button type="submit" class="btn btn-primary font-weight-bold text-uppercase py-3 w-100 mt-2">Subscribe Now</button>
 										</div>
 									</div>
-								</form>
+									<div class="py-3 py-lg-5 px-lg-5">
+										<div class="custom-testimonial-style-1 testimonial testimonial-style-2 testimonial-with-quotes testimonial-remove-right-quote px-0 px-md-4 mx-xl-3 my-3">
+											<img width="56" height="56" src="{{ asset('img/demos/hotel/icons/tripadvisor.svg') }}" alt="Tripadvisor Icon" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-dark', 'fadeIn': false}" />
+											<blockquote class="pt-3 pb-2 px-0 px-md-3">
+												<p class="text-color-dark text-3-5 line-height-8 alternative-font-4 mb-0">Cras a elit sit amet leo accumsan volutpat. Suspendisse hendreriast ehicula leo, vel efficitur felis ultrices non. Cras a elit sit amet leo acun volutpat. </p>
+											</blockquote>
+											<p class="text-color-grey opacity-6">TRIP ADVISOR - NOV 2020</p>
+											<div class="testimonial-author">
+												<strong class="font-weight-bold text-4 negative-ls-1">John Doe</strong>
+											</div>
+										</div>
+									</div>
+								</div>
 
 							</div>
 						</div>
 					</div>
-				</section>
+				</section>				
 
 				<footer id="footer" class="color bg-primary mt-0 py-5">
 					<div class="container">
@@ -582,20 +552,7 @@
 
 		<div class="footer-copyright bg-tertiary pt-3 pb-5">
 			<div class="container">
-				<div class="row">
-					<div class="col-lg-6 pt-4 pb-3 py-lg-0">
-						<ul class="nav justify-content-center justify-content-lg-start">
-							<li class="nav-item pe-4">
-								<a class="nav-link p-0 text-2 text-uppercase font-weight-bold text-light" href="#">Hotel</a>
-							</li>
-							<li class="nav-item pe-4">
-								<a class="nav-link p-0 text-2 text-uppercase font-weight-bold text-light" href="#">Rooms & Rates</a>
-							</li>
-							<li class="nav-item pe-4">
-								<a class="nav-link p-0 text-2 text-uppercase font-weight-bold text-light" href="#">Contact</a>
-							</li>
-						</ul>
-					</div>
+				<div class="row">					
 					<div class="col-lg-6 text-center text-lg-end">
 						<p class="text-2 m-0 p-relative bottom-2">© Copyright 2021. All Rights Reserved.</p>
 					</div>
