@@ -6,7 +6,7 @@
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">	
 
-		<title>Demo Hotel | Porto - Responsive HTML5 Template</title>	
+		<title>Задонецкая дача - эко курорт. Усадьба под Харьковом.</title>	
 
 		<meta name="keywords" content="HTML5 Template" />
 		<meta name="description" content="Porto - Responsive HTML5 Template">
@@ -54,6 +54,18 @@
 
 		<!-- Head Libs -->
 		<script src="{{ asset('vendor/modernizr/modernizr.min.js') }}"></script>
+
+		<style>
+        .address-line {
+            display: flex;
+            align-items: top;
+            gap: 10px;
+        }
+
+        .address-line p {
+            margin: 0;
+        }
+    	</style>
 
 	</head>
 	<body>
@@ -307,13 +319,45 @@
 									</div>
 									<div class="micro-map-info">
 										<div class="micro-map-info-detail">
-											<label class="opacity-7 d-block text-2">ADDRESS</label>
-											<p class="text-dark text-3 font-weight-bold line-height-5 mb-4">1234 Street Name, Los Angeles / California - 91234 <br> <a class="font-weight-bold text-color-primary text-color-hover-secondary text-uppercase mt-2 text-1" href="#"><u>Get Directions</u></a></p>
+											<label class="opacity-7 d-block text-2">КОНТАКТЫ</label>
+											<div class="address-line">
+												<div class="header-extra-info-icon">
+													<i class="icon-location-pin icons text-color-primary"></i>
+												</div>
+												<p class="text-dark text-3 font-weight-bold line-height-5 mb-4">
+													Украина, Харьковская обл. Змиевской р-н, с. Задонецкое, Коробов Хутор, ул. Курортная 13б
+												</p>
+											</div>
 
-											<label class="opacity-7 d-block text-2">PHONE</label>
-											<p class="text-dark text-4 font-weight-bold line-height-5 mb-1">(800) 123-4567</p>
-											<p class="text-dark text-3 font-weight-bold line-height-5 mb-0">(800) 123-4568</p>
-											<p class="text-dark text-3 font-weight-bold line-height-5 mb-0">(800) 123-4569</p>
+											<div class="address-line">
+												<div class="header-extra-info-icon">
+													<i class="icon-phone icons text-color-primary"></i>
+												</div>
+												<p class="text-dark text-3 font-weight-bold line-height-5 mb-4">
+													+38 (068) 497-98-84
+												</p>
+											</div>
+
+											<div class="address-line">
+												<div class="header-extra-info-icon">
+													<i class="icon-envelope icons text-color-primary"></i>
+												</div>
+												<p class="text-dark text-3 font-weight-bold line-height-5 mb-4">
+													dacha.zadonesk@gmail.com
+												</p>
+											</div>
+											
+											<div class="address-line">
+												<div class="header-extra-info-icon">
+													<i class="icon-link icons text-color-primary"></i>
+												</div>
+												<p class="text-dark text-3 font-weight-bold line-height-5 mb-4">
+													<a href="https://www.instagram.com/zadinetska_dacha" target="_blank" rel="noopener noreferrer">
+														instagram.com/zadinetska_dacha
+													</a>
+												</p>
+											</div>											
+											
 										</div>
 									</div>
 								</div>
