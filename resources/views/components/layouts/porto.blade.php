@@ -585,9 +585,8 @@
 										<div class="feature-box-icon p-0 m-0">
 											<i class="icon-location-pin icons text-color-light text-8"></i>
 										</div>
-										<div class="feature-box-info p-0 ms-2">
-											<label class="text-light opacity-7 d-block line-height-5">ADDRESS</label>
-											<strong class="text-light text-4 line-height-5">1234 Street Name, Los Angeles - CA<a class="d-block font-weight-bold text-color-light text-uppercase text-1" href="#"><u>Get Directions</u></a></strong>
+										<div class="feature-box-info p-0 ms-2">											
+											<strong class="text-light text-4 line-height-5">вул. Курортна, Задонецьке, Харківська область, Украина, 63436</strong>
 										</div>
 									</div>
 								</div>
@@ -595,9 +594,8 @@
 							</div>
 							<div class="col-lg-3 text-lg-end">
 								<ul class="header-social-icons social-icons social-icons-clean social-icons-icon-light">
-									<li class="social-icons-instagram mx-1"><a href="http://www.instagram.com/" target="_blank" class="text-3" title="Instagram"><i class="fab fa-instagram"></i></a></li>
-									<li class="social-icons-twitter mx-1"><a href="http://www.twitter.com/" target="_blank" class="text-3" title="Twitter"><i class="fab fa-twitter"></i></a></li>
-									<li class="social-icons-facebook mx-1"><a href="http://www.facebook.com/" target="_blank" class="text-3" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+									<li class="social-icons-instagram mx-1"><a href="https://www.instagram.com/zadinetska_dacha/" target="_blank" class="text-3" title="Instagram"><i class="fab fa-instagram"></i></a></li>									
+									<li class="social-icons-facebook mx-1"><a href="https://www.facebook.com/160508477643758/" target="_blank" class="text-3" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
 								</ul>
 							</div>
 						</div>
