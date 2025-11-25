@@ -335,7 +335,7 @@
 									</div>
 									<div class="micro-map-info">
 										<div class="micro-map-info-detail">
-											<label class="opacity-7 d-block text-2">КОНТАКТЫ</label>
+											
 											<div class="address-line">
 												<div class="header-extra-info-icon">
 													<i class="icon-location-pin icons text-color-primary"></i>
