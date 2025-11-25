@@ -534,26 +534,14 @@
 										<div class="custom-testimonial-style-1 testimonial testimonial-style-2 testimonial-with-quotes testimonial-remove-right-quote px-0 px-md-4 mx-xl-3 my-3">
 											<img width="56" height="56" src="{{ asset('img/demos/hotel/icons/tripadvisor.svg') }}" alt="Tripadvisor Icon" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-dark', 'fadeIn': false}" />
 											<blockquote class="pt-3 pb-2 px-0 px-md-3">
-												<p class="text-color-dark text-3-5 line-height-8 alternative-font-4 mb-0">Cras a elit sit amet leo accumsan volutpat. Suspendisse hendreriast ehicula leo, vel efficitur felis ultrices non. Cras a elit sit amet leo acun volutpat. </p>
+												<p class="text-color-dark text-3-5 line-height-8 alternative-font-4 mb-0">Шикарное место. Отличный, доброжелательный персонал и хозяйва. Классные домики. Ухоженная и удобная территория. Тихая и спокойная атмосфера. Хороший бассейн. Можно заказать доставку вкусной домашней еды. Рядом есть рестораны, до центра Змиева 9 мин езды, если надо что-то подкупить, рядом есть магазины. И что самое главное - территория обрабатывается от насекомых и плюс благодаря местоположению не встретили за 4 дня ни одного комара на территории. Недочеты конечно везде можно найти, но мы остались довольны отдыхом, то это самое главное.</p>
 											</blockquote>
-											<p class="text-color-grey opacity-6">TRIP ADVISOR - NOV 2020</p>
+											<p class="text-color-grey opacity-6">Google - Ноябрь 2021</p>
 											<div class="testimonial-author">
-												<strong class="font-weight-bold text-4 negative-ls-1">John Doe</strong>
+												<strong class="font-weight-bold text-4 negative-ls-1">Роман</strong>
 											</div>
 										</div>
-									</div>
-									<div class="py-3 py-lg-5 px-lg-5">
-										<div class="custom-testimonial-style-1 testimonial testimonial-style-2 testimonial-with-quotes testimonial-remove-right-quote px-0 px-md-4 mx-xl-3 my-3">
-											<img width="56" height="56" src="{{ asset('img/demos/hotel/icons/tripadvisor.svg') }}" alt="Tripadvisor Icon" data-icon data-plugin-options="{'onlySVG': true, 'extraClass': 'svg-fill-color-dark', 'fadeIn': false}" />
-											<blockquote class="pt-3 pb-2 px-0 px-md-3">
-												<p class="text-color-dark text-3-5 line-height-8 alternative-font-4 mb-0">Cras a elit sit amet leo accumsan volutpat. Suspendisse hendreriast ehicula leo, vel efficitur felis ultrices non. Cras a elit sit amet leo acun volutpat. </p>
-											</blockquote>
-											<p class="text-color-grey opacity-6">TRIP ADVISOR - NOV 2020</p>
-											<div class="testimonial-author">
-												<strong class="font-weight-bold text-4 negative-ls-1">John Doe</strong>
-											</div>
-										</div>
-									</div>
+									</div>									
 								</div>
 
 							</div>
