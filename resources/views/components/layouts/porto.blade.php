@@ -392,28 +392,28 @@
 
 								<p class="mt-4 mb-2">Для всех посетителей усадьбы «Задонецкая дача» в Харьковской области работает бассейн с подогревом с мая по октябрь, где можно окунуться после городской суеты в теплую водичку. Персонал «Задонецкой дачи» всегда заботится об удобствах и комфорте своих гостей. Посетителям предоставляются персональные полотенца, тапочки и средства личной гигиены.</p>
 
-								<p class="mt-4 mb-2">Все домики имеют свою современную кухня с техникой и посудой.</p>
+								<p class="mt-4 mb-2">Все домики имеют свою современную кухню с техникой и посудой.</p>
 								
 								<div class="row mt-4 pt-2">
 									<div class="col-lg-4">
 										<ul class="list list-icons list-primary text-uppercase font-weight-bold text-color-dark text-2">
-											<li><i class="fas fa-check"></i> 24 Rooms, 4 Luxury suites</li>
-											<li><i class="fas fa-check"></i> Fitness center</li>
-											<li><i class="fas fa-check"></i> Airport transporation</li>
+											<li><i class="fas fa-check"></i> Домики, деревянные срубы</li>
+											<li><i class="fas fa-check"></i> Беседки</li>
+											<li><i class="fas fa-check"></i> Мангальные зоны</li>
 										</ul>
 									</div>
 									<div class="col-lg-4">
 										<ul class="list list-icons list-primary text-uppercase font-weight-bold text-color-dark text-2">
-											<li><i class="fas fa-check"></i> 24-Hour In-Room Dining</li>
-											<li><i class="fas fa-check"></i> Cocktail Bar</li>
-											<li><i class="fas fa-check"></i> Dog Friendly - Pets Stay Free</li>
+											<li><i class="fas fa-check"></i> Автостоянка</li>
+											<li><i class="fas fa-check"></i> Ресторан</li>
+											<li><i class="fas fa-check"></i> Wi-Fi</li>
 										</ul>
 									</div>
 									<div class="col-lg-4">
 										<ul class="list list-icons list-primary text-uppercase font-weight-bold text-color-dark text-2">
-											<li><i class="fas fa-check"></i> Valet car service</li>
-											<li><i class="fas fa-check"></i> Pool</li>
-											<li><i class="fas fa-check"></i> Free Wi-Fi</li>
+											<li><i class="fas fa-check"></i> Детская площадка</li>
+											<li><i class="fas fa-check"></i> Бассейн с подогревом</li>
+											<li><i class="fas fa-check"></i> Баня на дровах</li>
 										</ul>
 									</div>
 								</div>
