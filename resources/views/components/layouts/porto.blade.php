@@ -65,6 +65,22 @@
         .address-line p {
             margin: 0;
         }
+
+		.card-img-top {
+			height: 450px; /* выбери нужную высоту */
+			width: 100%;
+			object-fit: cover;      /* обрезает изображение по размеру */
+			object-position: bottom; /* выравнивает изображение снизу */
+			border-top-left-radius: calc(0.25rem - 1px);
+			border-top-right-radius: calc(0.25rem - 1px);
+		}
+
+		.row .card {
+			height: 100%;
+		}
+		.col-lg-4 {
+			display: flex;
+		}
     	</style>
 
 	</head>
@@ -430,7 +446,7 @@
 							<div class="col my-3">
 
 								<div class="text-center">
-									<h3 class="mb-0 pb-0">Special Offers</h3>
+									<h3 class="mb-0 pb-0">Акции и предложения</h3>
 									<div class="divider divider-primary divider-small divider-small-center my-3">
 										<hr class="mt-2">
 									</div>
@@ -445,9 +461,8 @@
 														<img class="card-img-top border-radius-0 mb-2" src="img/demos/hotel/blog/blog-1.jpg" alt="Card Image">
 													</a>
 													<div class="card-body p-0">
-														<h4 class="card-title text-5 font-weight-bold pb-1 mt-3 mb-2"><a class="text-color-dark text-decoration-none" href="demo-hotel-book.html">Free Room Upgrade</a></h4>
-														<p class="card-text mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc viverra lorem , consectetur adipiscing elit...</p>
-														<a class="font-weight-bold text-uppercase text-2 text-decoration-none mt-2 mb-4" href="demo-hotel-book.html">Book Now <i class="fas fa-angle-right p-relative top-1 ms-1"></i></a>
+														<h4 class="card-title text-5 font-weight-bold pb-1 mt-3 mb-2"><a class="text-color-dark text-decoration-none" href="demo-hotel-book.html">Новий Рік і Різдво</a></h4>
+														<p class="card-text mb-2">Чекаємо на Вас на Новий Рік і Різдво в Садибі "Задінецька дача"</p>														
 													</div>
 												</div>
 											</div>
@@ -461,9 +476,8 @@
 														<img class="card-img-top border-radius-0 mb-2" src="img/demos/hotel/blog/blog-2.jpg" alt="Card Image">
 													</a>
 													<div class="card-body p-0">
-														<h4 class="card-title text-5 font-weight-bold pb-1 mt-3 mb-2"><a class="text-color-dark text-decoration-none" href="demo-hotel-book.html">Summer Sale</a></h4>
-														<p class="card-text mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc viverra lorem , consectetur adipiscing elit...</p>
-														<a class="font-weight-bold text-uppercase text-2 text-decoration-none mt-2 mb-4" href="demo-hotel-book.html">Book Now <i class="fas fa-angle-right p-relative top-1 ms-1"></i></a>
+														<h4 class="card-title text-5 font-weight-bold pb-1 mt-3 mb-2"><a class="text-color-dark text-decoration-none" href="demo-hotel-book.html">Золота Осінь</a></h4>
+														<p class="card-text mb-2">АКЦИИ! С Понедельника по Пятницу (4 дня и 4 ночи) - 4000грн. (экономия 35%). С Пятницы по Понедельник (3 дня и 3 ночи) - 3600грн. (экономия 20%). Цены на праздничные дни уточняйте у администрации."</p>														
 													</div>
 												</div>
 											</div>
@@ -477,9 +491,8 @@
 														<img class="card-img-top border-radius-0 mb-2" src="img/demos/hotel/blog/blog-3.jpg" alt="Card Image">
 													</a>
 													<div class="card-body p-0">
-														<h4 class="card-title text-5 font-weight-bold pb-1 mt-3 mb-2"><a class="text-color-dark text-decoration-none" href="demo-hotel-book.html">New Jacuzzi for Free</a></h4>
-														<p class="card-text mb-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc viverra lorem , consectetur adipiscing elit...</p>
-														<a class="font-weight-bold text-uppercase text-2 text-decoration-none mt-2 mb-4" href="demo-hotel-book.html">Book Now <i class="fas fa-angle-right p-relative top-1 ms-1"></i></a>
+														<h4 class="card-title text-5 font-weight-bold pb-1 mt-3 mb-2"><a class="text-color-dark text-decoration-none" href="demo-hotel-book.html">Золота Осінь</a></h4>
+														<p class="card-text mb-2">АКЦИЯ! С Понедельника по Пятницу (4 дня и 4 ночи) - 3000грн. (экономия 25%). С Пятницы по Понедельник (3 дня и 3 ночи) - 2400грн. (экономия 20%). Цены на праздничные дни уточняйте у администрации.</p>														
 													</div>
 												</div>
 											</div>
@@ -488,7 +501,7 @@
 								</div>
 
 								<div class="text-center pt-2">
-									<a href="demo-hotel-special-offers.html" class="btn btn-primary font-weight-bold text-uppercase px-5 py-3 mt-2 mb-2 appear-animation" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="500">View All</a>
+									<a href="demo-hotel-special-offers.html" class="btn btn-primary font-weight-bold text-uppercase px-5 py-3 mt-2 mb-2 appear-animation" data-appear-animation="fadeInUpShorterPlus" data-appear-animation-delay="500">Смотреть все</a>
 								</div>
 
 							</div>
