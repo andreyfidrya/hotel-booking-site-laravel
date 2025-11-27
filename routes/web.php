@@ -11,4 +11,4 @@ Route::get('/welcome', function () {
 
 Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/admin', [AdminController::class, 'index']);
+Route::get('/admin-panel', [AdminController::class, 'index']);

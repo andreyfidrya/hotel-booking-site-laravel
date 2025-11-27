@@ -1,1 +1,3 @@
-Admin Page
+<x-layouts.admin>
+
+</x-layouts.admin>
