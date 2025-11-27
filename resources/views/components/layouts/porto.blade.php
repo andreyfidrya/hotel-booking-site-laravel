@@ -110,11 +110,41 @@
 												</div>
 												<div class="header-extra-info-text">													
 													<strong class="text-light">вул. Курортна, Задонецьке, Харківська область, Украина, 63436</strong>
-												</div>
+												</div>												
 											</li>
 										</ul>
 									</div>
 								</div>
+								{{-- КНОПКИ АВТОРИЗАЦИИ --}}
+								@if (Route::has('login'))
+									<nav class="mt-2 d-flex gap-2">
+										@auth
+											<a
+												href="{{ url('/dashboard') }}"
+												class="px-3 py-1 border rounded-sm text-sm text-light"
+											>
+												Dashboard
+											</a>
+										@else
+											<a
+												href="{{ route('login') }}"
+												class="px-3 py-1 border rounded-sm text-sm text-light"
+											>
+												Вход
+											</a>
+
+											@if (Route::has('register'))
+												<a
+													href="{{ route('register') }}"
+													class="px-3 py-1 border rounded-sm text-sm text-light"
+												>
+												Регистрация
+												</a>
+											@endif
+										@endauth
+									</nav>
+								@endif
+								{{-- /КОНЕЦ КНОПОК --}}
 								<div class="header-column justify-content-end">
 									<div class="header-row">
 										<ul class="header-social-icons social-icons social-icons-clean social-icons-icon-light d-lg-flex m-0 ms-lg-2">
