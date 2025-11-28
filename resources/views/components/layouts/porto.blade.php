@@ -125,6 +125,17 @@
 											>
 												Dashboard
 											</a>
+
+											<form method="POST" action="{{ route('logout') }}">
+												@csrf
+												<button
+													type="submit"
+													class="px-3 py-1 border rounded-sm text-sm text-light bg-transparent border-0"
+													style="cursor: pointer;"
+												>
+													Выход
+												</button>
+											</form>
 										@else
 											<a
 												href="{{ route('login') }}"
@@ -138,7 +149,7 @@
 													href="{{ route('register') }}"
 													class="px-3 py-1 border rounded-sm text-sm text-light"
 												>
-												Регистрация
+													Регистрация
 												</a>
 											@endif
 										@endauth
