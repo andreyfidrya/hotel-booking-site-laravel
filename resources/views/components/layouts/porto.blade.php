@@ -121,11 +121,11 @@
 										@auth
 											@if(auth()->user()->usertype == 'admin')
 												<a href="{{ url('/admin-panel') }}" class="px-3 py-1 border rounded-sm text-sm text-light">
-													Admin Panel
+													Админ Панель
 												</a>
 											@else
 												<a href="{{ url('/dashboard') }}" class="px-3 py-1 border rounded-sm text-sm text-light">
-													Dashboard
+													Кабинет
 												</a>
 											@endif
 
