@@ -5,7 +5,7 @@
 		<!-- Basic -->
 		<meta charset="UTF-8">
 
-		<title>Админ ПанельА</title>
+		<title>Админ Панель</title>
 
 		<meta name="keywords" content="HTML5 Admin Template" />
 		<meta name="description" content="Porto Admin - Responsive HTML5 Template">
@@ -232,7 +232,7 @@
 								<img src="{{ asset('admin/img/!logged-user.jpg') }}" alt="Joseph Doe" class="rounded-circle" data-lock-picture="img/!logged-user.jpg" />
 							</figure>
 							<div class="profile-info" data-lock-name="John Doe" data-lock-email="johndoe@okler.com">
-								<span class="name">John Doe Junior</span>
+								<span class="name">{{auth()->user()->name}}</span>
 								<span class="role">Administrator</span>
 							</div>
 
