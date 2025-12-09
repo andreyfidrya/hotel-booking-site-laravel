@@ -119,12 +119,15 @@
 								@if (Route::has('login'))
 									<nav class="mt-2 d-flex gap-2">
 										@auth
-											<a
-												href="{{ url('/dashboard') }}"
-												class="px-3 py-1 border rounded-sm text-sm text-light"
-											>
-												Dashboard
-											</a>
+											@if(auth()->user()->usertype == 'admin')
+												<a href="{{ url('/admin-panel') }}" class="px-3 py-1 border rounded-sm text-sm text-light">
+													Admin Panel
+												</a>
+											@else
+												<a href="{{ url('/dashboard') }}" class="px-3 py-1 border rounded-sm text-sm text-light">
+													Dashboard
+												</a>
+											@endif
 
 											<form method="POST" action="{{ route('logout') }}">
 												@csrf
