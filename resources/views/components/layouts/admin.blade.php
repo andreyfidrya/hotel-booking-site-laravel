@@ -5,7 +5,7 @@
 		<!-- Basic -->
 		<meta charset="UTF-8">
 
-		<title>Dark Layout | Porto Admin - Responsive HTML5 Template</title>
+		<title>Админ ПанельА</title>
 
 		<meta name="keywords" content="HTML5 Admin Template" />
 		<meta name="description" content="Porto Admin - Responsive HTML5 Template">
@@ -321,34 +321,34 @@
 
 				            <div class="sidebar-widget widget-stats">
 				                <div class="widget-header">
-				                    <h6>Статистика</h6>
+				                    <h6>Статистика по бронированию</h6>
 				                    <div class="widget-toggle">+</div>
 				                </div>
 				                <div class="widget-content">
 				                    <ul>
 				                        <li>
-				                            <span class="stats-title">Stat 1</span>
-				                            <span class="stats-complete">85%</span>
+				                            <span class="stats-title">Коричневые домики</span>
+				                            <span class="stats-complete">66%</span>
 				                            <div class="progress">
-				                                <div class="progress-bar progress-bar-primary progress-without-number" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 85%;">
-				                                    <span class="sr-only">85% Complete</span>
+				                                <div class="progress-bar progress-bar-primary progress-without-number" role="progressbar" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100" style="width: 66%;">
+				                                    <span class="sr-only">66% Complete</span>
 				                                </div>
 				                            </div>
 				                        </li>
 				                        <li>
-				                            <span class="stats-title">Stat 2</span>
-				                            <span class="stats-complete">70%</span>
+				                            <span class="stats-title">Витражные домики</span>
+				                            <span class="stats-complete">50%</span>
 				                            <div class="progress">
-				                                <div class="progress-bar progress-bar-primary progress-without-number" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 70%;">
+				                                <div class="progress-bar progress-bar-primary progress-without-number" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width: 50%;">
 				                                    <span class="sr-only">70% Complete</span>
 				                                </div>
 				                            </div>
 				                        </li>
 				                        <li>
-				                            <span class="stats-title">Stat 3</span>
-				                            <span class="stats-complete">2%</span>
+				                            <span class="stats-title">Оливковый домик</span>
+				                            <span class="stats-complete">100%</span>
 				                            <div class="progress">
-				                                <div class="progress-bar progress-bar-primary progress-without-number" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="width: 2%;">
+				                                <div class="progress-bar progress-bar-primary progress-without-number" role="progressbar" aria-valuenow="2" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
 				                                    <span class="sr-only">2% Complete</span>
 				                                </div>
 				                            </div>
