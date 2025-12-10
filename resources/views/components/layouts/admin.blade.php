@@ -277,12 +277,19 @@
 				            <nav id="menu" class="nav-main" role="navigation">
 
 				                <ul class="nav nav-main">
-				                    <li>
-				                        <a class="nav-link" href="layouts-default.html">
+				                    <li class="nav-parent">
+				                        <a class="nav-link" href="index.html">
 				                            <i class="bx bx-home-alt" aria-hidden="true"></i>
 				                            <span>Домики</span>
-				                        </a>										                       
-				                    </li>
+				                        </a>
+										<ul class="nav nav-children">
+											<li>
+												<a class="nav-link" href="layouts-header-menu-stripe.html">
+													Добавить домик
+												</a>
+											</li>
+										</ul>										                       
+				                    </li>									
 				                    <li>
 				                        <a class="nav-link" href="#">
 				                            <i class="bx bx-cart-alt" aria-hidden="true"></i>

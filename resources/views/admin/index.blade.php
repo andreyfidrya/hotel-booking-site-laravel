@@ -1,3 +1,3 @@
 <x-layouts.admin>
-Test ...
+Домики.
 </x-layouts.admin>
