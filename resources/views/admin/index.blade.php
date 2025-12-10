@@ -1,3 +1,3 @@
 <x-layouts.admin>
-
+Test ...
 </x-layouts.admin>
