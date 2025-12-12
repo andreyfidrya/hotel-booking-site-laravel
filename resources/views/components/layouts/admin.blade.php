@@ -278,10 +278,24 @@
 
 				                <ul class="nav nav-main">
 				                    <li class="nav-parent">
-				                        <a class="nav-link" href="index.html">
+				                        <a class="nav-link">
 				                            <i class="bx bx-home-alt" aria-hidden="true"></i>
 				                            <span>Домики</span>
 				                        </a>
+										<ul class="nav nav-children">
+											<li>
+												<a class="nav-link" href="layouts-header-menu-stripe.html">
+													Оснащение домиков
+												</a>
+											</li>
+										</ul>
+										<ul class="nav nav-children">
+											<li>
+												<a class="nav-link" href="layouts-header-menu-stripe.html">
+													Типы домиков
+												</a>
+											</li>
+										</ul>																				
 										<ul class="nav nav-children">
 											<li>
 												<a class="nav-link" href="layouts-header-menu-stripe.html">
