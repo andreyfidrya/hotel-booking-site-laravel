@@ -41,7 +41,7 @@ class FacilitiesTableSeeder extends Seeder
                 'name' => 'Гостинная: 1 диван-кровать',                
             ],
              [
-                'name' => 'кухня',                
+                'name' => 'Кухня',                
             ],
         ]);
     }
