@@ -11,47 +11,47 @@ class FacilityHousetypeTableSeeder extends Seeder
     {
         DB::table('facility_housetype')->insert([
             [
-                'facility_id' => '23',
+                'facility_id' => '11',
                 'housetype_id' => '1',                               
             ], 
             [
-                'facility_id' => '24',
+                'facility_id' => '10',
                 'housetype_id' => '1',                               
             ],
             [
-                'facility_id' => '25',
+                'facility_id' => '9',
                 'housetype_id' => '1',                               
             ],
             [
-                'facility_id' => '26',
+                'facility_id' => '8',
                 'housetype_id' => '1',                               
             ],
             [
-                'facility_id' => '27',
+                'facility_id' => '7',
                 'housetype_id' => '1',                               
             ],
             [
-                'facility_id' => '28',
+                'facility_id' => '6',
                 'housetype_id' => '1',                               
             ],
             [
-                'facility_id' => '29',
+                'facility_id' => '5',
                 'housetype_id' => '1',                               
             ],
             [
-                'facility_id' => '30',
+                'facility_id' => '4',
                 'housetype_id' => '1',                               
             ],
             [
-                'facility_id' => '31',
+                'facility_id' => '3',
                 'housetype_id' => '1',                               
             ],
             [
-                'facility_id' => '32',
+                'facility_id' => '2',
                 'housetype_id' => '1',                               
             ],
             [
-                'facility_id' => '33',
+                'facility_id' => '1',
                 'housetype_id' => '1',                               
             ],           
         ]);

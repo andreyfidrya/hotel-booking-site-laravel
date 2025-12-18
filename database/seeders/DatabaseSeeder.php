@@ -12,9 +12,9 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
         UsersTableSeeder::class,
-        FacilitySeeder::class, 
+        FacilitiesTableSeeder::class, 
         HousetypesTableSeeder::class,  
-        FacilityHousetypeSeeder::class,     
+        FacilityHousetypeTableSeeder::class,     
         ]);
     }
 }

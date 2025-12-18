@@ -10,9 +10,6 @@ class Housetype extends Model
 
     public function facilities()
     {
-        return $this->belongsToMany(
-            Facility::class,
-            'facility_housetype'
-        );
+        return $this->belongsToMany(Facility::class);
     }
 }
