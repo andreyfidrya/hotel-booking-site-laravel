@@ -12,4 +12,9 @@ class Housetype extends Model
     {
         return $this->belongsToMany(Facility::class);
     }
+
+    public function houses()
+    {
+        return $this->hasMany(Ticket::class);
+    }
 }
