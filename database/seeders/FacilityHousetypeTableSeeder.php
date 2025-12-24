@@ -10,6 +10,54 @@ class FacilityHousetypeTableSeeder extends Seeder
     public function run(): void
     {
         DB::table('facility_housetype')->insert([
+             [
+                'facility_id' => '11',
+                'housetype_id' => '4',                               
+            ],
+            [
+                'facility_id' => '21',
+                'housetype_id' => '4',                               
+            ],
+            [
+                'facility_id' => '20',
+                'housetype_id' => '4',                               
+            ],
+            [
+                'facility_id' => '19',
+                'housetype_id' => '4',                               
+            ],
+            [
+                'facility_id' => '14',
+                'housetype_id' => '4',                               
+            ],
+            [
+                'facility_id' => '18',
+                'housetype_id' => '4',                               
+            ],
+            [
+                'facility_id' => '7',
+                'housetype_id' => '4',                               
+            ],
+            [
+                'facility_id' => '6',
+                'housetype_id' => '4',                               
+            ],
+            [
+                'facility_id' => '4',
+                'housetype_id' => '4',                               
+            ],
+            [
+                'facility_id' => '3',
+                'housetype_id' => '4',                               
+            ],
+            [
+                'facility_id' => '2',
+                'housetype_id' => '4',                               
+            ],
+            [
+                'facility_id' => '1',
+                'housetype_id' => '4',                               
+            ],
             [
                 'facility_id' => '11',
                 'housetype_id' => '3',                               
