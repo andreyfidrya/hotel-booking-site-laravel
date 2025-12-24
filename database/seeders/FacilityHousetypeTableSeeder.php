@@ -12,6 +12,102 @@ class FacilityHousetypeTableSeeder extends Seeder
         DB::table('facility_housetype')->insert([
             [
                 'facility_id' => '11',
+                'housetype_id' => '3',                               
+            ],
+            [
+                'facility_id' => '17',
+                'housetype_id' => '3',                               
+            ],
+            [
+                'facility_id' => '10',
+                'housetype_id' => '3',                               
+            ],
+            [
+                'facility_id' => '8',
+                'housetype_id' => '3',                               
+            ],
+            [
+                'facility_id' => '7',
+                'housetype_id' => '3',                               
+            ],
+            [
+                'facility_id' => '6',
+                'housetype_id' => '3',                               
+            ],
+            [
+                'facility_id' => '5',
+                'housetype_id' => '3',                               
+            ],
+            [
+                'facility_id' => '4',
+                'housetype_id' => '3',                               
+            ],
+            [
+                'facility_id' => '3',
+                'housetype_id' => '3',                               
+            ],
+            [
+                'facility_id' => '2',
+                'housetype_id' => '3',                               
+            ],
+            [
+                'facility_id' => '1',
+                'housetype_id' => '3',                               
+            ],
+            [
+                'facility_id' => '11',
+                'housetype_id' => '1',                               
+            ], 
+            [
+                'facility_id' => '16',
+                'housetype_id' => '1',                               
+            ],
+            [
+                'facility_id' => '13',
+                'housetype_id' => '1',                               
+            ],
+            [
+                'facility_id' => '10',
+                'housetype_id' => '1',                               
+            ],
+            [
+                'facility_id' => '12',
+                'housetype_id' => '1',                               
+            ],
+            [
+                'facility_id' => '14',
+                'housetype_id' => '1',                               
+            ],
+            [
+                'facility_id' => '7',
+                'housetype_id' => '1',                               
+            ],
+            [
+                'facility_id' => '6',
+                'housetype_id' => '1',                               
+            ],
+            [
+                'facility_id' => '15',
+                'housetype_id' => '1',                               
+            ],
+            [
+                'facility_id' => '4',
+                'housetype_id' => '1',                               
+            ],
+            [
+                'facility_id' => '3',
+                'housetype_id' => '1',                               
+            ],
+            [
+                'facility_id' => '2',
+                'housetype_id' => '1',                               
+            ],
+            [
+                'facility_id' => '1',
+                'housetype_id' => '1',                               
+            ],           
+            [
+                'facility_id' => '11',
                 'housetype_id' => '2',                               
             ], 
             [
