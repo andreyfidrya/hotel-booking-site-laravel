@@ -29,60 +29,61 @@
 								<li class="nav-item" data-option-value=".rooms"><a class="nav-link text-uppercase font-weight-bold text-3" href="#">Rooms</a></li>
 								<li class="nav-item" data-option-value=".suites"><a class="nav-link text-uppercase font-weight-bold text-3" href="#">Suites</a></li>
 							</ul>
-
+						@foreach ($housetypes as $housetype)
+							
 							<div class="sort-destination-loader sort-destination-loader-showing mb-0">
 								<div class="row portfolio-list sort-destination" data-sort-id="portfolio">
-									<div class="col-md-6 col-lg-4 isotope-item rooms mb-0 pb-0">
-										<img src="{{ asset('img/demos/hotel/rooms/room-1.jpg') }}" class="img-fluid" alt="">
-										<h5 class="text-transform-none text-4 font-weight-bold mt-3 mb-0">Standard Room</h5>
-										<div class="custom-room-suite-info mb-5 mb-lg-0">
-											<ul>
-												<li><label>BEDS</label>	<span>1 Double Bed</span></li>
-												<li><label>OCCUPANCY</label> <span>2 Persons</span></li>
-												<li><label>SIZE</label>	<span>40 sqm.</span></li>
-												<li><label>VIEW</label>	<span>Porto Bay</span></li>
-												<li><label>RATES FROM</label> <strong>USD 199</strong></li>
-												<li>
-													<a href="demo-hotel-book.html" class="room-suite-info-book" title="">Book Now</i></a>
-												</li>
-											</ul>
-										</div>
-									</div>
-									<div class="col-md-6 col-lg-4 isotope-item rooms mb-0 pb-0">
-										<img src="{{ asset('img/demos/hotel/rooms/room-2.jpg') }}" class="img-fluid" alt="">
-										<h5 class="text-transform-none text-4 font-weight-bold mt-3 mb-0">Premium Room</h5>
-										<div class="custom-room-suite-info mb-5 mb-lg-0">
-											<ul>
-												<li><label>BEDS</label>	<span>1 Double Bed</span></li>
-												<li><label>OCCUPANCY</label> <span>2 Persons</span></li>
-												<li><label>SIZE</label>	<span>50 sqm.</span></li>
-												<li><label>VIEW</label>	<span>Porto Bay</span></li>
-												<li><label>RATES FROM</label> <strong>USD 299</strong></li>
-												<li>
-													<a href="demo-hotel-book.html" class="room-suite-info-book" title="">Book Now</i></a>
-												</li>
-											</ul>
-										</div>
-									</div>
-									<div class="col-md-6 col-lg-4 isotope-item suites mb-0 pb-0">
-										<img src="{{ asset('img/demos/hotel/rooms/room-3.jpg') }}" class="img-fluid" alt="">
-										<h5 class="text-transform-none text-4 font-weight-bold mt-3 mb-0">Deluxe Suite</h5>
-										<div class="custom-room-suite-info mb-5 mb-lg-0">
-											<ul>
-												<li><label>BEDS</label>	<span>2 Double Beds</span></li>
-												<li><label>OCCUPANCY</label> <span>3 Persons</span></li>
-												<li><label>SIZE</label>	<span>80 sqm.</span></li>
-												<li><label>VIEW</label>	<span>Porto Bay</span></li>
-												<li><label>RATES FROM</label> <strong>USD 399</strong></li>
-												<li>
-													<a href="demo-hotel-book.html" class="room-suite-info-book" title="">Book Now</i></a>
-												</li>
-											</ul>
-										</div>
-									</div>
+							@foreach ($housetype->houses as $house)		
+
+											<div class="col-md-6 col-lg-4 isotope-item mb-0 pb-0 {{ Str::slug($housetype->name) }}">
+												
+												<img 
+													src="{{ asset('storage/' . $house->featured_image) }}" 
+													class="img-fluid" 
+													alt="{{ $house->name }}"
+												>
+
+												<h5 class="text-transform-none text-4 font-weight-bold mt-3 mb-0">
+													{{ $house->name }}
+												</h5>
+
+												<div class="custom-room-suite-info mb-5 mb-lg-0">
+													<ul>
+														<li>
+															<label>OCCUPANCY</label>
+															<span>{{ $housetype->capacity }} persons</span>
+														</li>
+
+														<li>
+															<label>SIZE</label>
+															<span>{{ $housetype->area }} sqm.</span>
+														</li>
+
+														<li>
+															<label>TYPE</label>
+															<span>{{ $housetype->name }}</span>
+														</li>
+
+														<li>
+															<label>RATES FROM</label>
+															<strong>{{ $housetype->price_on_business_days }} ₴</strong>
+														</li>
+
+														<li>
+															<a href=""
+															class="room-suite-info-book">
+																Book Now
+															</a>
+														</li>
+													</ul>
+												</div>
+
+											</div>
+						@endforeach				
 								</div>
 							</div>
-
+						
+							@endforeach
 						</div>
 
 					</div>

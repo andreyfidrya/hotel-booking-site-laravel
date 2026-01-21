@@ -15,6 +15,6 @@ class Housetype extends Model
 
     public function houses()
     {
-        return $this->hasMany(Ticket::class);
+        return $this->hasMany(House::class);
     }
 }

@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\House;
+use App\Models\Housetype;
+
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -13,6 +16,9 @@ class HomeController extends Controller
 
     public function houses()
     {
-        return view('houses');
+        $houses = House::all();
+        $housetypes = HouseType::with('houses')->get();        
+
+        return view('houses', compact('houses','housetypes'));       
     }
 }
