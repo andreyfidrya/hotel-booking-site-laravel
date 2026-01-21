@@ -35,50 +35,50 @@
 								<div class="row portfolio-list sort-destination" data-sort-id="portfolio">
 							@foreach ($housetype->houses as $house)		
 
-											<div class="col-md-6 col-lg-4 isotope-item mb-0 pb-0 {{ Str::slug($housetype->name) }}">
+									<div class="col-md-6 col-lg-4 isotope-item mb-0 pb-0 {{ Str::slug($housetype->name) }}">
 												
-												<img 
-													src="{{ asset('storage/' . $house->featured_image) }}" 
-													class="img-fluid" 
-													alt="{{ $house->name }}"
-												>
+										<img 
+											src="{{ asset('storage/' . $house->featured_image) }}" 
+											class="img-fluid" 
+											alt="{{ $house->name }}"
+										>
 
-												<h5 class="text-transform-none text-4 font-weight-bold mt-3 mb-0">
-													{{ $house->name }}
-												</h5>
+										<h5 class="text-transform-none text-4 font-weight-bold mt-3 mb-0">
+											{{ $house->name }}
+										</h5>
 
-												<div class="custom-room-suite-info mb-5 mb-lg-0">
-													<ul>
-														<li>
-															<label>OCCUPANCY</label>
-															<span>{{ $housetype->capacity }} persons</span>
-														</li>
+										<div class="custom-room-suite-info mb-5 mb-lg-0">
+											<ul>
+												<li>
+													<label>OCCUPANCY</label>
+													<span>{{ $housetype->capacity }} persons</span>
+												</li>
 
-														<li>
-															<label>SIZE</label>
-															<span>{{ $housetype->area }} sqm.</span>
-														</li>
+												<li>
+													<label>SIZE</label>
+													<span>{{ $housetype->area }} sqm.</span>
+												</li>
 
-														<li>
-															<label>TYPE</label>
-															<span>{{ $housetype->name }}</span>
-														</li>
+												<li>
+													<label>TYPE</label>
+													<span>{{ $housetype->name }}</span>
+												</li>
 
-														<li>
-															<label>RATES FROM</label>
-															<strong>{{ $housetype->price_on_business_days }} ₴</strong>
-														</li>
+												<li>
+													<label>RATES FROM</label>
+													<strong>{{ $housetype->price_on_business_days }} ₴</strong>
+												</li>
 
-														<li>
-															<a href=""
-															class="room-suite-info-book">
-																Book Now
-															</a>
-														</li>
-													</ul>
-												</div>
+												<li>
+													<a href=""
+													class="room-suite-info-book">
+														Book Now
+													</a>
+												</li>
+											</ul>
+										</div>
 
-											</div>
+									</div>
 						@endforeach				
 								</div>
 							</div>
