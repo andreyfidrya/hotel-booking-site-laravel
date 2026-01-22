@@ -56,29 +56,29 @@
 										<div class="custom-room-suite-info mb-5 mb-lg-0">
 											<ul>
 												<li>
-													<label>OCCUPANCY</label>
-													<span>{{ $housetype->capacity }} persons</span>
+													<label>Вместимость</label>
+													<span>{{ $housetype->capacity }} человек</span>
 												</li>
 
 												<li>
-													<label>SIZE</label>
-													<span>{{ $housetype->area }} sqm.</span>
+													<label>Полощадь</label>
+													<span>{{ $housetype->area }} кв.м.</span>
 												</li>
 
 												<li>
-													<label>TYPE</label>
+													<label>Вид</label>
 													<span>{{ $housetype->name }}</span>
 												</li>
 
 												<li>
-													<label>RATES FROM</label>
-													<strong>{{ $housetype->price_on_business_days }} ₴</strong>
+													<label>Цена</label>
+													<strong>{{ $housetype->price_on_business_days }} Грн</strong>
 												</li>
 
 												<li>
 													<a href=""
 													class="room-suite-info-book">
-														Book Now
+														Забронировать
 													</a>
 												</li>
 											</ul>
