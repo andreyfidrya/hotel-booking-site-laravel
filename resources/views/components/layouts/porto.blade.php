@@ -81,6 +81,12 @@
 		.card-wrapper {
 			display: flex;
 		}
+		.house-img {
+			width: 100%;
+			max-width: 356px;
+			height: 267px;
+			object-fit: cover;
+		}
     	</style>
 
 	</head>

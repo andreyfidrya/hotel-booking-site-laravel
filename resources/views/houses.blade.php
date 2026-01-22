@@ -38,9 +38,15 @@
 									<div class="col-md-6 col-lg-4 isotope-item mb-0 pb-0 {{ Str::slug($housetype->name) }}">
 												
 										<img 
-											src="{{ asset('storage/' . $house->featured_image) }}" 
-											class="img-fluid" 
+											src="{{ asset('images/' . $house->featured_image) }}" 
+											class="img-fluid house-img" 
 											alt="{{ $house->name }}"
+											
+											data-bgposition="center bottom"
+											data-bgfit="cover"
+											data-bgrepeat="no-repeat"
+											data-bgparallax="10"											
+											data-no-retina>											
 										>
 
 										<h5 class="text-transform-none text-4 font-weight-bold mt-3 mb-0">
