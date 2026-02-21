@@ -2,7 +2,7 @@
 
     <h1 class="mb-4">Домики</h1>
 
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered">
         <thead>
             <tr>
                 <th style="width: 15%">Название</th>
@@ -14,26 +14,36 @@
             </tr>
         </thead>
         <tbody>
-            
+                @foreach($houses as $house)               
+                
                 <tr>
-                    <td>название домика</td>
-                    <td>описание домика</td>
-                    <td>тип домика</td>
-                    <td>
-                        <img src="" 
-                             width="150">
+                    <td style="text-align: center; vertical-align: middle;">{{$house->name}}</td>
+                    <td style="text-align: center; vertical-align: middle;">{{$house->description}}</td>
+                    <td style="text-align: center; vertical-align: middle;">{{$house->housetype->name}}</td>
+                    <td style="text-align: center; vertical-align: middle;">
+                        <img src="{{ asset('images/' . $house->featured_image) }}" 
+                             width="220" height="200">
                     </td>
-                    <td>
-                        <img src="" 
-                             width="150">
+                    <td class="align-middle text-center">
+                        @php
+                            $images = explode(',', $house->galery_images);
+                        @endphp
+
+                        @foreach($images as $image)
+                            <img src="{{ asset('images/' . trim($image)) }}"
+                                width="150"
+                                style="display: block; margin: 0 auto 10px;">
+                        @endforeach
                     </td>
-                    <td>
+                    <td style="text-align: center; vertical-align: middle;">
                         <a href="" 
                            class="btn btn-sm btn-primary">
                             Редактировать
                         </a>
                     </td>
                 </tr>
+
+                @endforeach
             
         </tbody>
     </table>
