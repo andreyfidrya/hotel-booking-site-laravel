@@ -2,6 +2,11 @@
 
     <h1 class="mb-4">Домики</h1>
 
+    <a href="" 
+       class="btn btn-success mb-4">
+        Добавить домик
+    </a>
+
     <table class="table table-bordered">
         <thead>
             <tr>
@@ -37,9 +42,19 @@
                     </td>
                     <td style="text-align: center; vertical-align: middle;">
                         <a href="" 
-                           class="btn btn-sm btn-primary">
+                           class="btn btn-sm btn-primary w-100 mb-2">
                             Редактировать
                         </a>
+                        <form action="" 
+                            method="POST"
+                            onsubmit="return confirm('Удалить этот домик?')">
+                            @csrf
+                            @method('DELETE')
+
+                            <button type="submit" class="btn btn-sm btn-danger w-100">
+                                Удалить
+                            </button>
+                        </form>
                     </td>
                 </tr>
 

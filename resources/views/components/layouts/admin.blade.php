@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="fixed dark">
+<html class="dark">
 	<head>
 
 		<!-- Basic -->
