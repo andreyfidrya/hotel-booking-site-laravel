@@ -1,6 +1,6 @@
 <x-layouts.admin>
 
-    <h1 class="mb-4">Домики</h1>
+    <h1 class="mb-4">Все Домики</h1>
 
     <a href="" 
        class="btn btn-success mb-4">

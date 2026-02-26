@@ -284,25 +284,25 @@
 				                        </a>
 										<ul class="nav nav-children">
 											<li>
-												<a class="nav-link" href="layouts-header-menu-stripe.html">
-													Оснащение домиков
+												<a class="nav-link" href="admin-panel/houses">
+													Все домики
 												</a>
 											</li>
-										</ul>
+										</ul>									
 										<ul class="nav nav-children">
 											<li>
 												<a class="nav-link" href="layouts-header-menu-stripe.html">
 													Типы домиков
 												</a>
 											</li>
-										</ul>																				
+										</ul>										
 										<ul class="nav nav-children">
 											<li>
 												<a class="nav-link" href="layouts-header-menu-stripe.html">
-													Добавить домик
+													Оснащение домиков
 												</a>
 											</li>
-										</ul>										                       
+										</ul>													                       
 				                    </li>									
 				                    <li>
 				                        <a class="nav-link" href="#">

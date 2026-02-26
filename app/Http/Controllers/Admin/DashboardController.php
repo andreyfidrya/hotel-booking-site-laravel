@@ -11,8 +11,6 @@ class DashboardController extends Controller
     public function index()
     {
         
-        $houses = House::all();        
-
-        return view('admin.houses', compact('houses'));
+        return view('admin.index');
     }
 }
