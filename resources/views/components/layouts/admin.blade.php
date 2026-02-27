@@ -249,7 +249,19 @@
 									<a role="menuitem" tabindex="-1" href="#" data-lock-screen="true"><i class="bx bx-lock"></i> Lock Screen</a>
 								</li>
 								<li>
-									<a role="menuitem" tabindex="-1" href="pages-signin.html"><i class="bx bx-power-off"></i> Logout</a>
+									<a href="{{ route('logout') }}"
+									role="menuitem"
+									tabindex="-1"
+									onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+										<i class="bx bx-power-off"></i> Logout
+									</a>
+
+									<form id="logout-form" 
+										action="{{ route('logout') }}" 
+										method="POST" 
+										style="display: none;">
+										@csrf
+									</form>
 								</li>
 							</ul>
 						</div>
