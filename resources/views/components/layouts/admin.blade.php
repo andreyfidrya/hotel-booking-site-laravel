@@ -303,7 +303,7 @@
 										</ul>									
 										<ul class="nav nav-children">
 											<li>
-												<a class="nav-link" href="layouts-header-menu-stripe.html">
+												<a class="nav-link" href="{{ route('admin.housetypes.index') }}">
 													Типы домиков
 												</a>
 											</li>

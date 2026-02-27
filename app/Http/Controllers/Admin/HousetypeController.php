@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Housetype;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -9,7 +10,9 @@ class HousetypeController extends Controller
 {
     public function index()
     {
-        //
+        $housetypes = Housetype::all();        
+
+        return view('admin.housetypes', compact('housetypes'));
     }
 
     public function create()
