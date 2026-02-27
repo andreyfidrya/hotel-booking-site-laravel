@@ -296,7 +296,7 @@
 				                        </a>
 										<ul class="nav nav-children">
 											<li>
-												<a class="nav-link" href="admin-panel/houses">
+												<a class="nav-link" href="{{ route('admin.houses.index') }}">
 													Все домики
 												</a>
 											</li>
@@ -310,7 +310,7 @@
 										</ul>										
 										<ul class="nav nav-children">
 											<li>
-												<a class="nav-link" href="admin-panel/facilities">
+												<a class="nav-link" href="{{ route('admin.facilities.index') }}">
 													Удобства домиков
 												</a>
 											</li>
