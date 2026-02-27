@@ -3,6 +3,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\HouseController;
+use App\Http\Controllers\Admin\FacilityController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,6 +30,8 @@ Route::middleware('auth')->group(function () {
 Route::prefix('admin-panel')->name('admin.')->middleware(['auth', 'admin'])->group(function() {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/houses', [HouseController::class, 'index'])->name('houses.index');
+
+    Route::get('/facilities', [FacilityController::class, 'index'])->name('facilities.index');
 });
 
 require __DIR__.'/auth.php';

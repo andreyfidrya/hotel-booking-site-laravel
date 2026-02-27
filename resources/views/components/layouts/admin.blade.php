@@ -298,8 +298,8 @@
 										</ul>										
 										<ul class="nav nav-children">
 											<li>
-												<a class="nav-link" href="layouts-header-menu-stripe.html">
-													Оснащение домиков
+												<a class="nav-link" href="admin-panel/facilities">
+													Удобства домиков
 												</a>
 											</li>
 										</ul>													                       
