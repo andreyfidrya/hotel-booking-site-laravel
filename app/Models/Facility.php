@@ -8,6 +8,8 @@ class Facility extends Model
 {
     protected $fillable = ['name'];
 
+    public $timestamps = false; 
+
     public function housetypes()
     {
         return $this->belongsToMany(Housetype::class);

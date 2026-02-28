@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Facility;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\Admin\Facility\SaveRequest;
 
 class FacilityController extends Controller
 {
@@ -37,9 +38,13 @@ class FacilityController extends Controller
         return view('admin.facilities.edit', compact('facility'));
     }
 
-    public function update(Request $request, string $id)
+    public function update(SaveRequest $request, Facility $facility)
     {
-        //
+        $data = $request->only(['name']);
+
+        $facility->update($data);
+
+        return redirect()->route('admin.facilities.index');
     }
 
     public function destroy(string $id)
