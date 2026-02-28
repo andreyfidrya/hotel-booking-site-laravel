@@ -32,7 +32,7 @@ class FacilityController extends Controller
 
     public function edit(string $id)
     {
-        //
+        return view('admin.facilities.edit');
     }
 
     public function update(Request $request, string $id)

@@ -31,11 +31,12 @@ Route::middleware('auth')->group(function () {
 Route::prefix('admin-panel')->name('admin.')->middleware(['auth', 'admin'])->group(function() {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     
-    Route::get('/houses', [HouseController::class, 'index'])->name('houses.index');
-
-    Route::get('/facilities', [FacilityController::class, 'index'])->name('facilities.index');
-
-    Route::get('/housetypes', [HousetypeController::class, 'index'])->name('housetypes.index');
+    Route::resource('houses', HouseController::class);
+    
+    Route::resource('facilities', FacilityController::class);
+    
+    Route::resource('housetypes', HousetypeController::class);    
+    
 });
 
 require __DIR__.'/auth.php';

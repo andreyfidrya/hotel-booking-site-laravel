@@ -22,8 +22,8 @@
                     </td>
 
                     <td class="text-center align-middle">
-                        <a href="" 
-                           class="btn btn-sm btn-primary w-100 mb-2">
+                        <a href="{{ route('admin.facilities.edit', $facility) }}" 
+                        class="btn btn-sm btn-primary w-100 mb-2">
                             Редактировать
                         </a>
 
