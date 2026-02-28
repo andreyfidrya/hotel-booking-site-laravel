@@ -12,7 +12,7 @@ class HousetypeController extends Controller
     {
         $housetypes = Housetype::all();        
 
-        return view('admin.housetypes', compact('housetypes'));
+        return view('admin.housetypes.index', compact('housetypes'));
     }
 
     public function create()

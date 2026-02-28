@@ -47,7 +47,7 @@
 											data-bgrepeat="no-repeat"
 											data-bgparallax="10"											
 											data-no-retina>											
-										>
+										
 
 										<h5 class="text-transform-none text-4 font-weight-bold mt-3 mb-0">
 											{{ $house->name }}

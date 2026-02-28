@@ -12,7 +12,7 @@ class FacilityController extends Controller
     {
         $facilities = Facility::all();        
 
-        return view('admin.facilities', compact('facilities'));
+        return view('admin.facilities.index', compact('facilities'));
     }
 
     public function create()

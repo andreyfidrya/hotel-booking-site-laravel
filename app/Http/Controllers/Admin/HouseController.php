@@ -12,7 +12,7 @@ class HouseController extends Controller
     {
         $houses = House::all();        
 
-        return view('admin.houses', compact('houses'));
+        return view('admin.houses.index', compact('houses'));
     }
 
     public function create()
