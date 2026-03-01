@@ -50,7 +50,9 @@ class FacilityController extends Controller
 
         $facility->update($data);
 
-        return redirect()->route('admin.facilities.index');
+        return redirect()
+        ->route('admin.facilities.index')
+        ->with('success', 'Удобство успешно обновлено');
     }
 
     public function destroy(string $id)
