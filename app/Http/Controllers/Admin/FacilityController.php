@@ -55,8 +55,12 @@ class FacilityController extends Controller
         ->with('success', 'Удобство успешно обновлено');
     }
 
-    public function destroy(string $id)
+    public function destroy(Facility $facility)
     {
-        //
+        $facility->delete();
+
+        return redirect()
+            ->route('admin.facilities.index')
+            ->with('success', 'Удобство успешно удалено');
     }
 }
