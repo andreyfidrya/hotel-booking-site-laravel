@@ -21,8 +21,12 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th style="width: 70%">Название</th>
-                <th style="width: 30%">Действия</th>
+                <th style="width: 70%" class="text-center">
+                    Название
+                </th>
+                <th style="width: 30%" class="text-center">
+                    Действия
+                </th>
             </tr>
         </thead>
         <tbody>
