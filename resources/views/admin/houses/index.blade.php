@@ -10,12 +10,12 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th style="width: 15%">Название</th>
-                <th style="width: 25%">Описание</th>
-                <th style="width: 10%">Тип</th>
-                <th style="width: 20%">Основное фото</th>
-                <th style="width: 20%">Галерея</th>
-                <th style="width: 10%">Действия</th>
+                <th style="width: 15%; text-align: center;">Название</th>
+                <th style="width: 25%; text-align: center;">Описание</th>
+                <th style="width: 10%; text-align: center;">Тип</th>
+                <th style="width: 20%; text-align: center;">Основное фото</th>
+                <th style="width: 20%; text-align: center;">Галерея</th>
+                <th style="width: 10%; text-align: center;">Действия</th>
             </tr>
         </thead>
         <tbody>
