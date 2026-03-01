@@ -21,9 +21,15 @@ class FacilityController extends Controller
         return view('admin.facilities.create');
     }
 
-    public function store(Request $request)
+    public function store(SaveRequest $request)
     {
-        //
+        $data = $request->only(['name']);
+
+        Facility::create($data);
+
+        return redirect()
+            ->route('admin.facilities.index')
+            ->with('success', 'Удобство успешно добавлено');
     }
 
     public function show(string $id)
