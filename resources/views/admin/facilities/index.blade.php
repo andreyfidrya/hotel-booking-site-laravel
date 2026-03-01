@@ -38,9 +38,9 @@
                             Редактировать
                         </a>
 
-                        <form action="" 
-                              method="POST"
-                              onsubmit="return confirm('Удалить это удобство?')">
+                        <form action="{{ route('admin.facilities.destroy', $facility) }}" 
+                            method="POST"
+                            onsubmit="return confirm('Удалить это удобство?')">
                             @csrf
                             @method('DELETE')
 
