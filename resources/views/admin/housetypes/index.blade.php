@@ -1,10 +1,10 @@
 <x-layouts.admin>
 
-    <h1 class="mb-4">Все Типы Домиков</h1>
+    <h1 class="mb-4">Все типы домиков</h1>
 
     <a href="" 
        class="btn btn-success mb-4">
-        Добавить Тип Домика
+        Добавить тип домика
     </a>
 
     <table class="table table-bordered">
@@ -22,7 +22,7 @@
                     </td>
 
                     <td class="text-center align-middle">
-                        <a href="" 
+                        <a href="{{ route('admin.housetypes.edit', $housetype) }}" 
                            class="btn btn-sm btn-primary w-100 mb-2">
                             Редактировать
                         </a>

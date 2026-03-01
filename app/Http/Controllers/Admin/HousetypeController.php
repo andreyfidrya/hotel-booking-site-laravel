@@ -32,7 +32,9 @@ class HousetypeController extends Controller
 
     public function edit(string $id)
     {
-        //
+        $housetype = Housetype::findOrFail($id);
+    
+        return view('admin.housetypes.edit', compact('housetype'));
     }
 
     public function update(Request $request, string $id)

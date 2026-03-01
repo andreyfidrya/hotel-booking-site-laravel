@@ -1,6 +1,6 @@
 <x-layouts.admin>
 
-    <h1 class="mb-4">Все Удобства</h1>
+    <h1 class="mb-4">Все удобства</h1>
 
     @if(session('success'))
     <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -15,7 +15,7 @@
 
     <a href="{{ route('admin.facilities.create') }}" 
         class="btn btn-success mb-4">
-        Добавить Удобство
+        Добавить удобство
     </a>
 
     <table class="table table-bordered">
