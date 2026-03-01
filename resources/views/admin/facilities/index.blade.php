@@ -2,8 +2,8 @@
 
     <h1 class="mb-4">Все Удобства</h1>
 
-    <a href="" 
-       class="btn btn-success mb-4">
+    <a href="{{ route('admin.facilities.create') }}" 
+        class="btn btn-success mb-4">
         Добавить Удобство
     </a>
 
