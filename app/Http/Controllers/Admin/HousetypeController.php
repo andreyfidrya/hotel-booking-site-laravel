@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Housetype;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\Admin\Facility\Save as SaveRequest;
+use App\Http\Requests\Admin\Housetype\Save as SaveRequest;
 
 class HousetypeController extends Controller
 {
