@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Housetype;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\Admin\Facility\Save as SaveRequest;
 
 class HousetypeController extends Controller
 {
@@ -17,7 +18,7 @@ class HousetypeController extends Controller
 
     public function create()
     {
-        //
+        return view('admin.housetypes.create');
     }
 
     public function store(Request $request)

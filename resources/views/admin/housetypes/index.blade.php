@@ -2,9 +2,9 @@
 
     <h1 class="mb-4">Все типы домиков</h1>
 
-    <a href="" 
+    <a href="{{ route('admin.housetypes.create') }}" 
        class="btn btn-success mb-4">
-        Добавить тип домика
+        Добавить тип домиков
     </a>
 
     <table class="table table-bordered">
