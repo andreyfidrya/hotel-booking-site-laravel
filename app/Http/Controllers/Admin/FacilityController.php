@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Facility;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\Admin\Facility\SaveRequest;
+use App\Http\Requests\Admin\Facility\Save as SaveRequest;
 
 class FacilityController extends Controller
 {

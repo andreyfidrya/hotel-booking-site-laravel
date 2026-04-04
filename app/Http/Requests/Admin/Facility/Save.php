@@ -5,7 +5,7 @@ namespace App\Http\Requests\Admin\Facility;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class SaveRequest extends FormRequest
+class Save extends FormRequest
 {
     public function authorize(): bool
     {
@@ -20,7 +20,7 @@ class SaveRequest extends FormRequest
             'name' => [
                 'required',
                 'string',
-                'max:255',
+                'max:50',
                 Rule::unique('facilities', 'name')->ignore($facilityId),
             ],
         ];
@@ -30,7 +30,7 @@ class SaveRequest extends FormRequest
     {
         return [
             'name.required' => 'Название обязательно для заполнения.',
-            'name.max' => 'Название не должно превышать 255 символов.',
+            'name.max' => 'Название не должно превышать 50 символов.',
             'name.unique' => 'Такое удобство уже существует.',
         ];
     }
