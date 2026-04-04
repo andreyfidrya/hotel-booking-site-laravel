@@ -10,8 +10,11 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th style="width: 70%" class="text-center">
+                <th style="width: 40%" class="text-center">
                     Название
+                </th>
+                <th style="width: 30%" class="text-center">
+                    Удобства
                 </th>
                 <th style="width: 30%" class="text-center">
                     Действия
@@ -23,6 +26,14 @@
                 <tr>
                     <td class="text-center align-middle">
                         {{ $housetype->name }}
+                    </td>
+
+                    <td class="text-center align-middle">
+                        @foreach($housetype->facilities as $facility)
+                            <span class="badge bg-primary">
+                                {{ $facility->name }}
+                            </span>
+                        @endforeach
                     </td>
 
                     <td class="text-center align-middle">
