@@ -27,6 +27,37 @@
             @enderror
         </div>
 
+        <div class="mb-3">
+            <label for="facilities" class="form-label">
+                Удобства
+            </label>
+
+            <select name="facilities[]" 
+                    id="facilities"
+                    class="form-select @error('facilities') is-invalid @enderror"
+                    multiple>
+
+                @foreach($facilities as $facility)
+                    <option value="{{ $facility->id }}"
+                        @if(
+                            in_array(
+                                $facility->id,
+                                old('facilities', $housetype->facilities->pluck('id')->toArray())
+                            )
+                        ) selected @endif>
+                        {{ $facility->name }}
+                    </option>
+                @endforeach
+
+            </select>
+
+            @error('facilities')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+            @enderror
+        </div>
+
         <div class="d-flex gap-2">
             <button type="submit" 
                     class="btn btn-primary">

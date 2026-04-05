@@ -6,7 +6,7 @@
           method="POST">
 
         @csrf
-        @method('PUT')
+        
 
         <div class="mb-3">
             <label for="name" class="form-label">
@@ -21,6 +21,32 @@
                    required>
 
             @error('name')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+            @enderror
+        </div>
+
+        <div class="mb-3">
+            <label for="facilities" class="form-label">
+                Удобства
+            </label>
+
+            <select name="facilities[]" 
+                    id="facilities"
+                    class="form-select @error('facilities') is-invalid @enderror"
+                    multiple>
+                
+                @foreach($facilities as $facility)
+                    <option value="{{ $facility->id }}"
+                        @if(collect(old('facilities'))->contains($facility->id)) selected @endif>
+                        {{ $facility->name }}
+                    </option>
+                @endforeach
+
+            </select>
+
+            @error('facilities')
                 <div class="invalid-feedback">
                     {{ $message }}
                 </div>
