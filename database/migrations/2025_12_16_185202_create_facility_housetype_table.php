@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('facility_housetype', function (Blueprint $table) {
             $table->foreignIdFor(Facility::class)->constrained();
             $table->foreignIdFor(Housetype::class)->constrained();
+            $table->timestamps(); 
         });
     }
 

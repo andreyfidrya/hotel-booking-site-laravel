@@ -17,6 +17,7 @@ return new class extends Migration
             $table->integer('price_per_extra_person');
             $table->integer('price_on_business_days');
             $table->integer('price_on_weekends');
+            $table->timestamps();
         });
     }
 

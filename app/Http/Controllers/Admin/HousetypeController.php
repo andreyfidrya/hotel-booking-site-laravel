@@ -24,9 +24,15 @@ class HousetypeController extends Controller
         return view('admin.housetypes.create', compact('facilities'));
     }
 
-    public function store(Request $request)
+    public function store(SaveRequest $request)
     {
-        //
+        $data = $request->only(['name', 'facilities']);
+
+        Housetype::create($data);
+
+        return redirect()
+            ->route('admin.housetypes.index')
+            ->with('success', 'Тип домика успешно добавлен');
     }
 
     public function show(string $id)

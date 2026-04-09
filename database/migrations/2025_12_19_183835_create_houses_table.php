@@ -14,7 +14,8 @@ return new class extends Migration
             $table->foreignId('housetype_id')->constrained('housetypes');
             $table->text('description');
             $table->string('featured_image');
-            $table->text('galery_images');            
+            $table->text('galery_images');  
+            $table->timestamps();          
         });
     }
 

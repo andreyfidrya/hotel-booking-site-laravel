@@ -2,7 +2,7 @@
 
     <h1 class="mb-4">Добавить тип домиков</h1>
     
-    <form action="" 
+    <form action="{{ route('admin.housetypes.store') }}" 
           method="POST">
 
         @csrf
