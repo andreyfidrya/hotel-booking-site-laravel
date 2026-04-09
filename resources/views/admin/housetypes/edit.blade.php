@@ -35,7 +35,8 @@
             <select name="facilities[]" 
                     id="facilities"
                     class="form-select @error('facilities') is-invalid @enderror"
-                    multiple>
+                    multiple
+                    size="{{ count($facilities) }}">
 
                 @foreach($facilities as $facility)
                     <option value="{{ $facility->id }}"
