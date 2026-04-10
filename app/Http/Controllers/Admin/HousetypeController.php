@@ -26,9 +26,13 @@ class HousetypeController extends Controller
 
     public function store(SaveRequest $request)
     {
-        $data = $request->only(['name', 'facilities']);
+        $data = $request->only(['name', 'description', 'capacity', 'area', 'price_per_extra_person', 'price_on_business_days', 'price_on_weekends']);
 
-        Housetype::create($data);
+        $housetype = Housetype::create($data);  
+        
+        if ($request->has('facilities')) {
+        $housetype->facilities()->sync($request->input('facilities', []));
+        }
 
         return redirect()
             ->route('admin.housetypes.index')

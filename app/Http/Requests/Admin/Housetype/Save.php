@@ -24,6 +24,17 @@ class Save extends FormRequest
                 'max:50',
                 Rule::unique('housetypes', 'name')->ignore($housetypeId),
             ],
+             'description' => [
+                'required',
+                'string',
+                'max:500',                
+            ],
+            'capacity' => [
+                'required',
+                'integer',
+                'min:1',
+                'max:10',                
+            ],
         ];
     }
 

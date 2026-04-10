@@ -44,7 +44,7 @@
 
                         <form action="" 
                               method="POST"
-                              onsubmit="return confirm('Удалить это удобство?')">
+                              onsubmit="return confirm('Удалить этот тип домика?')">
                             @csrf
                             @method('DELETE')
 
