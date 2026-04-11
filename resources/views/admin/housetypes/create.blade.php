@@ -18,7 +18,7 @@
                    name="name"
                    class="form-control @error('name') is-invalid @enderror"
                    value="{{ old('name') }}"
-                   required>
+                   >
 
             @error('name')
                 <div class="invalid-feedback">
@@ -54,7 +54,7 @@
             <select name="capacity" 
                     id="capacity"
                     class="form-select @error('capacity') is-invalid @enderror"
-                    required>
+                    >
                 
                 @for ($i = 1; $i <= 10; $i++)
                     <option value="{{ $i }}" 
@@ -84,7 +84,7 @@
                 value="{{ old('area') }}"
                 min="1"
                 step="0.1"
-                required>
+                >
 
             @error('area')
                 <div class="invalid-feedback">
@@ -105,7 +105,7 @@
                 value="{{ old('price_per_extra_person') }}"
                 min="1"
                 step="0.1"
-                required>
+                >
 
             @error('price_per_extra_person')
                 <div class="invalid-feedback">
@@ -126,9 +126,9 @@
                 value="{{ old('price_on_business_days') }}"
                 min="1"
                 step="0.1"
-                required>
+                >
 
-            @error('price_per_extra_person')
+            @error('price_on_business_days')
                 <div class="invalid-feedback">
                     {{ $message }}
                 </div>
@@ -147,7 +147,7 @@
                 value="{{ old('price_on_weekends') }}"
                 min="1"
                 step="0.1"
-                required>
+                >
 
             @error('price_per_extra_person')
                 <div class="invalid-feedback">
