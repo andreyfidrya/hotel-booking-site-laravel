@@ -57,8 +57,14 @@ class HousetypeController extends Controller
         //
     }
 
-    public function destroy(string $id)
+    public function destroy(Housetype $housetype)
     {
-        //
+        $housetype->facilities()->detach(); 
+        
+        $housetype->delete();
+
+        return redirect()
+            ->route('admin.housetypes.index')
+            ->with('success', 'Удобство успешно удалено');
     }
 }

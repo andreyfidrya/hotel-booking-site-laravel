@@ -42,7 +42,7 @@
                             Редактировать
                         </a>
 
-                        <form action="" 
+                        <form action="{{ route('admin.housetypes.destroy', $housetype) }}" 
                               method="POST"
                               onsubmit="return confirm('Удалить этот тип домика?')">
                             @csrf
