@@ -68,7 +68,11 @@ class Save extends FormRequest
             'area.required' => 'Площадь обязательно для заполнения.',
             'area.max' => 'Площадь не должна превышать 250 м²',
             
-            'price_per_extra_person.required' => 'Цена за дополнительного человека обязательно для заполнения.',             
+            'price_per_extra_person.required' => 'Цена за дополнительного человека обязательно для заполнения.',
+            
+            'price_on_business_days.required' => 'Цена в будни обязательно для заполнения.', 
+
+            'price_on_weekends.required' => 'Цена на выходных обязательно для заполнения.', 
         ];
     }
 }
