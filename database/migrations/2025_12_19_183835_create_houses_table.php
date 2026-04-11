@@ -11,8 +11,7 @@ return new class extends Migration
         Schema::create('houses', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->foreignId('housetype_id')->constrained('housetypes');
-            $table->text('description');
+            $table->foreignId('housetype_id')->constrained('housetypes');            
             $table->string('featured_image');
             $table->text('galery_images');  
             $table->timestamps();          

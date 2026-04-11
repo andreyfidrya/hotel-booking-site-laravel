@@ -23,7 +23,7 @@
                 
                 <tr>
                     <td style="text-align: center; vertical-align: middle;">{{$house->name}}</td>
-                    <td style="text-align: center; vertical-align: middle;">{{$house->description}}</td>
+                    <td style="text-align: center; vertical-align: middle;">{{$house->housetype->description}}</td>
                     <td style="text-align: center; vertical-align: middle;">{{$house->housetype->name}}</td>
                     <td style="text-align: center; vertical-align: middle;">
                         <img src="{{ asset('images/' . $house->featured_image) }}" 
