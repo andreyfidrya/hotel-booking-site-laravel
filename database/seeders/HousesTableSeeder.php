@@ -32,7 +32,7 @@ class HousesTableSeeder extends Seeder
                 'name' => 'Коричневый домик №3',
                 'housetype_id' => '2',
                 'featured_image' => 'brown-featured3.jpg',
-                'galery_images' => 'brown3-1.jpg, brown3-2.jpg, brown3-3.jpg, brown3-4.jpg, brown3-5.jpg',                                
+                'galery_images' => 'brown3-1.jpg, brown3-2.jpg, brown3-3.jpg',                                
             ], 
             [
                 'name' => 'Витражный домик №1',
@@ -56,7 +56,7 @@ class HousesTableSeeder extends Seeder
                 'name' => 'Оливковый домик №1',
                 'housetype_id' => '5',
                 'featured_image' => 'olive-featured.jpg',
-                'galery_images' => 'olive-1.jpg, olive-2.jpg, olive-3.jpg, olive-4.jpg',                                
+                'galery_images' => 'olive-1.jpg, olive-2.jpg, olive-3.jpg',                                
             ],            
             [
                 'name' => 'Васильковый домик №1',
