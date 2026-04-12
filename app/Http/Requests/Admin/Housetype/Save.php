@@ -37,8 +37,7 @@ class Save extends FormRequest
             ],
             'area' => [
                 'required',
-                'integer', 
-                'max:250',                              
+                'integer',                                             
             ],
             'price_per_extra_person' => [
                 'required',
@@ -51,6 +50,9 @@ class Save extends FormRequest
             'price_on_weekends' => [
                 'required',
                 'integer',                               
+            ],
+            'facilities' => [
+                'required',                                               
             ],
         ];
     }
@@ -65,8 +67,7 @@ class Save extends FormRequest
             'description.required' => 'Название обязательно для заполнения.',
             'description.max' => 'Название не должно превышать 500 символов.',
             
-            'area.required' => 'Площадь обязательно для заполнения.',
-            'area.max' => 'Площадь не должна превышать 250 м²',
+            'area.required' => 'Площадь обязательно для заполнения.',            
             
             'price_per_extra_person.required' => 'Цена за дополнительного человека обязательно для заполнения.',
             
