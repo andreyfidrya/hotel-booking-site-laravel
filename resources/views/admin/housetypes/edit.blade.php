@@ -28,6 +28,51 @@
         </div>
 
         <div class="mb-3">
+            <label for="description" class="form-label">
+                Описание
+            </label>
+
+            <textarea
+                id="description"
+                name="description"
+                class="form-control @error('description') is-invalid @enderror"
+                rows="4"
+            >{{ old('description', $housetype->description) }}</textarea>
+
+            @error('description')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+            @enderror
+        </div>
+
+        <div class="mb-3">
+            <label for="capacity" class="form-label">
+                Вместимость
+            </label>
+
+            <select name="capacity" 
+                    id="capacity"
+                    class="form-select @error('capacity') is-invalid @enderror"
+                    >
+                
+                @for ($i = 1; $i <= 10; $i++)
+                    <option value="{{ $i }}" 
+                        @if(old('capacity', $housetype->capacity) == $i) selected @endif>
+                        {{ $i }}
+                    </option>
+                @endfor
+
+            </select>
+
+            @error('capacity')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+            @enderror
+        </div>
+
+        <div class="mb-3">
             <label for="facilities" class="form-label">
                 Удобства
             </label>
@@ -57,7 +102,7 @@
                     {{ $message }}
                 </div>
             @enderror
-        </div>
+        </div>        
 
         <div class="d-flex gap-2">
             <button type="submit" 

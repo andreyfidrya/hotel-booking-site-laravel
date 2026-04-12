@@ -52,9 +52,19 @@ class HousetypeController extends Controller
         return view('admin.housetypes.edit', compact('housetype', 'facilities'));
     }
 
-    public function update(Request $request, string $id)
+    public function update(SaveRequest $request, Housetype $housetype)
     {
-        //
+        $data = $request->only(['name', 'description', 'capacity', 'area', 'price_per_extra_person', 'price_on_business_days', 'price_on_weekends']);
+
+        $housetype->update($data);
+
+        if ($request->has('facilities')) {
+        $housetype->facilities()->sync($request->input('facilities', []));
+        }
+
+        return redirect()
+        ->route('admin.housetypes.index')
+        ->with('success', 'Тип домика успешно обновлен');
     }
 
     public function destroy(Housetype $housetype)
