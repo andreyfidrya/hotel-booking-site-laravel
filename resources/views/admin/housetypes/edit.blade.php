@@ -2,7 +2,7 @@
 
     <h1 class="mb-4">Редактировать тип домиков</h1>
     
-    <form action="" 
+    <form action="{{ route('admin.housetypes.update', $housetype) }}" 
           method="POST">
 
         @csrf
@@ -66,6 +66,90 @@
             </select>
 
             @error('capacity')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+            @enderror
+        </div>
+
+        <div class="mb-3">
+            <label for="area" class="form-label">
+                Площадь (м²)
+            </label>
+
+            <input type="number"
+                id="area"
+                name="area"
+                class="form-control @error('area') is-invalid @enderror"
+                value="{{ old('area', $housetype->area) }}"                
+                min="1"
+                step="0.1"
+                >
+
+            @error('area')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+            @enderror
+        </div>
+
+        <div class="mb-3">
+            <label for="price_per_extra_person" class="form-label">
+                Цена за дополнительного человека
+            </label>
+
+            <input type="number"
+                id="price_per_extra_person"
+                name="price_per_extra_person"
+                class="form-control @error('price_per_extra_person') is-invalid @enderror"
+                value="{{ old('price_per_extra_person', $housetype->price_per_extra_person) }}"
+                min="1"
+                step="0.1"
+                >
+
+            @error('price_per_extra_person')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+            @enderror
+        </div>
+
+        <div class="mb-3">
+            <label for="price_on_business_days" class="form-label">
+                Цена в будни
+            </label>
+
+            <input type="number"
+                id="price_on_business_days"
+                name="price_on_business_days"
+                class="form-control @error('price_on_business_days') is-invalid @enderror"
+                value="{{ old('price_on_business_days', $housetype->price_on_business_days) }}"
+                min="1"
+                step="0.1"
+                >
+
+            @error('price_on_business_days')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+            @enderror
+        </div>
+
+        <div class="mb-3">
+            <label for="price_on_weekends" class="form-label">
+                Цена на выходных
+            </label>
+
+            <input type="number"
+                id="price_on_weekends"
+                name="price_on_weekends"
+                class="form-control @error('price_on_weekends') is-invalid @enderror"
+                value="{{ old('price_on_weekends', $housetype->price_on_weekends) }}"
+                min="1"
+                step="0.1"
+                >
+
+            @error('price_per_extra_person')
                 <div class="invalid-feedback">
                     {{ $message }}
                 </div>

@@ -54,6 +54,7 @@ class HousetypeController extends Controller
 
     public function update(SaveRequest $request, Housetype $housetype)
     {
+        
         $data = $request->only(['name', 'description', 'capacity', 'area', 'price_per_extra_person', 'price_on_business_days', 'price_on_weekends']);
 
         $housetype->update($data);

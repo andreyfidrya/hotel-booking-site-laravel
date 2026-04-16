@@ -52,7 +52,9 @@ class Save extends FormRequest
                 'integer',                               
             ],
             'facilities' => [
-                'required',                                               
+                'required',
+                'array',
+                'min:1',                                               
             ],
         ];
     }
