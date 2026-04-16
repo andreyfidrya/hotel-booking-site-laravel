@@ -2,6 +2,17 @@
 
     <h1 class="mb-4">Все типы домиков</h1>
 
+    @if(session('success'))
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ session('success') }}
+
+        <button type="button" 
+                class="btn-close" 
+                data-bs-dismiss="alert">
+        </button>
+    </div>
+    @endif
+
     <a href="{{ route('admin.housetypes.create') }}" 
        class="btn btn-success mb-4">
         Добавить тип домиков

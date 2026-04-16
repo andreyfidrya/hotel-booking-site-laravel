@@ -2,6 +2,16 @@
 
     <h1 class="mb-4">Редактировать удобство</h1>
 
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
     <form action="{{ route('admin.facilities.update', $facility) }}" 
           method="POST">
 

@@ -76,6 +76,8 @@ class Save extends FormRequest
             'price_on_business_days.required' => 'Цена в будни обязательно для заполнения.', 
 
             'price_on_weekends.required' => 'Цена на выходных обязательно для заполнения.', 
+
+            'facilities' => 'Должно быть выбрано минимум одно удобство.',
         ];
     }
 }
