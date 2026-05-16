@@ -11,14 +11,14 @@ class Save extends FormRequest
     {
         return true;
     }
-
+    
     public function rules(): array
     {
         $facilityId = $this->route('facility')?->id;
 
         return [
             'name' => [
-                'required',
+                'required',                
                 'string',
                 'max:50',
                 'min:3',
