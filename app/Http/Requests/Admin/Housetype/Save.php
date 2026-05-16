@@ -22,6 +22,7 @@ class Save extends FormRequest
                 'required',
                 'string',
                 'max:50',
+                'min:3',
                 Rule::unique('housetypes', 'name')->ignore($housetypeId),
             ],
              'description' => [
@@ -64,6 +65,7 @@ class Save extends FormRequest
         return [
             'name.required' => 'Название обязательно для заполнения.',            
             'name.max' => 'Название не должно превышать 50 символов.',
+            'name.min' => 'Название не должно быть меньше чем 3 символа.',
             'name.unique' => 'Такой тип домика уже существует.',
             
             'description.required' => 'Название обязательно для заполнения.',
