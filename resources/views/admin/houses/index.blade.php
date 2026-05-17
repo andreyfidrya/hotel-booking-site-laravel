@@ -2,7 +2,7 @@
 
     <h1 class="mb-4">Все домики</h1>
 
-    <a href="" 
+    <a href="{{ route('admin.houses.create') }}" 
        class="btn btn-success mb-4">
         Добавить домик
     </a>
