@@ -1,32 +1,48 @@
 <x-layouts.admin>
 
     <script>
+    // Хранилище всех выбранных файлов
+    let galleryFiles = new DataTransfer();
+
     function previewGallery(event) {
-        const files = event.target.files;
+
+        const input = event.target;
         const container = document.querySelector('#gallery-preview');
 
-        container.innerHTML = ""; // очищаем старые превью
+        // Добавляем новые файлы к уже существующим
+        Array.from(input.files).forEach(file => {
 
-        if (!files.length) return;
+            if (!file.type.startsWith('image/')) {
+                return;
+            }
 
-        Array.from(files).forEach(file => {
-            if (!file.type.startsWith('image/')) return;
+            galleryFiles.items.add(file);
 
             const reader = new FileReader();
 
-            reader.onload = function (e) {
-                const img = document.createElement('img');
-                img.src = e.target.result;
-                img.style.maxWidth = "150px";
-                img.style.marginRight = "10px";
-                img.style.marginTop = "10px";
-                img.style.borderRadius = "6px";
+            reader.onload = function(e) {
 
-                container.appendChild(img);
+                const wrapper = document.createElement('div');
+                wrapper.style.position = 'relative';
+
+                const img = document.createElement('img');
+
+                img.src = e.target.result;
+                img.style.width = '200px';
+                img.style.height = '200px';
+                img.style.objectFit = 'cover';
+                img.style.borderRadius = '6px';
+
+                wrapper.appendChild(img);
+
+                container.appendChild(wrapper);
             };
 
             reader.readAsDataURL(file);
         });
+
+        // Обновляем input.files
+        input.files = galleryFiles.files;
     }
     </script>
 
@@ -135,7 +151,7 @@
                 onchange="previewGallery(event)"
             >            
 
-            @error('gallery_images[]')
+            @error('gallery_images')
                 <div class="invalid-feedback">
                     {{ $message }}
                 </div>

@@ -40,8 +40,8 @@ class HouseController extends Controller
         ]);
 
         // 3. Галерея (если есть)
-        if ($request->hasFile('galery_images')) {
-            foreach ($request->file('galery_images') as $image) {
+        if ($request->hasFile('gallery_images')) {
+            foreach ($request->file('gallery_images') as $image) {
                 $path = $image->store('houses/gallery', 'public');
 
                 // если у тебя есть relation images()
