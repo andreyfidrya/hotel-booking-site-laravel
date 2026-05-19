@@ -78,6 +78,39 @@
         // Обновляем input.files
         input.files = galleryFiles.files;
     }
+
+    document.addEventListener('DOMContentLoaded', function () {
+
+    const featuredInput = document.getElementById('featured_image');
+    const featuredPreview = document.getElementById('featured-preview');
+
+    featuredInput.addEventListener('change', function () {
+
+        const file = this.files[0];
+
+        if (!file) {
+            featuredPreview.style.display = 'none';
+            featuredPreview.src = '';
+            return;
+        }
+
+        if (!file.type.startsWith('image/')) {
+            featuredPreview.style.display = 'none';
+            return;
+        }
+
+        const reader = new FileReader();
+
+        reader.onload = function (e) {
+            featuredPreview.src = e.target.result;
+            featuredPreview.style.display = 'block';
+        };
+
+        reader.readAsDataURL(file);
+    });
+
+    });
+    
     </script>
 
     <h1 class="mb-4">Добавить домик</h1>
@@ -168,6 +201,11 @@
                     {{ $message }}
                 </div>
             @enderror
+        </div>
+
+        <div class="mt-3">
+            <img id="featured-preview"
+                style="display:none; width:200px; height:200px; object-fit:cover; border-radius:6px;" />
         </div>
 
         {{-- Галерея --}}
