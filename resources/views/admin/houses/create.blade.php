@@ -192,7 +192,7 @@
             @enderror
         </div>
 
-        <div id="gallery-preview" class="d-flex flex-wrap gap-2 mt-2"></div>
+        <div id="gallery-preview" class="d-flex flex-wrap gap-2 my-3"></div>
 
         {{-- Кнопка --}}
         <button type="submit" class="btn btn-primary">
