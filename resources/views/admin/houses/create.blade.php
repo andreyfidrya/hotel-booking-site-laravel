@@ -33,10 +33,44 @@
                 img.style.objectFit = 'cover';
                 img.style.borderRadius = '6px';
 
-                wrapper.appendChild(img);
+                const removeBtn = document.createElement('button');
+                removeBtn.innerHTML = '❌';
+                removeBtn.type = 'button';
 
+                removeBtn.style.position = 'absolute';
+                removeBtn.style.top = '5px';
+                removeBtn.style.right = '5px';
+                removeBtn.style.border = 'none';
+                removeBtn.style.background = 'rgba(0,0,0,0.6)';
+                removeBtn.style.color = 'white';
+                removeBtn.style.borderRadius = '50%';
+                removeBtn.style.width = '25px';
+                removeBtn.style.height = '25px';
+                removeBtn.style.cursor = 'pointer';
+
+                wrapper.appendChild(img);
+                wrapper.appendChild(removeBtn);
                 container.appendChild(wrapper);
-            };
+
+                // удаление
+            removeBtn.addEventListener('click', function () {
+
+                // пересобираем DataTransfer без этого файла
+                const dt = new DataTransfer();
+
+                Array.from(galleryFiles.files).forEach(f => {
+                    if (f !== file) {
+                        dt.items.add(f);
+                    }
+                });
+
+                galleryFiles = dt;
+
+                input.files = galleryFiles.files;
+
+                wrapper.remove();
+            });
+            };            
 
             reader.readAsDataURL(file);
         });
