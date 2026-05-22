@@ -28,28 +28,41 @@ class HouseController extends Controller
     {
         $data = $request->validated();
 
-        // 1. Загружаем главное изображение
-        $featuredPath = $request->file('featured_image')
-            ->store('houses/featured', 'public');
+        // Главное изображение
+        $featuredImage = $request->file('featured_image');
 
-        // 2. Создаём домик
-        $house = House::create([
+        $featuredName = $featuredImage->getClientOriginalName();
+
+        $featuredPath = $featuredImage->storeAs(
+            'houses/featured',
+            $featuredName,
+            'public'
+        );
+
+        // Пути галереи
+        $galleryPaths = [];
+
+        if ($request->hasFile('gallery_images')) {
+
+            foreach ($request->file('gallery_images') as $image) {
+
+                $imageName = $image->getClientOriginalName();
+
+                $galleryPaths[] = $image->storeAs(
+                    'houses/gallery',
+                    $imageName,
+                    'public'
+                );
+            }
+        }
+
+        // Создание домика
+        House::create([
             'name' => $data['name'],
             'housetype_id' => $data['housetype_id'],
             'featured_image' => $featuredPath,
+            'galery_images' => json_encode($galleryPaths),
         ]);
-
-        // 3. Галерея (если есть)
-        if ($request->hasFile('gallery_images')) {
-            foreach ($request->file('gallery_images') as $image) {
-                $path = $image->store('houses/gallery', 'public');
-
-                // если у тебя есть relation images()
-                $house->images()->create([
-                    'path' => $path,
-                ]);
-            }
-        }
 
         return redirect()
             ->route('admin.houses.index')

@@ -17,10 +17,10 @@ class Save extends FormRequest
         'name' => ['required', 'string', 'max:255'],
         'housetype_id' => ['required', 'exists:housetypes,id'],
 
-        'featured_image' => ['required', 'image', 'max:2048'],
+        'featured_image' => ['required', 'image', 'max:5000'],
 
         'galery_images' => ['nullable', 'array'],
-        'galery_images.*' => ['image', 'max:2048'],
+        'galery_images.*' => ['image', 'max:5000'],
         ];
     }
 }
