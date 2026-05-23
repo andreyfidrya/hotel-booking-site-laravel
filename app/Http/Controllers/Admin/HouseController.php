@@ -31,29 +31,29 @@ class HouseController extends Controller
         // Главное изображение
         $featuredImage = $request->file('featured_image');
 
-        $featuredName = $featuredImage->getClientOriginalName();
+        $featuredName = time() . '_' . $featuredImage->getClientOriginalName();
 
-        $featuredPath = $featuredImage->storeAs(
-            'houses/featured',
-            $featuredName,
-            'public'
+        $featuredImage->move(
+            public_path('images'),
+            $featuredName
         );
+
+        $featuredPath = $featuredName;
+
 
         // Пути галереи
         $galleryPaths = [];
 
-        if ($request->hasFile('gallery_images')) {
+        foreach ($request->file('gallery_images') as $image) {
 
-            foreach ($request->file('gallery_images') as $image) {
+            $imageName = time() . '_' . $image->getClientOriginalName();
 
-                $imageName = $image->getClientOriginalName();
+            $image->move(
+                public_path('images'),
+                $imageName
+            );
 
-                $galleryPaths[] = $image->storeAs(
-                    'houses/gallery',
-                    $imageName,
-                    'public'
-                );
-            }
+            $galleryPaths[] = $imageName;
         }
 
         // Создание домика
