@@ -19,8 +19,8 @@ class Save extends FormRequest
 
         'featured_image' => ['required', 'image', 'max:5000'],
 
-        'galery_images' => ['nullable', 'array'],
-        'galery_images.*' => ['image', 'max:5000'],
+        'gallery_images' => ['nullable', 'array'],
+        'gallery_images.*' => ['image', 'max:5000'],
         ];
     }
 }
