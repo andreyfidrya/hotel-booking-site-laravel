@@ -31,7 +31,7 @@
                     </td>
                     <td class="align-middle text-center">
                         @php
-                            $images = explode(',', $house->galery_images);
+                            $images = explode(',', $house->gallery_images);
                         @endphp
 
                         @foreach($images as $image)

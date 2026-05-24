@@ -13,7 +13,7 @@ return new class extends Migration
             $table->string('name');
             $table->foreignId('housetype_id')->constrained('housetypes');            
             $table->string('featured_image');
-            $table->text('galery_images');  
+            $table->text('gallery_images');  
             $table->timestamps();          
         });
     }

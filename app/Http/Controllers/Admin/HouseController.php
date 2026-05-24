@@ -61,7 +61,7 @@ class HouseController extends Controller
             'name' => $data['name'],
             'housetype_id' => $data['housetype_id'],
             'featured_image' => $featuredPath,
-            'galery_images' => implode(', ', $galleryPaths),
+            'gallery_images' => implode(', ', $galleryPaths),
         ]);
 
         return redirect()
