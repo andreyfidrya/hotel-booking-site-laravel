@@ -45,7 +45,7 @@
                             class="btn btn-sm btn-success w-100 mb-2">
                             Календарь
                         </a>
-                        <a href="" 
+                        <a href="{{ route('admin.houses.edit', $house) }}" 
                            class="btn btn-sm btn-primary w-100 mb-2">
                             Редактировать
                         </a>

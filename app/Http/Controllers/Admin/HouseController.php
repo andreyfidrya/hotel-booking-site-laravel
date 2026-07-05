@@ -76,7 +76,9 @@ class HouseController extends Controller
 
     public function edit(string $id)
     {
-        //
+        $house = House::findOrFail($id);
+
+        return view('admin.houses.edit', compact('house'));
     }
 
     public function update(Request $request, string $id)
