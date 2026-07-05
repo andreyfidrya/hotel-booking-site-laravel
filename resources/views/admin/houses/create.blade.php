@@ -223,11 +223,19 @@
                 onchange="previewGallery(event)"
             >            
 
-            @error('gallery_images')
-                <div class="invalid-feedback">
-                    {{ $message }}
+            @if($errors->has('gallery_images') || $errors->has('gallery_images.*'))
+                <div class="text-danger">
+                    @foreach($errors->get('gallery_images') as $message)
+                        <div>{{ $message }}</div>
+                    @endforeach
+
+                    @foreach($errors->get('gallery_images.*') as $messages)
+                        @foreach($messages as $message)
+                            <div>{{ $message }}</div>
+                        @endforeach
+                    @endforeach
                 </div>
-            @enderror
+            @endif
         </div>
 
         <div id="gallery-preview" class="d-flex flex-wrap gap-2 my-3"></div>
