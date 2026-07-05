@@ -34,7 +34,7 @@ class HouseController extends Controller
         $featuredName = time() . '_' . $featuredImage->getClientOriginalName();
 
         $featuredImage->move(
-            public_path('images'),
+            public_path('images/houses/featured'),
             $featuredName
         );
 
@@ -49,7 +49,7 @@ class HouseController extends Controller
             $imageName = time() . '_' . $image->getClientOriginalName();
 
             $image->move(
-                public_path('images'),
+                public_path('images/houses/gallery'),
                 $imageName
             );
 
