@@ -61,7 +61,7 @@ class HousesTableSeeder extends Seeder
             [
                 'name' => 'Васильковый домик №1',
                 'housetype_id' => '6',
-                'featured_image' => 'vasilk.jpg',
+                'featured_image' => 'vasilk-featured.jpg',
                 'gallery_images' => 'vasilk-1.jpg, vasilk-2.jpg, vasilk-3.jpg',                                
             ],         
         ]);

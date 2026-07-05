@@ -26,7 +26,7 @@
                     <td style="text-align: center; vertical-align: middle;">{{$house->housetype->description}}</td>
                     <td style="text-align: center; vertical-align: middle;">{{$house->housetype->name}}</td>
                     <td style="text-align: center; vertical-align: middle;">
-                        <img src="{{ asset('images/' . $house->featured_image) }}" 
+                        <img src="{{ asset('images/houses/featured/' . $house->featured_image) }}" 
                              width="220" height="200">
                     </td>
                     <td class="align-middle text-center">
@@ -35,7 +35,7 @@
                         @endphp
 
                         @foreach($images as $image)
-                            <img src="{{ asset('images/' . trim($image)) }}"
+                            <img src="{{ asset('images/houses/gallery/' . trim($image)) }}"
                                 width="150"
                                 style="display: block; margin: 0 auto 10px;">
                         @endforeach
