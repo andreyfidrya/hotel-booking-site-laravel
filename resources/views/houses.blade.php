@@ -38,7 +38,7 @@
 									<div class="col-md-6 col-lg-4 isotope-item mb-0 pb-0 {{ Str::slug($housetype->name) }}">
 												
 										<img 
-											src="{{ asset('images/' . $house->featured_image) }}" 
+											src="{{ asset('images/houses/featured/' . $house->featured_image) }}" 
 											class="img-fluid house-img" 
 											alt="{{ $house->name }}"
 											
