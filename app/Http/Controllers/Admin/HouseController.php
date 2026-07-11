@@ -76,9 +76,14 @@ class HouseController extends Controller
 
     public function edit(string $id)
     {
+        
+        $housetypes = Housetype::all();
+        
         $house = House::findOrFail($id);
 
-        return view('admin.houses.edit', compact('house'));
+        $galleryImages = explode(', ', $house->gallery_images);
+
+        return view('admin.houses.edit', compact('house', 'housetypes', 'galleryImages'));
     }
 
     public function update(Request $request, string $id)
