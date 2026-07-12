@@ -86,9 +86,76 @@ class HouseController extends Controller
         return view('admin.houses.edit', compact('house', 'housetypes', 'galleryImages'));
     }
 
-    public function update(Request $request, string $id)
+    public function update(SaveRequest $request, House $house)
     {
-        //
+        $data = $request->validated();
+
+        if ($request->hasFile('featured_image')) {
+
+        // удаляем старое изображение
+        $oldImage = public_path('images/houses/featured/' . $house->featured_image);
+
+        if (file_exists($oldImage)) {
+            unlink($oldImage);
+        }
+
+        // сохраняем новое
+        $featuredImage = $request->file('featured_image');
+
+        $featuredName = time() . '_' . $featuredImage->getClientOriginalName();
+
+        $featuredImage->move(
+            public_path('images/houses/featured'),
+            $featuredName
+        );
+
+        $house->featured_image = $featuredName;
+        }
+
+        $galleryImages = [];
+
+        if ($house->gallery_images) {
+            $galleryImages = array_map('trim', explode(',', $house->gallery_images));
+        }
+
+        if ($request->filled('delete_gallery')) {
+
+            foreach ($request->delete_gallery as $image) {
+
+                $path = public_path('images/houses/gallery/' . $image);
+
+                if (file_exists($path)) {
+                    unlink($path);
+                }
+
+                $galleryImages = array_diff($galleryImages, [$image]);
+            }
+        }
+
+        if ($request->hasFile('gallery_images')) {
+
+            foreach ($request->file('gallery_images') as $image) {
+
+                $imageName = time() . '_' . $image->getClientOriginalName();
+
+                $image->move(
+                    public_path('images/houses/gallery'),
+                    $imageName
+                );
+
+                $galleryImages[] = $imageName;
+            }
+        }
+
+        $house->name = $data['name'];
+        $house->housetype_id = $data['housetype_id'];
+        $house->gallery_images = implode(', ', $galleryImages);
+
+        $house->save();
+
+        return redirect()
+            ->route('admin.houses.index')
+            ->with('success', 'Домик успешно обновлен');
     }
 
     public function destroy(string $id)

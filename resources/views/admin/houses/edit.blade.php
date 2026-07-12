@@ -133,11 +133,13 @@
     </div>
     @endif
 
-    <form action="{{ route('admin.houses.store') }}"
-          method="POST"
-          enctype="multipart/form-data">
+    <form action="{{ route('admin.houses.update', $house) }}"
+        method="POST"
+        enctype="multipart/form-data"
+    >
 
         @csrf
+        @method('PUT')
 
         {{-- Название --}}
         <div class="mb-3">

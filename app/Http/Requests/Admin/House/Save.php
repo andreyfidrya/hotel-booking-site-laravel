@@ -17,9 +17,9 @@ class Save extends FormRequest
         'name' => ['required', 'string', 'min:3', 'max:255'],
         'housetype_id' => ['required', 'exists:housetypes,id'],
 
-        'featured_image' => ['required', 'image', 'max:5000'],
+        'featured_image' => ['nullabe', 'image', 'max:5000'],
 
-        'gallery_images' => ['required', 'nullable', 'array', 'max:5'],
+        'gallery_images' => ['nullable', 'nullable', 'array', 'max:5'],
         'gallery_images.*' => ['image', 'max:5000'],
         ];
     }
