@@ -1,7 +1,5 @@
 <x-layouts.admin>
 
-    <h1 class="mb-4">Редактировать домик {{$house->name}}</h1>
-
     <script>
     // Хранилище всех выбранных файлов
     let galleryFiles = new DataTransfer();
@@ -36,19 +34,22 @@
                 img.style.borderRadius = '6px';
 
                 const removeBtn = document.createElement('button');
-                removeBtn.innerHTML = '❌';
+
                 removeBtn.type = 'button';
+                removeBtn.innerHTML = '❌';
+
+                removeBtn.className = 'delete-image btn btn-danger btn-sm';
 
                 removeBtn.style.position = 'absolute';
                 removeBtn.style.top = '5px';
                 removeBtn.style.right = '5px';
-                removeBtn.style.border = 'none';
-                removeBtn.style.background = 'rgba(0,0,0,0.6)';
-                removeBtn.style.color = 'white';
+                removeBtn.style.width = '30px';
+                removeBtn.style.height = '30px';
+                removeBtn.style.padding = '0';
                 removeBtn.style.borderRadius = '50%';
-                removeBtn.style.width = '25px';
-                removeBtn.style.height = '25px';
-                removeBtn.style.cursor = 'pointer';
+                removeBtn.style.display = 'flex';
+                removeBtn.style.alignItems = 'center';
+                removeBtn.style.justifyContent = 'center';
 
                 wrapper.appendChild(img);
                 wrapper.appendChild(removeBtn);
@@ -113,8 +114,10 @@
 
     });
     
-    </script>    
+    </script>
 
+    <h1 class="mb-4">Редактировать домик {{$house->name}}</h1>
+     
     @if ($errors->any())
     <div class="alert alert-danger alert-dismissible fade show" role="alert">
         <button type="button"
@@ -241,16 +244,36 @@
             @endif
         </div>
 
-        <div id="gallery-preview" class="d-flex flex-wrap gap-2 my-3"></div>
-
-        <div class="mb-4">
+        <div id="gallery-preview" class="mb-4 d-flex flex-wrap gap-3">
             @foreach($galleryImages as $image)
-                <img
-                    src="{{ asset('images/houses/gallery/' . $image) }}"
-                    style="width:200px;height:200px;object-fit:cover;"
-                >
+                <div style="position:relative;display:inline-block;">
+                    <img
+                        src="{{ asset('images/houses/gallery/' . $image) }}"
+                        style="width:200px;height:200px;object-fit:cover;"
+                    >
+
+                    <button
+                        type="button"
+                        class="delete-image btn btn-danger btn-sm"
+                        data-image="{{ $image }}"
+                        style="
+                            position:absolute;
+                            top:5px;
+                            right:5px;
+                            width:30px;
+                            height:30px;
+                            padding:0;
+                            border-radius:50%;
+                            display:flex;
+                            align-items:center;
+                            justify-content:center;
+                        "
+                    >
+                        ❌
+                    </button>
+                </div>
             @endforeach
-        </div>
+        </div>        
 
         {{-- Кнопка --}}
         <button type="submit" class="btn btn-primary">
@@ -258,5 +281,27 @@
         </button>
 
     </form>
+
+    <script>
+    
+    document.querySelectorAll('.delete-image').forEach(button => {
+
+    button.addEventListener('click', function () {
+
+        this.closest('div').remove();
+
+        let input = document.createElement('input');
+
+        input.type = 'hidden';
+        input.name = 'delete_gallery[]';
+        input.value = this.dataset.image;
+
+        document.querySelector('form').appendChild(input);
+
+    });
+
+    });
+    
+    </script>  
 
 </x-layouts.admin>
