@@ -6,7 +6,8 @@ use App\Models\House;
 use App\Models\Housetype;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Http\Requests\Admin\House\Save as SaveRequest;
+use App\Http\Requests\Admin\House\Store as StoreRequest;
+use App\Http\Requests\Admin\House\Update as UpdateRequest;
 
 class HouseController extends Controller
 {
@@ -24,7 +25,7 @@ class HouseController extends Controller
         return view('admin.houses.create', compact('housetypes'));
     }
 
-    public function store(SaveRequest $request)
+    public function store(StoreRequest $request)
     {
         $data = $request->validated();
 
@@ -54,7 +55,7 @@ class HouseController extends Controller
             );
 
             $galleryPaths[] = $imageName;
-        }
+        }        
 
         // Создание домика
         House::create([
@@ -86,7 +87,7 @@ class HouseController extends Controller
         return view('admin.houses.edit', compact('house', 'housetypes', 'galleryImages'));
     }
 
-    public function update(SaveRequest $request, House $house)
+    public function update(UpdateRequest $request, House $house)
     {
         $data = $request->validated();
 
@@ -145,6 +146,14 @@ class HouseController extends Controller
 
                 $galleryImages[] = $imageName;
             }
+        }
+
+        if (count($galleryImages) === 0) {
+            return back()
+                ->withErrors([
+                    'gallery_images' => 'У домика должно быть хотя бы одно изображение галереи.'
+                ])
+                ->withInput();
         }
 
         $house->name = $data['name'];

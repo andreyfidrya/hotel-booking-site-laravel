@@ -133,7 +133,9 @@
     </div>
     @endif
 
-    <form action="{{ route('admin.houses.update', $house) }}"
+    <form 
+        id="house-form"
+        action="{{ route('admin.houses.update', $house) }}"
         method="POST"
         enctype="multipart/form-data"
     >
@@ -288,7 +290,7 @@
     
     document.querySelectorAll('.delete-image').forEach(button => {
 
-    button.addEventListener('click', function () {
+    button.addEventListener('click', function () {        
 
         this.closest('div').remove();
 
@@ -298,7 +300,7 @@
         input.name = 'delete_gallery[]';
         input.value = this.dataset.image;
 
-        document.querySelector('form').appendChild(input);
+        document.getElementById('house-form').appendChild(input);
 
     });
 
