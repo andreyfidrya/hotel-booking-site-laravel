@@ -190,10 +190,10 @@ class HouseController extends Controller
         // Удаляем изображения галереи
         if ($house->gallery) {
 
-            $gallery = json_decode($house->gallery, true);
+            $galleryImages = array_map('trim', explode(',', $house->gallery_images));
 
-            if (is_array($gallery)) {
-                foreach ($gallery as $image) {
+            if (is_array($galleryImages)) {
+                foreach ($galleryImages as $image) {
 
                     $imagePath = public_path('images/houses/gallery/' . $image);
 
