@@ -190,7 +190,16 @@
             @enderror
         </div>
 
-        {{-- Главное изображение --}}
+        {{-- Главное изображение --}}        
+
+        <div class="mt-3">
+            <img
+                id="featured-preview"
+                src="{{ asset('images/houses/featured/' . $house->featured_image) }}"
+                style="width:200px; height:200px; object-fit:cover; border-radius:6px;"
+            >
+        </div>
+
         <div class="mb-3">
             <label for="featured_image" class="form-label">
                 Главное изображение
@@ -210,45 +219,13 @@
             @enderror
         </div>
 
-        <div class="mt-3">
-            <img
-                id="featured-preview"
-                src="{{ asset('images/houses/featured/' . $house->featured_image) }}"
-                style="width:200px; height:200px; object-fit:cover; border-radius:6px;"
-            >
-        </div>
-
         {{-- Галерея --}}
         <div class="mb-4">
             <label for="gallery_images[]" class="form-label">
                 Изображения галереи
             </label>
 
-            <input
-                type="file"
-                name="gallery_images[]"
-                id="gallery_images"
-                multiple
-                class="form-control"
-                onchange="previewGallery(event)"
-            >            
-
-            @if($errors->has('gallery_images') || $errors->has('gallery_images.*'))
-                <div class="text-danger">
-                    @foreach($errors->get('gallery_images') as $message)
-                        <div>{{ $message }}</div>
-                    @endforeach
-
-                    @foreach($errors->get('gallery_images.*') as $messages)
-                        @foreach($messages as $message)
-                            <div>{{ $message }}</div>
-                        @endforeach
-                    @endforeach
-                </div>
-            @endif
-        </div>
-
-        <div id="gallery-preview" class="mb-4 d-flex flex-wrap gap-3">
+            <div id="gallery-preview" class="mb-4 d-flex flex-wrap gap-3">
             @foreach($galleryImages as $image)
                 <div style="position:relative;display:inline-block;">
                     <img
@@ -277,7 +254,31 @@
                     </button>
                 </div>
             @endforeach
-        </div>        
+        </div> 
+
+            <input
+                type="file"
+                name="gallery_images[]"
+                id="gallery_images"
+                multiple
+                class="form-control"
+                onchange="previewGallery(event)"
+            >            
+
+            @if($errors->has('gallery_images') || $errors->has('gallery_images.*'))
+                <div class="text-danger">
+                    @foreach($errors->get('gallery_images') as $message)
+                        <div>{{ $message }}</div>
+                    @endforeach
+
+                    @foreach($errors->get('gallery_images.*') as $messages)
+                        @foreach($messages as $message)
+                            <div>{{ $message }}</div>
+                        @endforeach
+                    @endforeach
+                </div>
+            @endif
+        </div>               
 
         {{-- Кнопка --}}
         <button type="submit" class="btn btn-primary">
