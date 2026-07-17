@@ -177,6 +177,9 @@ class HouseController extends Controller
 
     public function destroy(House $house)
     {
+        
+        dd($house->gallery_images);
+
         // Удаляем главное изображение
         if ($house->featured_image) {
 
@@ -188,12 +191,12 @@ class HouseController extends Controller
         }
 
         // Удаляем изображения галереи
-        if ($house->gallery) {
+        if ($house->gallery_images) {
 
-            $galleryImages = array_map('trim', explode(',', $house->gallery_images));
+            $gallery = array_map('trim', explode(',', $house->gallery_images));            
 
-            if (is_array($galleryImages)) {
-                foreach ($galleryImages as $image) {
+            if (is_array($gallery)) {
+                foreach ($gallery as $image) {
 
                     $imagePath = public_path('images/houses/gallery/' . $image);
 
