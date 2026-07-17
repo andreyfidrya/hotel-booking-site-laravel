@@ -49,7 +49,7 @@
                            class="btn btn-sm btn-primary w-100 mb-2">
                             Редактировать
                         </a>
-                        <form action="" 
+                        <form action="{{ route('admin.houses.destroy', $house) }}" 
                             method="POST"
                             onsubmit="return confirm('Удалить этот домик?')">
                             @csrf

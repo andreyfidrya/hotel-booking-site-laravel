@@ -175,8 +175,40 @@ class HouseController extends Controller
             ->with('success', 'Домик успешно обновлен');
     }
 
-    public function destroy(string $id)
+    public function destroy(House $house)
     {
-        //
+        // Удаляем главное изображение
+        if ($house->featured_image) {
+
+            $featuredImage = public_path('images/houses/featured/' . $house->featured_image);
+
+            if (file_exists($featuredImage)) {
+                unlink($featuredImage);
+            }
+        }
+
+        // Удаляем изображения галереи
+        if ($house->gallery) {
+
+            $gallery = json_decode($house->gallery, true);
+
+            if (is_array($gallery)) {
+                foreach ($gallery as $image) {
+
+                    $imagePath = public_path('images/houses/gallery/' . $image);
+
+                    if (file_exists($imagePath)) {
+                        unlink($imagePath);
+                    }
+                }
+            }
+        }
+
+        // Удаляем запись из БД
+        $house->delete();
+
+        return redirect()
+            ->route('admin.houses.index')
+            ->with('success', 'Домик успешно удален');
     }
 }
