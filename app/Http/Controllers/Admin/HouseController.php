@@ -178,8 +178,6 @@ class HouseController extends Controller
     public function destroy(House $house)
     {
         
-        dd($house->gallery_images);
-
         // Удаляем главное изображение
         if ($house->featured_image) {
 
