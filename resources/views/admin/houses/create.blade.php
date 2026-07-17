@@ -183,6 +183,11 @@
             @enderror
         </div>
 
+        <div class="mt-3">
+            <img id="featured-preview"
+                style="display:none; width:200px; height:200px; object-fit:cover; border-radius:6px;" />
+        </div>
+
         {{-- Главное изображение --}}
         <div class="mb-3">
             <label for="featured_image" class="form-label">
@@ -201,14 +206,12 @@
                     {{ $message }}
                 </div>
             @enderror
-        </div>
-
-        <div class="mt-3">
-            <img id="featured-preview"
-                style="display:none; width:200px; height:200px; object-fit:cover; border-radius:6px;" />
-        </div>
+        </div>        
 
         {{-- Галерея --}}
+
+        <div id="gallery-preview" class="d-flex flex-wrap gap-2 my-3"></div>
+
         <div class="mb-4">
             <label for="gallery_images[]" class="form-label">
                 Изображения галереи
@@ -238,7 +241,7 @@
             @endif
         </div>
 
-        <div id="gallery-preview" class="d-flex flex-wrap gap-2 my-3"></div>
+        
 
         {{-- Кнопка --}}
         <button type="submit" class="btn btn-primary">

@@ -156,6 +156,14 @@ class HouseController extends Controller
                 ->withInput();
         }
 
+        if (count($galleryImages) > 5) {
+            return back()
+                ->withErrors([
+                    'gallery_images' => 'Максимальное количество изображений — 5.'
+                ])
+                ->withInput();
+        }
+
         $house->name = $data['name'];
         $house->housetype_id = $data['housetype_id'];
         $house->gallery_images = implode(', ', $galleryImages);
