@@ -176,32 +176,41 @@
                 Удобства
             </label>
 
-            <select name="facilities[]" 
-                    id="facilities"
-                    class="form-select @error('facilities') is-invalid @enderror"
-                    multiple
-                    size="{{ count($facilities) }}">
+        <div class="mb-3">
+            <label class="form-label">
+                Facilities
+            </label>
 
-                @foreach($facilities as $facility)
-                    <option value="{{ $facility->id }}"
-                        @if(
+            @foreach($facilities as $facility)
+                <div class="form-check">
+                    <input
+                        class="form-check-input @error('facilities') is-invalid @enderror"
+                        type="checkbox"
+                        name="facilities[]"
+                        value="{{ $facility->id }}"
+                        id="facility{{ $facility->id }}"
+                        {{
                             in_array(
                                 $facility->id,
                                 old('facilities', $housetype->facilities->pluck('id')->toArray())
                             )
-                        ) selected @endif>
-                        {{ $facility->name }}
-                    </option>
-                @endforeach
+                            ? 'checked'
+                            : ''
+                        }}
+                    >
 
-            </select>
+                    <label class="form-check-label" for="facility{{ $facility->id }}">
+                        {{ $facility->name }}
+                    </label>
+                </div>
+            @endforeach
 
             @error('facilities')
-                <div class="invalid-feedback">
+                <div class="invalid-feedback d-block">
                     {{ $message }}
                 </div>
             @enderror
-        </div>        
+        </div>                   
 
         <div class="d-flex gap-2">
             <button type="submit" 

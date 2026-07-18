@@ -30,9 +30,7 @@ class HousetypeController extends Controller
 
         $housetype = Housetype::create($data);  
         
-        if ($request->has('facilities')) {
-        $housetype->facilities()->sync($request->input('facilities', []));
-        }
+        $housetype->facilities()->sync($request->input('facilities', []));        
 
         return redirect()
             ->route('admin.housetypes.index')
@@ -59,9 +57,7 @@ class HousetypeController extends Controller
 
         $housetype->update($data);
 
-        if ($request->has('facilities')) {
-        $housetype->facilities()->sync($request->input('facilities', []));
-        }
+        $housetype->facilities()->sync($request->input('facilities', []));        
 
         return redirect()
         ->route('admin.housetypes.index')
@@ -76,6 +72,6 @@ class HousetypeController extends Controller
 
         return redirect()
             ->route('admin.housetypes.index')
-            ->with('success', 'Удобство успешно удалено');
+            ->with('success', 'Тип домика успешно удален');
     }
 }

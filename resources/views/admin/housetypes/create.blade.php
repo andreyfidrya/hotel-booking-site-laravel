@@ -176,20 +176,32 @@
                 Удобства
             </label>
 
-            <select name="facilities[]" 
-                    id="facilities"
-                    class="form-select @error('facilities') is-invalid @enderror"
-                    multiple
-                    size="{{ count($facilities) }}">
-                
-                @foreach($facilities as $facility)
-                    <option value="{{ $facility->id }}"
-                        @if(collect(old('facilities'))->contains($facility->id)) selected @endif>
-                        {{ $facility->name }}
-                    </option>
-                @endforeach
+        <div class="mb-3">
+            <label class="form-label">Facilities</label>
 
-            </select>
+            @foreach($facilities as $facility)
+                <div class="form-check">
+                    <input
+                        class="form-check-input @error('facilities') is-invalid @enderror"
+                        type="checkbox"
+                        name="facilities[]"
+                        value="{{ $facility->id }}"
+                        id="facility{{ $facility->id }}"
+                        {{ in_array($facility->id, old('facilities', [])) ? 'checked' : '' }}
+                    >
+
+            <label class="form-check-label" for="facility{{ $facility->id }}">
+                {{ $facility->name }}
+            </label>
+        </div>
+    @endforeach
+
+    @error('facilities')
+        <div class="invalid-feedback d-block">
+            {{ $message }}
+        </div>
+    @enderror
+</div>
 
             @error('facilities')
                 <div class="invalid-feedback">

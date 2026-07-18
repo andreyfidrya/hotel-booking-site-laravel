@@ -57,6 +57,10 @@ class Save extends FormRequest
                 'array',
                 'min:1',                                               
             ],
+            'facilities.*' => [
+                'integer',
+                Rule::exists('facilities', 'id'),
+            ],
         ];
     }
 
@@ -79,7 +83,9 @@ class Save extends FormRequest
 
             'price_on_weekends.required' => 'Цена на выходных обязательно для заполнения.', 
 
-            'facilities' => 'Должно быть выбрано минимум одно удобство.',
+            'facilities.required' => 'Выберите хотя бы одно удобство.',
+            'facilities.array'    => 'Некорректный формат списка удобств.',
+            'facilities.min'      => 'Выберите хотя бы одно удобство.',
         ];
     }
 }
