@@ -71,7 +71,7 @@
                     class="form-select @error('capacity') is-invalid @enderror"
                     >
                 
-                @for ($i = 1; $i <= 10; $i++)
+                @for ($i = 4; $i <= 10; $i++)
                     <option value="{{ $i }}" 
                         @if(old('capacity', $housetype->capacity) == $i) selected @endif>
                         {{ $i }}
