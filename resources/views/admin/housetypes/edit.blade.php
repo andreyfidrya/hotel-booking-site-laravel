@@ -131,7 +131,7 @@
 
         <div class="mb-3">
             <label for="price_on_business_days" class="form-label">
-                Цена в будни
+                Цена в будни (за два человека)
             </label>
 
             <input type="number"
@@ -152,7 +152,7 @@
 
         <div class="mb-3">
             <label for="price_on_weekends" class="form-label">
-                Цена на выходных
+                Цена на выходных (за два человека)
             </label>
 
             <input type="number"
