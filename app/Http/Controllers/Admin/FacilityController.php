@@ -57,6 +57,8 @@ class FacilityController extends Controller
 
     public function destroy(Facility $facility)
     {
+        $facility->housetypes()->detach();    
+
         $facility->delete();
 
         return redirect()
