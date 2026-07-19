@@ -66,8 +66,14 @@ class HousetypeController extends Controller
 
     public function destroy(Housetype $housetype)
     {
-        $housetype->facilities()->detach(); 
-        
+        if ($housetype->houses()->exists()) {
+            return back()->with(
+                'error',
+                'Нельзя удалить тип домика, пока существуют домики этого типа.'
+            );
+        }    
+
+        $housetype->facilities()->detach();
         $housetype->delete();
 
         return redirect()
