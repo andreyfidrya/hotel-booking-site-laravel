@@ -21,4 +21,9 @@ class HomeController extends Controller
 
         return view('houses', compact('houses','housetypes'));       
     }
+
+    public function booking()
+    {
+        return view('booking');       
+    }
 }

@@ -11,7 +11,7 @@
 							<div class="col-md-12 align-self-center">
 								<ul class="breadcrumb breadcrumb-light d-block mb-4 text-center">
 									<li><a href="#">Home</a></li>
-									<li class="active">Rooms & Rates</li>
+									<li class="active">Домики и цены</li>
 								</ul>
 							</div>
 						</div>
@@ -76,7 +76,7 @@
 												</li>
 
 												<li>
-													<a href=""
+													<a href="{{ route('booking') }}"
 													class="room-suite-info-book">
 														Забронировать
 													</a>
