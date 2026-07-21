@@ -24,6 +24,8 @@ class HomeController extends Controller
 
     public function booking()
     {
-        return view('booking');       
+        $houses = House::with('housetype')->get();
+        
+        return view('booking', compact('houses'));       
     }
 }

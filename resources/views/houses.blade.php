@@ -3,14 +3,14 @@
 					<div class="container py-4">
 						<div class="row py-5">
 							<div class="col-md-12 align-self-center p-static text-center">
-								<h1 class="text-light mt-4 mb-0 pb-0 font-weight-bold text-8">Rooms & Rates</h1>
+								<h1 class="text-light mt-4 mb-0 pb-0 font-weight-bold text-8">Домики и цены</h1>
 								<div class="divider divider-primary divider-small my-3 text-center">
 									<hr class="mt-2 mx-auto">
 								</div>								
 							</div>
 							<div class="col-md-12 align-self-center">
 								<ul class="breadcrumb breadcrumb-light d-block mb-4 text-center">
-									<li><a href="#">Home</a></li>
+									<li><a href="#">Главная</a></li>
 									<li class="active">Домики и цены</li>
 								</ul>
 							</div>
