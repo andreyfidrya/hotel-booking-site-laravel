@@ -22,10 +22,13 @@ class HomeController extends Controller
         return view('houses', compact('houses','housetypes'));       
     }
 
-    public function booking()
+    public function booking(House $house)
     {
         $houses = House::with('housetype')->get();
         
-        return view('booking', compact('houses'));       
+        return view('booking', [
+            'houses' => $houses,
+            'selectedHouse' => $house
+        ]);       
     }
 }

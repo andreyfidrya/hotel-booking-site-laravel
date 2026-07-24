@@ -8,14 +8,12 @@ use App\Http\Controllers\Admin\FacilityController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-/*Route::get('/', function () {
-    return view('welcome');
-});*/
-
 Route::get('/', [HomeController::class, 'index']);
 
 Route::get('/houses', [HomeController::class, 'houses']);
-Route::get('/booking', [HomeController::class, 'booking'])->name('booking');
+
+Route::get('/booking/{house}', [HomeController::class, 'booking'])
+    ->name('booking');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

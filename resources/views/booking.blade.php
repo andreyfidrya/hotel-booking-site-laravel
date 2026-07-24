@@ -32,7 +32,10 @@
 								@foreach ($houses as $house)
 									<div class="row align-items-center mb-4">
 										<div class="col-md-1 text-center">
-											<input type="radio" checked="checked" name="bookNowRoom" id="bookNowRoom1" value="">
+											<input type="radio"
+													name="house_id"
+													value="{{ $house->id }}"
+													{{ $selectedHouse->id == $house->id ? 'checked' : '' }}>
 										</div>
 										<div class="col-md-2 text-center">
 											<label for="bookNowRoom1" class="d-block">

@@ -76,7 +76,7 @@
 												</li>
 
 												<li>
-													<a href="{{ route('booking') }}"
+													<a href="{{ route('booking', ['house' => $house->id]) }}"
 													class="room-suite-info-book">
 														Забронировать
 													</a>
