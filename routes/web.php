@@ -8,7 +8,7 @@ use App\Http\Controllers\Admin\FacilityController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [HomeController::class, 'index']);
+Route::get('/', [HomeController::class, 'index'])->name('home.index');
 
 Route::get('/houses', [HomeController::class, 'houses']);
 
