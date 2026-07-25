@@ -139,17 +139,20 @@
 											</div>
 										</div>
 									</div>
-									<div class="row">
-										<div class="form-group col pb-0 mb-0">
-											<div class="form-control-custom form-control-custom-dark">
-												<select class="form-select form-control text-2" name="bookNowKids" data-msg-required="This field is required." id="bookNowKids" required>
-													<option value="">Наличие животных (кошка, собака)</option>
-													<option value="1">0</option>
-													<option value="1">1</option>													
-												</select>
-											</div>
-										</div>
+									<div class="form-group col pb-0 mb-0">
+									<div class="form-check">
+										<input
+											class="form-check-input"
+											type="checkbox"
+											id="bookNowPets"
+											name="pets"
+											value="1">
+
+										<label class="form-check-label text-2" for="bookNowPets">
+											Проживание с домашним животным (кошка или собака)
+										</label>
 									</div>
+								</div>
 								</div>
 
 								<button type="submit" class="btn btn-primary font-weight-bold text-uppercase px-5 py-3 mt-4 mb-2 w-100">Забронировать</a>
