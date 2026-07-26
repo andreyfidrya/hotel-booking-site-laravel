@@ -25,9 +25,10 @@
 						<div class="col">
 
 							<ul class="nav nav-pills nav-pills-center sort-source text-2 text-uppercase mb-4 mt-0" data-sort-id="portfolio" data-option-key="filter" data-plugin-options="{'layoutMode': 'fitRows', 'filter': '*'}">
-								<li class="nav-item active" data-option-value="*"><a class="nav-link text-uppercase font-weight-bold text-3 active" href="#">Show All</a></li>
-								<li class="nav-item" data-option-value=".rooms"><a class="nav-link text-uppercase font-weight-bold text-3" href="#">Rooms</a></li>
-								<li class="nav-item" data-option-value=".suites"><a class="nav-link text-uppercase font-weight-bold text-3" href="#">Suites</a></li>
+								<li class="nav-item active" data-option-value="*"><a class="nav-link text-uppercase font-weight-bold text-3 active" href="#">Все домики</a></li>
+								<li class="nav-item" data-option-value=".rooms"><a class="nav-link text-uppercase font-weight-bold text-3" href="#">4 человек</a></li>
+								<li class="nav-item" data-option-value=".suites"><a class="nav-link text-uppercase font-weight-bold text-3" href="#">8 человек</a></li>
+								<li class="nav-item" data-option-value=".suites"><a class="nav-link text-uppercase font-weight-bold text-3" href="#">10 человек</a></li>
 							</ul>
 						@foreach ($housetypes as $housetype)
 							
