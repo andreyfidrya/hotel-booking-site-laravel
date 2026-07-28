@@ -19,7 +19,7 @@ class HomeController extends Controller
     public function houses()
     {
         $houses = House::all();
-        $housetypes = HouseType::with('houses')->get();        
+        $housetypes = Housetype::with('houses')->get();        
 
         return view('houses', compact('houses','housetypes'));       
     }
