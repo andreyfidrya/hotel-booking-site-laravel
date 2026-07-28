@@ -6,14 +6,14 @@ use App\Http\Controllers\Admin\HouseController;
 use App\Http\Controllers\Admin\HousetypeController;
 use App\Http\Controllers\Admin\FacilityController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\BookingController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
 
 Route::get('/houses', [HomeController::class, 'houses']);
 
-Route::get('/booking/{house}', [HomeController::class, 'booking'])
-    ->name('booking');
+Route::get('/booking/{house}', [BookingController::class, 'index'])->name('booking.index');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -24,8 +24,6 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');    
 });
-
-// Route::get('/admin-panel', [DashboardController::class, 'index'])->middleware(['auth', 'admin']);
 
 Route::prefix('admin-panel')->name('admin.')->middleware(['auth', 'admin'])->group(function() {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');

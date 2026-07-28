@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\House;
 use App\Models\Housetype;
 
+use App\Services\BookingPriceCalculator;
+
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -21,14 +23,5 @@ class HomeController extends Controller
 
         return view('houses', compact('houses','housetypes'));       
     }
-
-    public function booking(House $house)
-    {
-        $houses = House::with('housetype')->get();
-        
-        return view('booking', [
-            'houses' => $houses,
-            'selectedHouse' => $house
-        ]);       
-    }
+    
 }
