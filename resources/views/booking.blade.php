@@ -112,6 +112,12 @@
 											</div>
 										</div>
 									</div>
+									<div class="alert alert-light border mt-3 mb-0">
+										<i class="fas fa-clock me-2"></i>
+										Заезд: <strong>с 14:00</strong><br>
+										<i class="fas fa-sign-out-alt me-2"></i>
+										Выезд: <strong>до 12:00</strong>
+									</div>
 									<div class="row">
 										<div class="form-group col">
 											<div class="form-control-custom form-control-custom-dark">
