@@ -4,72 +4,97 @@ namespace App\Services;
 
 use App\Models\House;
 use Carbon\Carbon;
-use InvalidArgumentException;
 
 class BookingPriceCalculator
 {
     public function calculate(
-    House $house,
-    string $arrivalDate,
-    string $departureDate,
-    int $adults,
-    int $children,
-    bool $pets = false
-): array
-{
-    $arrival = Carbon::parse($arrivalDate);
-    $departure = Carbon::parse($departureDate);
+        House $house,
+        string $arrivalDate,
+        string $departureDate,
+        int $adults,
+        int $children,
+        bool $pets = false
+    ): array {
+        $arrival = Carbon::parse($arrivalDate);
+        $departure = Carbon::parse($departureDate);
 
-    if ($departure->lessThanOrEqualTo($arrival)) {
-        throw new \InvalidArgumentException('Дата выезда должна быть позже даты заезда.');
-    }
-
-    $capacity = $house->housetype->capacity;
-
-    if (($adults + $children) > $capacity) {
-        throw new \InvalidArgumentException(
-            "Максимальная вместимость домика {$capacity} человек."
-        );
-    }
-
-    $currentDay = $arrival->copy();
-
-    $totalPrice = 0;
-
-    while ($currentDay->lt($departure)) {
-
-        // Стоимость домика за текущие сутки
-        if ($currentDay->isWeekend()) {
-            $pricePerDay = $house->housetype->price_on_weekends;
-        } else {
-            $pricePerDay = $house->housetype->price_on_business_days;
+        if ($departure->lessThanOrEqualTo($arrival)) {
+            throw new \InvalidArgumentException(
+                'Дата выезда должна быть позже даты заезда.'
+            );
         }
 
-        // Базовая стоимость
-        $dayPrice = $pricePerDay;
+        $capacity = $house->housetype->capacity;
 
-        // Доплата за взрослых
+        if (($adults + $children) > $capacity) {
+            throw new \InvalidArgumentException(
+                "Максимальная вместимость домика {$capacity} человек."
+            );
+        }
+
+        $extraAdultsPrice = 0;
+        $extraChildrenPrice = 0;
+        $petsPrice = 0;
+
         if ($adults > 2) {
-            $dayPrice += ($adults - 2) * 500;
+            $extraAdultsPrice =
+                ($adults - 2) * $house->housetype->price_per_extra_person;
         }
 
-        // Первые два ребенка бесплатно
         if ($children > 2) {
-            $dayPrice += ($children - 2) * 500;
+            $extraChildrenPrice =
+                ($children - 2) * $house->housetype->price_per_extra_child;
         }
 
-        // Домашнее животное
         if ($pets) {
-            $dayPrice += 500;
+            $petsPrice = $house->housetype->pet_price;
         }
 
-        $totalPrice += $dayPrice;
+        $currentDay = $arrival->copy();
 
-        $currentDay->addDay();
+        $totalPrice = 0;
+        $details = [];
+
+        while ($currentDay->lt($departure)) {
+
+            $basePrice = $currentDay->isWeekend()
+                ? $house->housetype->price_on_weekends
+                : $house->housetype->price_on_business_days;
+
+            $dayPrice =
+                $basePrice +
+                $extraAdultsPrice +
+                $extraChildrenPrice +
+                $petsPrice;
+
+            $details[] = [
+                'date' => $currentDay->toDateString(),
+                'day_type' => $currentDay->isWeekend()
+                    ? 'Выходной'
+                    : 'Будний',
+
+                'base_price' => $basePrice,
+                'extra_adults_price' => $extraAdultsPrice,
+                'extra_children_price' => $extraChildrenPrice,
+                'pets_price' => $petsPrice,
+
+                'total_price' => $dayPrice,
+            ];
+
+            $totalPrice += $dayPrice;
+
+            $currentDay->addDay();
+        }
+
+        return [
+            'total_days' => $arrival->diffInDays($departure),
+            'details' => $details,
+            
+            'extra_adults_price' => $extraAdultsPrice,
+            'extra_children_price' => $extraChildrenPrice,
+            'pets_price' => $petsPrice,
+            
+            'total_price' => $totalPrice,
+        ];
     }
-
-    return [
-        'total_price' => $totalPrice,
-    ];
-}
 }
