@@ -106,28 +106,7 @@
                     {{ $message }}
                 </div>
             @enderror
-        </div>
-
-        <div class="mb-3">
-            <label for="price_per_extra_person" class="form-label">
-                Цена за дополнительного человека
-            </label>
-
-            <input type="number"
-                id="price_per_extra_person"
-                name="price_per_extra_person"
-                class="form-control @error('price_per_extra_person') is-invalid @enderror"
-                value="{{ old('price_per_extra_person') }}"
-                min="1"
-                step="0.1"
-                >
-
-            @error('price_per_extra_person')
-                <div class="invalid-feedback">
-                    {{ $message }}
-                </div>
-            @enderror
-        </div>
+        </div>        
 
         <div class="mb-3">
             <label for="price_on_business_days" class="form-label">
@@ -164,7 +143,70 @@
                 step="0.1"
                 >
 
+            @error('price_on_weekends')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+            @enderror
+        </div>
+
+        <div class="mb-3">
+            <label for="price_per_extra_person" class="form-label">
+                Цена за дополнительного человека
+            </label>
+
+            <input type="number"
+                id="price_per_extra_person"
+                name="price_per_extra_person"
+                class="form-control @error('price_per_extra_person') is-invalid @enderror"
+                value="{{ old('price_per_extra_person') }}"
+                min="1"
+                step="0.1"
+                >
+
             @error('price_per_extra_person')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+            @enderror
+        </div>
+
+        <div class="mb-3">
+            <label for="price_per_extra_child" class="form-label">
+                Цена за дополнительного ребенка
+            </label>
+
+            <input type="number"
+                id="price_per_extra_child"
+                name="price_per_extra_child"
+                class="form-control @error('price_per_extra_child') is-invalid @enderror"
+                value="{{ old('price_per_extra_child') }}"
+                min="1"
+                step="0.1"
+                >
+
+            @error('price_per_extra_child')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+            @enderror
+        </div>
+
+        <div class="mb-3">
+            <label for="pet_price" class="form-label">
+                Цена за животное
+            </label>
+
+            <input type="number"
+                id="pet_price"
+                name="pet_price"
+                class="form-control @error('pet_price') is-invalid @enderror"
+                value="{{ old('pet_price') }}"
+                min="1"
+                step="0.1"
+                >
+
+            @error('pet_price')
                 <div class="invalid-feedback">
                     {{ $message }}
                 </div>
@@ -176,8 +218,7 @@
                 Удобства
             </label>
 
-        <div class="mb-3">
-            <label class="form-label">Facilities</label>
+        <div class="mb-3">            
 
             @foreach($facilities as $facility)
                 <div class="form-check">

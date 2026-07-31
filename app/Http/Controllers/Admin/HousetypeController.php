@@ -26,7 +26,7 @@ class HousetypeController extends Controller
 
     public function store(SaveRequest $request)
     {
-        $data = $request->only(['name', 'description', 'capacity', 'area', 'price_per_extra_person', 'price_on_business_days', 'price_on_weekends']);
+        $data = $request->only(['name', 'description', 'capacity', 'area', 'price_on_business_days', 'price_on_weekends', 'price_per_extra_person', 'price_per_extra_child', 'pet_price']);
 
         $housetype = Housetype::create($data);  
         
@@ -53,7 +53,7 @@ class HousetypeController extends Controller
     public function update(SaveRequest $request, Housetype $housetype)
     {
         
-        $data = $request->only(['name', 'description', 'capacity', 'area', 'price_per_extra_person', 'price_on_business_days', 'price_on_weekends']);
+        $data = $request->only(['name', 'description', 'capacity', 'area', 'price_on_business_days', 'price_on_weekends', 'price_per_extra_person', 'price_per_extra_child', 'pet_price']);
 
         $housetype->update($data);
 
