@@ -13,10 +13,12 @@ return new class extends Migration
             $table->string('name');
             $table->longText('description');
             $table->integer('capacity');
-            $table->integer('area');            
-            $table->integer('price_per_extra_person');
+            $table->integer('area');           
             $table->integer('price_on_business_days');
             $table->integer('price_on_weekends');
+            $table->integer('price_per_extra_person');
+            $table->integer('price_per_extra_child');
+            $table->integer('pet_price');            
             $table->timestamps();
         });
     }

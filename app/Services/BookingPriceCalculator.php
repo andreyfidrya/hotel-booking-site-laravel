@@ -4,40 +4,72 @@ namespace App\Services;
 
 use App\Models\House;
 use Carbon\Carbon;
+use InvalidArgumentException;
 
 class BookingPriceCalculator
 {
     public function calculate(
-        House $house,
-        string $arrivalDate,
-        string $departureDate,
-        int $adults,
-        int $children,
-        bool $pets = false
-    ): array
-    {
-        $arrival = Carbon::parse($arrivalDate);
-        $departure = Carbon::parse($departureDate);
+    House $house,
+    string $arrivalDate,
+    string $departureDate,
+    int $adults,
+    int $children,
+    bool $pets = false
+): array
+{
+    $arrival = Carbon::parse($arrivalDate);
+    $departure = Carbon::parse($departureDate);
 
-        $currentDay = $arrival->copy();
+    if ($departure->lessThanOrEqualTo($arrival)) {
+        throw new \InvalidArgumentException('Дата выезда должна быть позже даты заезда.');
+    }
 
-        $totalPrice = 0;
+    $capacity = $house->housetype->capacity;
 
-        while ($currentDay->lt($departure)) {
+    if (($adults + $children) > $capacity) {
+        throw new \InvalidArgumentException(
+            "Максимальная вместимость домика {$capacity} человек."
+        );
+    }
 
-            if ($currentDay->isWeekend()) {
-                $pricePerDay = $house->housetype->price_on_weekends;
-            } else {
-                $pricePerDay = $house->housetype->price_on_business_days;
-            }
+    $currentDay = $arrival->copy();
 
-            $totalPrice += $pricePerDay;
+    $totalPrice = 0;
 
-            $currentDay->addDay();
+    while ($currentDay->lt($departure)) {
+
+        // Стоимость домика за текущие сутки
+        if ($currentDay->isWeekend()) {
+            $pricePerDay = $house->housetype->price_on_weekends;
+        } else {
+            $pricePerDay = $house->housetype->price_on_business_days;
         }
 
-        return [
-            'total_price' => $totalPrice
-        ];
+        // Базовая стоимость
+        $dayPrice = $pricePerDay;
+
+        // Доплата за взрослых
+        if ($adults > 2) {
+            $dayPrice += ($adults - 2) * 500;
+        }
+
+        // Первые два ребенка бесплатно
+        if ($children > 2) {
+            $dayPrice += ($children - 2) * 500;
+        }
+
+        // Домашнее животное
+        if ($pets) {
+            $dayPrice += 500;
+        }
+
+        $totalPrice += $dayPrice;
+
+        $currentDay->addDay();
     }
+
+    return [
+        'total_price' => $totalPrice,
+    ];
+}
 }
