@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\House;
+use App\Services\BookingPriceCalculator;
 
 class BookingController extends Controller
 {
@@ -15,6 +16,22 @@ class BookingController extends Controller
             'houses' => $houses,
             'selectedHouse' => $house
         ]);
+    }
+
+    public function calculatePrice(Request $request,BookingPriceCalculator $calculator)
+    {
+        $house = House::with('housetype')->findOrFail($request->house_id);
+
+        $result = $calculator->calculate(
+            $house,
+            $request->arrival_date,
+            $request->departure_date,
+            $request->adults,
+            $request->children,
+            $request->boolean('pets')
+        );
+
+    return response()->json($result);
     }
 
 

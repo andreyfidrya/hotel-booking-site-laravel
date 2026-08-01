@@ -22,6 +22,8 @@
 		<!-- Web Fonts  -->
 		<link id="googleFonts" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800%7CShadows+Into+Light&display=swap" rel="stylesheet" type="text/css">
 
+		<meta name="csrf-token" content="{{ csrf_token() }}">
+
 		<!-- Vendor CSS -->
 		<link rel="stylesheet" href="{{ asset('vendor/bootstrap/css/bootstrap.min.css') }}">
 		<link rel="stylesheet" href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}">

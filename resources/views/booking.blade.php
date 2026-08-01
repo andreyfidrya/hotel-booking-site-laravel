@@ -121,7 +121,7 @@
 									<div class="row">
 										<div class="form-group col">
 											<div class="form-control-custom form-control-custom-dark">
-												<select class="form-select form-control text-2" name="bookNowAdults" data-msg-required="This field is required." id="bookNowAdults" required>
+												<select class="form-select form-control text-2" name="bookNowAdults" data-msg-required="This field is required." id="bookingAdults" required>
 													<option value="">Количество взрослых</option>
 													<option value="1">1</option>
 													<option value="2">2</option>
@@ -134,9 +134,9 @@
 									<div class="row">
 										<div class="form-group col pb-0 mb-0">
 											<div class="form-control-custom form-control-custom-dark">
-												<select class="form-select form-control text-2" name="bookNowKids" data-msg-required="This field is required." id="bookNowKids" required>
+												<select class="form-select form-control text-2" name="bookNowKids" data-msg-required="This field is required." id="bookingKids" required>
 													<option value="">Количество детей</option>
-													<option value="1">0</option>
+													<option value="0">0</option>
 													<option value="1">1</option>
 													<option value="2">2</option>
 													<option value="3">3</option>
@@ -150,7 +150,7 @@
 											<input
 												class="form-check-input"
 												type="checkbox"
-												id="bookNowPets"
+												id="bookingPets"
 												name="pets"
 												value="1">
 
@@ -161,8 +161,16 @@
 									</div>
 								</div>
 
+								<div class="mt-4" id="price-details">
+									<h4>Стоимость проживания</h4>
+
+									<div id="price-content">
+										Заполните параметры бронирования
+									</div>
+								</div>
+
 								<button type="submit" class="btn btn-primary font-weight-bold text-uppercase px-5 py-3 mt-4 mb-2 w-100">Забронировать</a>
-							</div>
+							</div>							
 
 						</div>
 					</div>
@@ -259,3 +267,110 @@
 
 	</div>
 </x-layouts.porto>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+    const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+    function calculatePrice() {		
+
+        const selectedHouse = document.querySelector('input[name="house_id"]:checked')?.value;
+        const arrival = document.getElementById('bookNowArrival').value;
+        const departure = document.getElementById('bookNowDeparture').value;
+        const adults = document.getElementById('bookingAdults').value;
+		console.log('Adults value:',document.getElementById('bookingAdults').value);
+        const children = document.getElementById('bookingKids').value;
+		console.log('Kids value:',document.getElementById('bookingKids').value);
+        const pets = document.getElementById('bookingPets').checked;
+
+		console.log(document.getElementById('bookingAdults'));
+    	console.log(document.getElementById('bookingKids'));
+
+        console.log({
+			selectedHouse,
+			arrival,
+			departure,
+			adults,
+			children,
+			pets
+		});
+
+		if (!selectedHouse || !arrival || !departure || !adults || children === "") {
+			console.log('Не хватает данных');
+			return;
+		}
+
+		console.log('before fetch');		
+
+        fetch('/booking/calculate', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': csrfToken
+            },
+            body: JSON.stringify({
+                house_id: selectedHouse,
+                arrival_date: arrival,
+                departure_date: departure,
+                adults: adults,
+                children: children,
+                pets: pets
+            })
+        })
+
+		.then(response => {
+			console.log('Response:', response);
+			return response.json();
+		})
+		
+		.then(data => {
+
+		let html = `
+			<p><strong>Всего суток:</strong> ${data.total_days}</p>
+			<p><strong>Итого:</strong> ${data.total_price} грн</p>
+			<hr>
+		`;
+
+		data.details.forEach(day => {
+			html += `
+				<div class="mb-2">
+					<strong>${day.date}</strong> (${day.day_type})<br>
+					Базовая цена: ${day.base_price} грн<br>
+					Доп. взрослые: ${day.extra_adults_price} грн<br>
+					Доп. дети: ${day.extra_children_price} грн<br>
+					Животные: ${day.pets_price} грн<br>
+					<strong>За день: ${day.total_price} грн</strong>
+						</div>
+						<hr>
+					`;
+				});
+
+				document.getElementById('price-content').innerHTML = html;
+			});
+			.catch(error => {
+				console.error('Fetch error:', error);
+			});
+        
+    	}
+
+    document.getElementById('bookingAdults').addEventListener('change', function () {
+    console.log('Adults changed:', this.value);
+    calculatePrice();
+	});
+
+	document.getElementById('bookingKids').addEventListener('change', function () {
+		console.log('Kids changed:', this.value);
+		calculatePrice();
+	});
+
+	document.getElementById('bookNowArrival').addEventListener('change', calculatePrice);
+	document.getElementById('bookNowDeparture').addEventListener('change', calculatePrice);
+	document.getElementById('bookingPets').addEventListener('change', calculatePrice);
+
+	document.querySelectorAll('input[name="house_id"]').forEach(radio => {
+		radio.addEventListener('change', calculatePrice);
+	});
+
+	});
+</script>
