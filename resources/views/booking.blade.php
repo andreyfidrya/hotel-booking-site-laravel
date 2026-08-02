@@ -91,7 +91,7 @@
 						<!-- Sidebar -->
 						<div class="col-lg-4 mt-4 mt-lg-0 position-relative">
 
-							<div data-plugin-sticky data-plugin-options="{'minWidth': 991, 'containerSelector': '.container', 'padding': {'top': 150}}">
+							<div>
 								<div id="bookFormDetails" class="box-shadow-custom bg-quaternary p-5">
 									<div class="row">
 										<div class="form-group col">
