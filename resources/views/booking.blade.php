@@ -278,30 +278,14 @@ document.addEventListener('DOMContentLoaded', function () {
         const selectedHouse = document.querySelector('input[name="house_id"]:checked')?.value;
         const arrival = document.getElementById('bookNowArrival').value;
         const departure = document.getElementById('bookNowDeparture').value;
-        const adults = document.getElementById('bookingAdults').value;
-		console.log('Adults value:',document.getElementById('bookingAdults').value);
-        const children = document.getElementById('bookingKids').value;
-		console.log('Kids value:',document.getElementById('bookingKids').value);
-        const pets = document.getElementById('bookingPets').checked;
-
-		console.log(document.getElementById('bookingAdults'));
-    	console.log(document.getElementById('bookingKids'));
-
-        console.log({
-			selectedHouse,
-			arrival,
-			departure,
-			adults,
-			children,
-			pets
-		});
+        const adults = document.getElementById('bookingAdults').value;		
+        const children = document.getElementById('bookingKids').value;		
+        const pets = document.getElementById('bookingPets').checked;		
 
 		if (!selectedHouse || !arrival || !departure || !adults || children === "") {
 			console.log('Не хватает данных');
 			return;
-		}
-
-		console.log('before fetch');		
+		}				
 
         fetch('/booking/calculate', {
             method: 'POST',
