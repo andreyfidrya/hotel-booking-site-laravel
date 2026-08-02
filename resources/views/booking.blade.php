@@ -347,7 +347,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				});
 
 				document.getElementById('price-content').innerHTML = html;
-			});
+			})
 			.catch(error => {
 				console.error('Fetch error:', error);
 			});
