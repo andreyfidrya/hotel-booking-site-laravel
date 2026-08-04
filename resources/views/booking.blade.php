@@ -315,9 +315,15 @@ document.addEventListener('DOMContentLoaded', function () {
             })
         })
 
-		.then(response => {
-			console.log('Response:', response);
-			return response.json();
+		.then(async response => {
+
+			const data = await response.json();
+
+			if (!response.ok) {
+				throw new Error(data.error);
+			}
+
+			return data;
 		})
 		
 		.then(data => {		
@@ -345,7 +351,12 @@ document.addEventListener('DOMContentLoaded', function () {
 				document.getElementById('price-content').innerHTML = html;
 			})
 			.catch(error => {
-				console.error('Fetch error:', error);
+
+				document.getElementById('price-content').innerHTML =
+					`<div class="alert alert-danger">
+						${error.message}
+					</div>`;
+
 			});
         
     	}

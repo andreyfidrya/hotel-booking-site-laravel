@@ -20,6 +20,7 @@ class BookingController extends Controller
 
     public function calculatePrice(Request $request,BookingPriceCalculator $calculator)
     {
+        try {
         $house = House::with('housetype')->findOrFail($request->house_id);
 
         $result = $calculator->calculate(
@@ -31,7 +32,15 @@ class BookingController extends Controller
             $request->boolean('pets')
         );
 
-    return response()->json($result);
+        return response()->json($result);
+
+        } catch (\InvalidArgumentException $e) {
+
+        return response()->json([
+            'error' => $e->getMessage()
+        ], 422);
+
+        }
     }
 
 
