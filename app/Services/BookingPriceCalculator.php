@@ -84,7 +84,7 @@ class BookingPriceCalculator
             $totalPrice += $dayPrice;
 
             $currentDay->addDay();
-        }
+        }        
 
         return [
             'total_days' => $arrival->diffInDays($departure),

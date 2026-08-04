@@ -338,13 +338,11 @@ document.addEventListener('DOMContentLoaded', function () {
         
     	}
 
-    document.getElementById('bookingAdults').addEventListener('change', function () {
-    console.log('Adults changed:', this.value);
+    document.getElementById('bookingAdults').addEventListener('change', function () {    
     calculatePrice();
 	});
 
-	document.getElementById('bookingKids').addEventListener('change', function () {
-		console.log('Kids changed:', this.value);
+	document.getElementById('bookingKids').addEventListener('change', function () {		
 		calculatePrice();
 	});
 
