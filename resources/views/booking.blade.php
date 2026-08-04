@@ -308,7 +308,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			return response.json();
 		})
 		
-		.then(data => {
+		.then(data => {		
 
 		let html = `
 			<p><strong>Всего суток:</strong> ${data.total_days}</p>

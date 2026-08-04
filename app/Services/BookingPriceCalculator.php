@@ -88,12 +88,7 @@ class BookingPriceCalculator
 
         return [
             'total_days' => $arrival->diffInDays($departure),
-            'details' => $details,
-            
-            'extra_adults_price' => $extraAdultsPrice,
-            'extra_children_price' => $extraChildrenPrice,
-            'pets_price' => $petsPrice,
-            
+            'details' => $details,                    
             'total_price' => $totalPrice,
         ];
     }
