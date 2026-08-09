@@ -285,19 +285,31 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
-    function calculatePrice() {		
+    function calculatePrice() {
+		
+		console.log('calculatePrice запущена');
 
         const selectedHouse = document.querySelector('input[name="house_id"]:checked')?.value;
         const arrival = document.getElementById('bookNowArrival').value;
         const departure = document.getElementById('bookNowDeparture').value;
         const adults = document.getElementById('bookingAdults').value;		
         const children = document.getElementById('bookingKids').value;		
-        const pets = document.getElementById('bookingPets').checked;		
+        const pets = document.getElementById('bookingPets').checked;
+		
+		if (arrival && departure && departure < arrival) {
+
+        document.getElementById('price-content').innerHTML =
+            `<div class="alert alert-danger">
+                Дата выезда не может быть меньше даты заезда.
+            </div>`;
+
+        return;
+    	}
 
 		if (!selectedHouse || !arrival || !departure || !adults || children === "") {
 			console.log('Не хватает данных');
 			return;
-		}				
+		}		
 
         fetch('/booking/calculate', {
             method: 'POST',
