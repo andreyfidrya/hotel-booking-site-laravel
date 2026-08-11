@@ -379,8 +379,6 @@ document.addEventListener('DOMContentLoaded', function () {
 		calculatePrice();
 	});
 
-	document.getElementById('bookNowArrival').addEventListener('change', calculatePrice);
-	document.getElementById('bookNowDeparture').addEventListener('change', calculatePrice);
 	document.getElementById('bookingPets').addEventListener('change', calculatePrice);
 
 	$('#bookNowArrival').on('changeDate', calculatePrice);
