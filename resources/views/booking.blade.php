@@ -285,16 +285,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
-    function calculatePrice() {
-		
-		console.log('calculatePrice запущена');
+    function calculatePrice() {			
 
         const selectedHouse = document.querySelector('input[name="house_id"]:checked')?.value;
         const arrival = document.getElementById('bookNowArrival').value;
         const departure = document.getElementById('bookNowDeparture').value;
         const adults = document.getElementById('bookingAdults').value;		
         const children = document.getElementById('bookingKids').value;		
-        const pets = document.getElementById('bookingPets').checked;
+        const pets = document.getElementById('bookingPets').checked;		
 		
 		if (arrival && departure && departure < arrival) {
 
@@ -384,6 +382,9 @@ document.addEventListener('DOMContentLoaded', function () {
 	document.getElementById('bookNowArrival').addEventListener('change', calculatePrice);
 	document.getElementById('bookNowDeparture').addEventListener('change', calculatePrice);
 	document.getElementById('bookingPets').addEventListener('change', calculatePrice);
+
+	$('#bookNowArrival').on('changeDate', calculatePrice);
+	$('#bookNowDeparture').on('changeDate', calculatePrice);
 
 	document.querySelectorAll('input[name="house_id"]').forEach(radio => {
 		radio.addEventListener('change', calculatePrice);
