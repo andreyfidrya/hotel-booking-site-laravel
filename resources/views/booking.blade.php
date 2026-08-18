@@ -297,7 +297,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const children = document.getElementById('bookingKids').value;		
         const pets = document.getElementById('bookingPets').checked;		
 		
-		if (arrival && departure && departure < arrival) {
+		if (arrival && departure && departure <= arrival) {
 
         document.getElementById('date-error-content').innerHTML =
             `<div class="alert alert-danger">

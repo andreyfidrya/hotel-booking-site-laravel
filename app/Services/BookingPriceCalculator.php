@@ -18,12 +18,6 @@ class BookingPriceCalculator
         $arrival = Carbon::parse($arrivalDate);
         $departure = Carbon::parse($departureDate);
 
-        if ($departure->lessThanOrEqualTo($arrival)) {
-            throw new \InvalidArgumentException(
-                'Дата выезда должна быть позже даты заезда.'
-            );
-        }
-
         $capacity = $house->housetype->capacity;
 
         if (($adults + $children) > $capacity) {
