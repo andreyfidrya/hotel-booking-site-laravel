@@ -112,6 +112,9 @@
 											</div>
 										</div>
 									</div>
+									<div id="date-error-content">
+										Заполните параметры бронирования
+									</div>
 									<div class="alert alert-light border mt-3 mb-0">
 										<i class="fas fa-clock me-2"></i>
 										Заезд: <strong>с 14:00</strong><br>
@@ -296,7 +299,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		
 		if (arrival && departure && departure < arrival) {
 
-        document.getElementById('price-content').innerHTML =
+        document.getElementById('date-error-content').innerHTML =
             `<div class="alert alert-danger">
                 Дата выезда не может быть меньше даты заезда.
             </div>`;
@@ -306,7 +309,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		if (!selectedHouse || !arrival || !departure || !adults || children === "") {
 			
-			document.getElementById('price-content').innerHTML = '';
+			document.getElementById('date-error-content').innerHTML = '';
 
 			console.log('Не хватает данных');
 
