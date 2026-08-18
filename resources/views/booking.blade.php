@@ -285,9 +285,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
-    function calculatePrice() {			
+    function calculatePrice() {	
 
-        const selectedHouse = document.querySelector('input[name="house_id"]:checked')?.value;
+		const selectedHouse = document.querySelector('input[name="house_id"]:checked')?.value;
         const arrival = document.getElementById('bookNowArrival').value;
         const departure = document.getElementById('bookNowDeparture').value;
         const adults = document.getElementById('bookingAdults').value;		
@@ -305,7 +305,11 @@ document.addEventListener('DOMContentLoaded', function () {
     	}
 
 		if (!selectedHouse || !arrival || !departure || !adults || children === "") {
+			
+			document.getElementById('price-content').innerHTML = '';
+
 			console.log('Не хватает данных');
+
 			return;
 		}		
 
@@ -379,7 +383,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		calculatePrice();
 	});
 
-	document.getElementById('bookingPets').addEventListener('change', calculatePrice);
+	document.getElementById('bookingPets').addEventListener('change', calculatePrice);	
 
 	$('#bookNowArrival').on('changeDate', calculatePrice);
 	$('#bookNowDeparture').on('changeDate', calculatePrice);
