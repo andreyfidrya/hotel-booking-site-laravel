@@ -48,4 +48,9 @@ class BookingController extends Controller
     {
         //
     }
+
+    public function success()
+    {
+       return view('success');
+    }
 }

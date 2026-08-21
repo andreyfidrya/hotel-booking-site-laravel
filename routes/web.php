@@ -13,7 +13,10 @@ Route::get('/', [HomeController::class, 'index'])->name('home.index');
 
 Route::get('/houses', [HomeController::class, 'houses']);
 
-Route::get('/booking/{house}', [BookingController::class, 'index'])->name('booking.index');
+Route::get('/booking/{house}', [BookingController::class, 'index'])
+    ->whereNumber('house')
+    ->name('booking.index');
+Route::get('/booking/success', [BookingController::class, 'success'])->name('booking.success');
 Route::post('/booking/calculate', [BookingController::class, 'calculatePrice'])->name('booking.calculate');
 
 Route::get('/dashboard', function () {
