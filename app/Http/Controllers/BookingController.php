@@ -43,7 +43,6 @@ class BookingController extends Controller
         }
     }
 
-
     public function store(Request $request)
     {
         return redirect()->route('booking.success');
