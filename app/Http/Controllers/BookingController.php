@@ -45,11 +45,7 @@ class BookingController extends Controller
 
     public function store(Request $request)
     {
-        return redirect()->route('booking.success');
+        return view('success');
     }
-
-    public function success()
-    {
-       return view('success');
-    }
+    
 }
