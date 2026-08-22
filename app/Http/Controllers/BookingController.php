@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\House;
+use App\Models\Booking;
 use App\Services\BookingPriceCalculator;
+use App\Http\Requests\Booking\Save as SaveRequest;
 
 class BookingController extends Controller
 {
@@ -43,9 +45,13 @@ class BookingController extends Controller
         }
     }
 
-    public function store(Request $request)
+    public function store(SaveRequest $request)
     {
-        return view('success');
+        $validated = $request->validated();
+
+        $data = $request->only(['house_id', 'arrival_date', 'departure_date', 'adults', 'children', 'pets', 'full_name','phone', 'email']);
+
+        return redirect()->route('booking.success');
     }
     
 }

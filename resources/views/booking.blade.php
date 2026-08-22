@@ -63,7 +63,7 @@
 								<div class="row">
 									<div class="form-group col mb-4">
 										<div class="form-control-custom form-control-custom-dark">
-											<input type="text" class="form-control text-3" id="bookNowFullName" name="bookNowFullName" placeholder="Фамилия Имя Отчество">
+											<input type="text" class="form-control text-3" id="bookNowFullName" name="full_name" placeholder="Фамилия Имя Отчество">
 										</div>
 									</div>	
 								</div>
@@ -79,7 +79,7 @@
 								<div class="row">						
 									<div class="form-group col mb-4">
 										<div class="form-control-custom form-control-custom-dark">
-											<input type="email" class="form-control text-3" id="bookNowStreetAdd2" name="bookNowStreetAdd2" placeholder="Адрес электронной почты">
+											<input type="email" class="form-control text-3" id="bookNowStreetAdd2" name="email" placeholder="Адрес электронной почты">
 										</div>
 									</div>	
 								</div>
@@ -101,14 +101,14 @@
 									<div class="row">
 										<div class="form-group col">
 											<div class="form-control-custom form-control-custom-dark form-control-datepicker-custom">
-												<input type="text" value="" class="form-control text-2" data-msg-required="This field is required." placeholder="Дата заезда" name="bookNowArrival" id="bookNowArrival" required>
+												<input type="text" value="" class="form-control text-2" data-msg-required="This field is required." placeholder="Дата заезда" name="arrival_date" id="bookNowArrival" required>
 											</div>
 										</div>
 									</div>
 									<div class="row">
 										<div class="form-group col">
 											<div class="form-control-custom form-control-custom-dark form-control-datepicker-custom">
-												<input type="text" value="" class="form-control text-2" data-msg-required="This field is required." placeholder="Дата выезда" name="bookNowDeparture" id="bookNowDeparture" required>
+												<input type="text" value="" class="form-control text-2" data-msg-required="This field is required." placeholder="Дата выезда" name="departure_date" id="bookNowDeparture" required>
 											</div>
 										</div>
 									</div>
@@ -124,7 +124,7 @@
 									<div class="row">
 										<div class="form-group col">
 											<div class="form-control-custom form-control-custom-dark">
-												<select class="form-select form-control text-2" name="bookNowAdults" data-msg-required="This field is required." id="bookingAdults" required>
+												<select class="form-select form-control text-2" name="adults" data-msg-required="This field is required." id="bookingAdults" required>
 													<option value="">Количество взрослых</option>
 													<option value="1">1</option>
 													<option value="2">2</option>
@@ -143,7 +143,7 @@
 									<div class="row">
 										<div class="form-group col pb-0 mb-0">
 											<div class="form-control-custom form-control-custom-dark">
-												<select class="form-select form-control text-2" name="bookNowKids" data-msg-required="This field is required." id="bookingKids" required>
+												<select class="form-select form-control text-2" name="children" data-msg-required="This field is required." id="bookingKids" required>
 													<option value="">Количество детей</option>
 													<option value="0">0</option>
 													<option value="1">1</option>
