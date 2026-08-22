@@ -17,6 +17,10 @@ Route::get('/booking/{house}', [BookingController::class, 'index'])
     ->whereNumber('house')
     ->name('booking.index');
 
+Route::get('/booking/success', function () {
+    return view('success');
+})->name('booking.success');
+
 Route::post('/booking/calculate', [BookingController::class, 'calculatePrice'])->name('booking.calculate');
 
 Route::get('/dashboard', function () {
