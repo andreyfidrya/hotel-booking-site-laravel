@@ -22,7 +22,8 @@
 
 			<div class="container py-5">
 
-				<form id="bookForm" action="demo-hotel-book.html" method="POST">
+				<form id="bookForm" action="{{ route('booking.store') }}" method="POST">
+					@csrf
 					<div class="row">
 						<div class="col-lg-8 mt-0">
 

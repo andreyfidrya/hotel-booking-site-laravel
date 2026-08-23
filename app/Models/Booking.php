@@ -8,16 +8,17 @@ class Booking extends Model
 {
     protected $fillable = [
         'house_id',
-        'coupon_id',
+        'user_id',        
         'arrival_date',
         'departure_date',
         'adults',
         'children',
         'pets',
-        'name',
+        'coupon_id',
+        'amount',
+        'full_name',
         'phone',
-        'email',
-        'price',
+        'email',        
         'status',
     ];
 

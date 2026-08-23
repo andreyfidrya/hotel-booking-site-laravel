@@ -7,6 +7,7 @@ use App\Models\House;
 use App\Models\Booking;
 use App\Services\BookingPriceCalculator;
 use App\Http\Requests\Booking\Save as SaveRequest;
+use Carbon\Carbon;
 
 class BookingController extends Controller
 {
@@ -45,11 +46,52 @@ class BookingController extends Controller
         }
     }
 
-    public function store(SaveRequest $request)
-    {
+    public function store(
+        SaveRequest $request,
+        BookingPriceCalculator $calculator
+    ) {
         $validated = $request->validated();
 
-        $data = $request->only(['house_id', 'arrival_date', 'departure_date', 'adults', 'children', 'pets', 'full_name','phone', 'email']);
+        $validated['arrival_date'] = Carbon::createFromFormat(
+            'm/d/Y',
+            $validated['arrival_date']
+        )->format('Y-m-d');
+
+        $validated['departure_date'] = Carbon::createFromFormat(
+            'm/d/Y',
+            $validated['departure_date']
+        )->format('Y-m-d');
+
+        $house = House::with('housetype')->findOrFail($validated['house_id']);
+
+        $result = $calculator->calculate(
+            $house,
+            $validated['arrival_date'],
+            $validated['departure_date'],
+            $validated['adults'],
+            $validated['children'],
+            $request->boolean('pets')
+        );
+
+        Booking::create([
+            'house_id' => $validated['house_id'],
+            'user_id' => auth()->id(),
+            'arrival_date' => $validated['arrival_date'],
+            'departure_date' => $validated['departure_date'],
+            'adults' => $validated['adults'],
+            'children' => $validated['children'],
+            'pets' => $request->boolean('pets'),
+
+            'coupon_id' => null,
+
+            'amount' => $result['total_price'],
+
+            'full_name' => $validated['full_name'],
+            'phone' => $validated['phone'],
+            'email' => $validated['email'],
+
+            'status' => 'неоплаченный',
+        ]);
 
         return redirect()->route('booking.success');
     }

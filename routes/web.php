@@ -17,6 +17,9 @@ Route::get('/booking/{house}', [BookingController::class, 'index'])
     ->whereNumber('house')
     ->name('booking.index');
 
+Route::post('/booking', [BookingController::class, 'store'])
+    ->name('booking.store');
+
 Route::get('/booking/success', function () {
     return view('success');
 })->name('booking.success');

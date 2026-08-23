@@ -92,7 +92,7 @@ Theme Version:	9.2.0
 		$('#bookNowArrivalHeader, #bookNowDepartureHeader').datepicker('hide').blur();
 	});
 
-	$('#bookNowArrival').datepicker({
+	$('#bookNowArrival').datepicker({		
 		defaultDate: '+1d',
 		startDate: '+1d',
 		autoclose: true,
@@ -101,7 +101,7 @@ Theme Version:	9.2.0
 		rtl: (($('html[dir="rtl"]').get(0)) ? true : false)
 	});
 
-	$('#bookNowDeparture').datepicker({
+	$('#bookNowDeparture').datepicker({		
 		defaultDate: '+2d',
 		startDate: '+2d',
 		autoclose: true,
