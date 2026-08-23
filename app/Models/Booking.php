@@ -22,7 +22,6 @@ class Booking extends Model
         'status',
     ];
 
-
     public function house()
     {
         return $this->belongsTo(House::class);
