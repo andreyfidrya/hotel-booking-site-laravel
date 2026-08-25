@@ -103,6 +103,9 @@
 										<div class="form-group col">
 											<div class="form-control-custom form-control-custom-dark form-control-datepicker-custom">
 												<input type="text" value="" class="form-control text-2" data-msg-required="This field is required." placeholder="Дата заезда" name="arrival_date" id="bookNowArrival" required>
+												@error('wrong_date')
+													<strong><div class="text-danger">{{ $message }}</div></strong>
+												@enderror
 											</div>
 										</div>
 									</div>

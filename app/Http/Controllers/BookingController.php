@@ -73,6 +73,19 @@ class BookingController extends Controller
             $request->boolean('pets')
         );
 
+        $exists = Booking::where('house_id', $validated['house_id'])
+        ->where('arrival_date', '<', $validated['departure_date'])
+        ->where('departure_date', '>', $validated['arrival_date'])
+        ->exists();
+
+        if ($exists) {
+            return back()
+                ->withErrors([
+                    'wrong_date' => 'Этот домик уже забронирован на выбранные даты.'
+                ])
+                ->withInput();
+        }
+
         Booking::create([
             'house_id' => $validated['house_id'],
             'user_id' => auth()->id(),
