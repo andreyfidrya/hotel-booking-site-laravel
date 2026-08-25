@@ -97,44 +97,5 @@
 
 				</div>
 
-				<section class="section section-tertiary section-no-border m-0">
-					<div class="container">
-						<div class="row align-items-center">
-							<div class="col-lg-3 mt-1 pt-2">
-
-								<p class="lead p-0 m-0 text-3 opacity-7 text-uppercase">Sign Up Now For</p>
-								<h4 class="mb-1 mt-0 text-light font-weight-bold text-5-5 p-relative bottom-4">Exclusive Special Offers:</h4>
-
-							</div>
-							<div class="col-lg-9">
-
-								<div class="alert alert-success d-none" id="newsletterSuccess">
-									<strong>Success!</strong> You've been added to our email list.
-								</div>
-
-								<div class="alert alert-danger d-none" id="newsletterError"></div>
-
-								<form id="newsletterForm" action="php/newsletter-subscribe.php" method="POST">
-									<div class="row">
-										<div class="form-group col-md-5">
-											<div class="form-control-custom">
-												<input type="text" class="form-control form-control-lg py-3 text-2 mt-2" id="newsletterName" placeholder="Full Name *" required>
-											</div>
-										</div>
-										<div class="form-group col-md-4">
-											<div class="form-control-custom">
-												<input type="email" class="form-control form-control-lg py-3 text-2 mt-2" id="newsletterEmail" placeholder="Email Address *" 
-												required>
-											</div>
-										</div>
-										<div class="form-group col-md-3">
-											<button type="submit" class="btn btn-primary font-weight-bold text-uppercase py-3 w-100 mt-2">Subscribe Now</button>
-										</div>
-									</div>
-								</form>
-
-							</div>
-						</div>
-					</div>
-				</section>	
+					
 </x-layouts.porto>
