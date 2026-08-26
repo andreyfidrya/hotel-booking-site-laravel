@@ -86,7 +86,7 @@ class BookingController extends Controller
                 ->withInput();
         }
 
-        Booking::create([
+        $booking = Booking::create([
             'house_id' => $validated['house_id'],
             'user_id' => auth()->id(),
             'arrival_date' => $validated['arrival_date'],
@@ -106,7 +106,14 @@ class BookingController extends Controller
             'status' => 'неоплаченный',
         ]);
 
-        return redirect()->route('booking.success');
+        return redirect()->route('booking.success', $booking);
+    }
+
+    public function success(Booking $booking)
+    {
+        $booking->load('house');
+
+        return view('success', compact('booking'));
     }
     
 }

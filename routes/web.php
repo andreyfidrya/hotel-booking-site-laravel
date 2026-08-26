@@ -20,9 +20,8 @@ Route::get('/booking/{house}', [BookingController::class, 'index'])
 Route::post('/booking', [BookingController::class, 'store'])
     ->name('booking.store');
 
-Route::get('/booking/success', function () {
-    return view('success');
-})->name('booking.success');
+Route::get('/booking/success/{booking}', [BookingController::class, 'success'])
+    ->name('booking.success');
 
 Route::post('/booking/calculate', [BookingController::class, 'calculatePrice'])->name('booking.calculate');
 
