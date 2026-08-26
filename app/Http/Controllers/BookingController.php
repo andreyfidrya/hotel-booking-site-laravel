@@ -113,7 +113,12 @@ class BookingController extends Controller
     {
         $booking->load('house');
 
-        return view('success', compact('booking'));
+        $user = \App\Models\User::where('email', $booking->email)->first();
+
+        return view('success', [
+        'booking' => $booking,
+        'user' => $user,
+        ]);
     }
     
 }

@@ -13,6 +13,7 @@ class UsersTableSeeder extends Seeder
         DB::table('users')->insert([
             [
                 'name' => 'Admin',
+                'phone' => '+380501112204',
                 'email' => 'admin@example.com',
                 'password' => Hash::make('12345678'),
                 'usertype' => 'admin', // если есть такой столбец
@@ -21,6 +22,7 @@ class UsersTableSeeder extends Seeder
             ],
             [
                 'name' => 'User',
+                'phone' => '+380501112206',
                 'email' => 'user@example.com',
                 'password' => Hash::make('12345678'),
                 'usertype' => 'user',

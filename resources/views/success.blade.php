@@ -57,6 +57,6 @@
             </a>
         </div>
 
-    </div>
+    </div>    
 
 </x-layouts.porto>
