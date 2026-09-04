@@ -14,10 +14,13 @@ class BookingController extends Controller
     public function index(House $house)
     {
         $houses = House::with('housetype')->get();
+
+        $user = auth()->user();
         
         return view('booking', [
             'houses' => $houses,
-            'selectedHouse' => $house
+            'selectedHouse' => $house,
+            'user' => $user
         ]);
     }
 

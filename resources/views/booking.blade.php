@@ -64,7 +64,12 @@
 								<div class="row">
 									<div class="form-group col mb-4">
 										<div class="form-control-custom form-control-custom-dark">
-											<input type="text" class="form-control text-3" id="bookNowFullName" name="full_name" placeholder="Фамилия Имя Отчество">
+											<input type="text" 
+											class="form-control text-3" 
+											id="bookNowFullName" 
+											name="full_name" 
+											placeholder="Фамилия Имя Отчество" 
+											value="{{ old('full_name', $user?->name) }}">
 										</div>
 									</div>	
 								</div>
@@ -75,12 +80,17 @@
 								id="phone"
 								name="phone"
 								placeholder="+380 XX XXX XX XX"
+								value="{{ old('phone', $user?->phone) }}"
 								required>	
 
 								<div class="row">						
 									<div class="form-group col mb-4">
 										<div class="form-control-custom form-control-custom-dark">
-											<input type="email" class="form-control text-3" id="bookNowStreetAdd2" name="email" placeholder="Адрес электронной почты">
+											<input type="email" class="form-control text-3" 
+											id="bookNowStreetAdd2" 
+											name="email" 
+											placeholder="Адрес электронной почты"
+											value="{{ old('email', $user?->email) }}">
 										</div>
 									</div>	
 								</div>
