@@ -17,6 +17,10 @@ Route::get('/booking/{house}', [BookingController::class, 'index'])
     ->whereNumber('house')
     ->name('booking.index');
 
+Route::get('/bookings', [BookingController::class, 'bookings'])
+    ->middleware('auth')
+    ->name('bookings.index');
+
 Route::post('/booking', [BookingController::class, 'store'])
     ->name('booking.store');
 

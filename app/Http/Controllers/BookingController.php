@@ -86,9 +86,19 @@ class BookingController extends Controller
                 ->withInput();
         }
 
+        $userId = auth()->id();
+
+        if (!$userId) {
+            $user = \App\Models\User::where('email', $validated['email'])->first();
+
+            if ($user) {
+                $userId = $user->id;
+            }
+        }
+
         $booking = Booking::create([
             'house_id' => $validated['house_id'],
-            'user_id' => auth()->id(),
+            'user_id' => $userId,
             'arrival_date' => $validated['arrival_date'],
             'departure_date' => $validated['departure_date'],
             'adults' => $validated['adults'],
