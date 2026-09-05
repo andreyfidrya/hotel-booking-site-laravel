@@ -21,6 +21,10 @@ Route::get('/bookings', [BookingController::class, 'bookings'])
     ->middleware('auth')
     ->name('bookings.index');
 
+Route::get('/admin/bookings', [BookingController::class, 'adminBookings'])
+    ->middleware('auth')
+    ->name('admin.bookings.index');
+
 Route::post('/booking', [BookingController::class, 'store'])
     ->name('booking.store');
 

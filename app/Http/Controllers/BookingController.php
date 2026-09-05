@@ -133,5 +133,15 @@ class BookingController extends Controller
         'user' => $user,
         ]);
     }
+
+    public function bookings()
+    {
+        
+    }
+
+    public function adminBookings()
+    {
+        
+    }
     
 }

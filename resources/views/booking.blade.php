@@ -55,6 +55,7 @@
 										</div>
 									</div>								
 								@endforeach
+								
 							</div>
 
 							<div class="bg-color-quaternary p-5 mt-4">
