@@ -8,6 +8,19 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        return view('dashboard');
+        
+    $currentBookings = auth()->user()
+        ->bookings()
+        ->whereDate('departure_date', '>=', today())
+        ->orderBy('arrival_date')
+        ->get();
+
+    $archiveBookings = auth()->user()
+        ->bookings()
+        ->whereDate('departure_date', '<', today())
+        ->orderByDesc('arrival_date')
+        ->get();
+
+        return view('dashboard', compact('currentBookings','archiveBookings'));
     }
 }

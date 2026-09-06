@@ -22,6 +22,11 @@ class Booking extends Model
         'status',
     ];
 
+    protected $casts = [
+        'arrival_date' => 'date',
+        'departure_date' => 'date',
+    ];
+
     public function house()
     {
         return $this->belongsTo(House::class);
