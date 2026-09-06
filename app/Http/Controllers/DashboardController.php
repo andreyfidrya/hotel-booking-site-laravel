@@ -11,12 +11,14 @@ class DashboardController extends Controller
         
     $currentBookings = auth()->user()
         ->bookings()
+        ->with('house')
         ->whereDate('departure_date', '>=', today())
         ->orderBy('arrival_date')
         ->get();
 
     $archiveBookings = auth()->user()
         ->bookings()
+        ->with('house')
         ->whereDate('departure_date', '<', today())
         ->orderByDesc('arrival_date')
         ->get();
