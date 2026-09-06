@@ -1,13 +1,14 @@
 <?php
 
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\Admin\DashboardController as AdminDashboardController;
 use App\Http\Controllers\Admin\HouseController;
 use App\Http\Controllers\Admin\HousetypeController;
 use App\Http\Controllers\Admin\FacilityController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BookingController;
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DashboardController;
+use Illuminate\Support\Facades\Route; 
 
 Route::get('/', [HomeController::class, 'index'])->name('home.index');
 
@@ -33,9 +34,9 @@ Route::get('/booking/success/{booking}', [BookingController::class, 'success'])
 
 Route::post('/booking/calculate', [BookingController::class, 'calculatePrice'])->name('booking.calculate');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])
+    ->middleware(['auth', 'verified'])
+    ->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -44,7 +45,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::prefix('admin-panel')->name('admin.')->middleware(['auth', 'admin'])->group(function() {
-    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/', [AdminDashboardController::class, 'index'])->name('dashboard');
     
     Route::resource('houses', HouseController::class);
     
