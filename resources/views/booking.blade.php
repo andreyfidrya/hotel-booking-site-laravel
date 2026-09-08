@@ -36,7 +36,8 @@
 											<input type="radio"
 													name="house_id"
 													value="{{ $house->id }}"
-													{{ $selectedHouse->id == $house->id ? 'checked' : '' }}>
+													{{ $selectedHouse->id == $house->id ? 'checked' : '' }}
+       												onchange="window.location.href='{{ route('booking.index', $house) }}'">
 										</div>
 										<div class="col-md-2 text-center">
 											<label for="bookNowRoom1" class="d-block">
@@ -215,6 +216,10 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
+	
+	const bookedDates = @json($bookedDates);
+	
+	console.log(bookedDates);
 
     const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
@@ -326,4 +331,5 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 
 	});
+	
 </script>

@@ -16,11 +16,16 @@ class BookingController extends Controller
         $houses = House::with('housetype')->get();
 
         $user = auth()->user();
+
+        $bookedDates = Booking::where('house_id', $house->id)
+            ->where('departure_date', '>=', today())
+            ->get(['arrival_date', 'departure_date']);
         
         return view('booking', [
             'houses' => $houses,
             'selectedHouse' => $house,
-            'user' => $user
+            'user' => $user,
+            'bookedDates' => $bookedDates
         ]);
     }
 
