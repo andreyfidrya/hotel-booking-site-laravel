@@ -397,6 +397,13 @@
 		<!-- Current Page Vendor and Views -->
 		<script src="{{ asset('js/views/view.contact.js') }}"></script>
 
+		@if (isset($bookedDates))
+		<script>
+			const bookedDates = @json($bookedDates);
+			console.log('Забронированные даты:', bookedDates);
+		</script>
+		@endif
+
 		<!-- Demo -->
 		<script src="{{ asset('js/demos/demo-hotel.js') }}"></script>
 

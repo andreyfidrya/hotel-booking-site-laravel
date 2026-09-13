@@ -1,4 +1,4 @@
-<x-layouts.porto>
+<x-layouts.porto :booked-dates="$bookedDates">
     <div class="body">
 		<div role="main" class="main">
 			<section class="page-header page-header-modern bg-tertiary m-0 py-0">
@@ -215,13 +215,10 @@
 </x-layouts.porto>
 
 <script>
+
 document.addEventListener('DOMContentLoaded', function () {
 	
-	const bookedDates = @json($bookedDates);
-	
-	console.log(bookedDates);
-
-    const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+	const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
     function calculatePrice() {	
 

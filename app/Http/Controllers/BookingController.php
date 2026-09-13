@@ -17,9 +17,22 @@ class BookingController extends Controller
 
         $user = auth()->user();
 
-        $bookedDates = Booking::where('house_id', $house->id)
+        $bookings = Booking::where('house_id', $house->id)
             ->where('departure_date', '>=', today())
             ->get(['arrival_date', 'departure_date']);
+
+        $bookedDates = [];
+
+        foreach ($bookings as $booking) {
+            $date = Carbon::parse($booking->arrival_date);
+            $departure = Carbon::parse($booking->departure_date);
+
+            while ($date->lt($departure)) {
+                $bookedDates[] = $date->format('Y-m-d');
+
+                $date->addDay();
+            }
+        }
         
         return view('booking', [
             'houses' => $houses,
