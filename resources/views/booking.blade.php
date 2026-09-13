@@ -76,6 +76,8 @@
 									</div>	
 								</div>
 
+								@error('full_name') <div class="text-danger mt-2"> {{ $message }} </div> @enderror
+
 								<input
 								type="tel"
 								class="form-control text-3"
@@ -83,7 +85,9 @@
 								name="phone"
 								placeholder="+380 XX XXX XX XX"
 								value="{{ old('phone', $user?->phone) }}"
-								required>	
+								required>
+								
+								@error('phone') <div class="text-danger mt-2"> {{ $message }} </div> @enderror
 
 								<div class="row">						
 									<div class="form-group col mb-4">
@@ -96,6 +100,8 @@
 										</div>
 									</div>	
 								</div>
+
+								@error('email') <div class="text-danger mt-2"> {{ $message }} </div> @enderror
 
 							</div>
 
