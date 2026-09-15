@@ -20,6 +20,22 @@
 				</div>
 			</section>
 
+			@if ($errors->any())
+			<div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
+				<button type="button"
+						class="btn-close"
+						data-bs-dismiss="alert"
+						aria-label="Close"></button>
+
+				<ul class="mb-0 mt-2"
+					style="display: inline-block; text-align: left; padding-left: 20px;">
+					@foreach ($errors->all() as $error)
+						<li>{{ $error }}</li>
+					@endforeach
+				</ul>
+			</div>
+			@endif
+
 			<div class="container py-5">
 
 				<form id="bookForm" action="{{ route('booking.store') }}" method="POST">

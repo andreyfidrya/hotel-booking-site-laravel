@@ -40,7 +40,8 @@ class Save extends FormRequest
         return [
             'arrival_date.after_or_equal' => 'Дата заезда не может быть в прошлом.',
             'departure_date.after' => 'Дата выезда должна быть позже даты заезда.',
-
+            'full_name.required' => 'Введите фамилию, имя, отчество',
+            'email.required' => 'Введите адрес электронной почты',
             'phone.regex' => 'Введите номер в формате +380XXXXXXXXX.',
         ];
     }
