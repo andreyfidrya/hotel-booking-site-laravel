@@ -41,12 +41,11 @@
                         @endforeach
                     </td>
                     <td style="text-align: center; vertical-align: middle;">
-                        <a href="" 
-                            class="btn btn-sm btn-success w-100 mb-2">
+                        <button type="button"
+                                class="btn btn-sm btn-success w-100 mb-2 house-calendar">                                
                             Календарь
-                        </a>
-                        <a href="{{ route('admin.houses.edit', $house) }}" 
-                           class="btn btn-sm btn-primary w-100 mb-2">
+                        </button>
+                        <a href="{{ route('admin.houses.edit', $house) }}" class="btn btn-sm btn-primary w-100 mb-2">
                             Редактировать
                         </a>
                         <form action="{{ route('admin.houses.destroy', $house) }}" 
@@ -64,8 +63,33 @@
 
                 @endforeach
             
-        </tbody>
+        </tbody>        
     </table>
 
+    <input type="text"
+       id="calendarInput"
+       style="position: absolute; opacity: 0; pointer-events: none;">
+       
+    @push('scripts')
+
+    <script>
+        $(document).ready(function () {
+
+            $('#calendarInput').datepicker({
+                format: 'yyyy-mm-dd',
+                autoclose: true
+            });
+
+            $('.house-calendar').on('click', function () {
+                $('#calendarInput').datepicker('show');
+            });
+
+        });
+    </script>
+
+    @endpush
+
 </x-layouts.admin>
+
+
 
