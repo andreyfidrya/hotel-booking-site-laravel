@@ -41,10 +41,14 @@
                         @endforeach
                     </td>
                     <td style="text-align: center; vertical-align: middle;">
-                        <button type="button"
-                                class="btn btn-sm btn-success w-100 mb-2 house-calendar">                                
-                            Календарь
-                        </button>
+                        <div class="position-relative">
+                            <button type="button"
+                                    class="btn btn-sm btn-success w-100 mb-2 house-calendar">
+                                Календарь
+                            </button>
+
+                            <div class="calendar-container"></div>
+                        </div>
                         <a href="{{ route('admin.houses.edit', $house) }}" class="btn btn-sm btn-primary w-100 mb-2">
                             Редактировать
                         </a>
@@ -66,28 +70,47 @@
         </tbody>        
     </table>
 
-    <input type="text"
-       id="calendarInput"
-       style="position: absolute; opacity: 0; pointer-events: none;">
-       
+    <div id="calendarContainer"></div>
+
     @push('scripts')
 
     <script>
-        $(document).ready(function () {
+        
+    $(document).ready(function () {
 
-            $('#calendarInput').datepicker({
+        $('.house-calendar').on('click', function () {
+
+            let button = $(this);
+            let container = button.siblings('.calendar-container');
+
+            // Закрываем календарь
+            if (container.hasClass('calendar-open')) {
+                container.hide();
+                container.removeClass('calendar-open');
+                button.text('Календарь');
+
+                return;
+            }
+
+            // Создаём календарь
+            container.datepicker({
                 format: 'yyyy-mm-dd',
-                autoclose: true
+                autoclose: false
             });
 
-            $('.house-calendar').on('click', function () {
-                $('#calendarInput').datepicker('show');
-            });
+            container.show();
+            container.datepicker('show');
+
+            container.addClass('calendar-open');
+            button.text('Закрыть');
 
         });
+
+    });
+
     </script>
 
-    @endpush
+    @endpush    
 
 </x-layouts.admin>
 
