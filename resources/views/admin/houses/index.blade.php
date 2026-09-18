@@ -68,9 +68,7 @@
                 @endforeach
             
         </tbody>        
-    </table>
-
-    <div id="calendarContainer"></div>
+    </table>    
 
     @push('scripts')
 
