@@ -125,12 +125,25 @@
 
                 let currentDate = year + '-' + month + '-' + day;
 
+                let today = new Date();
+
+                today.setHours(0, 0, 0, 0);
+
                 if (bookedDates.includes(currentDate)) {
 
                     return [
                         false,
                         'booked-date',
                         'Забронировано'
+                    ];
+                }
+
+                if (date < today) {
+
+                    return [
+                        false,
+                        'past-date',
+                        'Прошедшая дата'
                     ];
                 }
 
