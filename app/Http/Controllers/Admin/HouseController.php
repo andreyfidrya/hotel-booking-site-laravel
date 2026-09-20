@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\House;
 use App\Models\Housetype;
+use App\Models\Booking;
+use Carbon\Carbon;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\Admin\House\Store as StoreRequest;
@@ -13,9 +15,36 @@ class HouseController extends Controller
 {
     public function index()
     {
-        $houses = House::all();        
+        $houses = House::all();
 
-        return view('admin.houses.index', compact('houses'));
+        $bookedDates = [];
+
+        foreach ($houses as $house) {
+
+            $bookings = Booking::where('house_id', $house->id)
+                ->where('departure_date', '>=', today())
+                ->get(['arrival_date', 'departure_date']);
+
+            $bookedDates[$house->id] = [];
+
+            foreach ($bookings as $booking) {
+
+                $date = Carbon::parse($booking->arrival_date);
+                $departure = Carbon::parse($booking->departure_date);
+
+                while ($date->lt($departure)) {
+
+                    $bookedDates[$house->id][] = $date->format('Y-m-d');
+
+                    $date->addDay();
+                }
+            }
+        }
+
+        return view(
+            'admin.houses.index',
+            compact('houses', 'bookedDates')
+        );
     }
 
     public function create()

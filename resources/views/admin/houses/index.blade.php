@@ -1,4 +1,4 @@
-<x-layouts.admin>
+<x-layouts.admin :booked-dates="$bookedDates">
 
     <h1 class="mb-4">Все домики</h1>
 
@@ -47,7 +47,9 @@
                                 Календарь
                             </button>
 
-                            <div class="calendar-container"></div>
+                            <div class="calendar-container"
+                                data-booked-dates='@json($bookedDates[$house->id] ?? [])'>
+                            </div>
                         </div>
                         <a href="{{ route('admin.houses.edit', $house) }}" class="btn btn-sm btn-primary w-100 mb-2">
                             Редактировать
@@ -68,7 +70,20 @@
                 @endforeach
             
         </tbody>        
-    </table>    
+    </table>
+    
+    <style> 
+        .booked-date { 
+        background-color: #dc3545 !important; 
+        color: white !important; 
+        border-radius: 4px; 
+        } 
+        .past-date {
+        background-color: #e9ecef !important;
+        color: #6c757d !important;
+        border-radius: 4px;
+        }
+    </style>
 
     @push('scripts')
 
@@ -90,10 +105,41 @@
                 return;
             }
 
+            // Получаем занятые даты именно этого домика
+            let bookedDates = JSON.parse(
+                container.attr('data-booked-dates')
+            );
+
+            console.log('Занятые даты:', bookedDates);            
+            console.log('Массив:', Array.isArray(bookedDates));            
+
             // Создаём календарь
             container.datepicker({
                 format: 'yyyy-mm-dd',
-                autoclose: false
+                autoclose: false,
+                beforeShowDay: function (date) {
+
+                let year = date.getFullYear();
+                let month = String(date.getMonth() + 1).padStart(2, '0');
+                let day = String(date.getDate()).padStart(2, '0');
+
+                let currentDate = year + '-' + month + '-' + day;
+
+                if (bookedDates.includes(currentDate)) {
+
+                    return [
+                        false,
+                        'booked-date',
+                        'Забронировано'
+                    ];
+                }
+
+                return [
+                    true,
+                    '',
+                    ''
+                ];
+            }
             });
 
             container.show();
