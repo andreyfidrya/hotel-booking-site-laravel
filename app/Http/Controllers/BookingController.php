@@ -21,7 +21,7 @@ class BookingController extends Controller
             ->where('departure_date', '>=', today())
             ->get(['arrival_date', 'departure_date']);
 
-        $bookedDates = [];
+        $bookedDates = [];        
 
         foreach ($bookings as $booking) {
             $date = Carbon::parse($booking->arrival_date);
@@ -32,13 +32,13 @@ class BookingController extends Controller
 
                 $date->addDay();
             }
-        }
+        }        
         
         return view('booking', [
             'houses' => $houses,
             'selectedHouse' => $house,
             'user' => $user,
-            'bookedDates' => $bookedDates
+            'bookedDates' => $bookedDates,            
         ]);
     }
 

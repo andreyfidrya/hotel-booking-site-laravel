@@ -105,13 +105,13 @@ function isDateBooked(date) {
 	});
 
 	$('#bookNowArrival').datepicker({		
-		defaultDate: '+1d',
-		startDate: '+1d',
-		autoclose: true,
-		orientation: (($('html[dir="rtl"]').get(0)) ? 'bottom left' : 'bottom left'),
-		container: '#bookFormDetails',
-		rtl: (($('html[dir="rtl"]').get(0)) ? true : false),
-		beforeShowDay: isDateBooked		
+    defaultDate: '+1d',
+    startDate: '+1d',
+    autoclose: true,
+    orientation: (($('html[dir="rtl"]').get(0)) ? 'bottom left' : 'bottom left'),
+    container: '#bookFormDetails',
+    rtl: (($('html[dir="rtl"]').get(0)) ? true : false),
+    beforeShowDay: isDateBooked
 	});
 
 	$('#bookNowDeparture').datepicker({		
@@ -122,6 +122,24 @@ function isDateBooked(date) {
 		container: '#bookFormDetails',
 		rtl: (($('html[dir="rtl"]').get(0)) ? true : false),
 		beforeShowDay: isDateBooked
+	});
+
+	$('#bookNowArrival').on('changeDate', function(e) {
+
+		const arrivalDate = e.date;
+
+		const minDeparture = new Date(arrivalDate);
+		minDeparture.setDate(minDeparture.getDate() + 1);
+
+		$('#bookNowDeparture').datepicker(
+			'setStartDate',
+			minDeparture
+		);
+
+		$('#bookNowDeparture').datepicker(
+			'setDate',
+			minDeparture
+		);
 	});
 
 	// Book Form
