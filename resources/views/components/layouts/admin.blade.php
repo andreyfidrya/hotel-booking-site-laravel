@@ -320,7 +320,7 @@
 				                    <li>
 				                        <a class="nav-link" href="#">
 				                            <i class="bx bx-cart-alt" aria-hidden="true"></i>
-				                            <span>Забронированные домики</span>
+				                            <span>Бронирования</span>
 				                        </a>				                        
 				                    </li>
 									<li>
