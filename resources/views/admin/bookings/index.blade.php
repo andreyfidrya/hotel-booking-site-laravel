@@ -1,3 +1,3 @@
 <x-layouts.admin>
-bookings
+bookings page
 </x-layouts.admin>

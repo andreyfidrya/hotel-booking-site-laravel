@@ -152,10 +152,10 @@ class BookingController extends Controller
         ]);
     }
 
-    public function bookings()
+    /*public function bookings()
     {
         
-    }
+    }*/
 
     public function adminBookings()
     {
