@@ -159,7 +159,7 @@ class BookingController extends Controller
 
     public function adminBookings()
     {
-        
+        return view('admin.bookings.index');
     }
     
 }

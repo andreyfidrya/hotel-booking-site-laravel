@@ -318,7 +318,7 @@
 										</ul>													                       
 				                    </li>									
 				                    <li>
-				                        <a class="nav-link" href="#">
+				                        <a class="nav-link" href="{{ route('admin.bookings.index') }}">
 				                            <i class="bx bx-cart-alt" aria-hidden="true"></i>
 				                            <span>Бронирования</span>
 				                        </a>				                        
