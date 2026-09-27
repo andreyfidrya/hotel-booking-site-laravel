@@ -42,8 +42,7 @@
                     </td>
                     <td style="text-align: center; vertical-align: middle;">
                         <div class="position-relative">
-                            <button type="button"
-                                    class="btn btn-sm btn-success w-100 mb-2 house-calendar">
+                            <button type="button" class="btn btn-sm btn-success w-100 mb-2 house-calendar">
                                 Календарь
                             </button>
 
