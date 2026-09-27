@@ -150,16 +150,6 @@ class BookingController extends Controller
         'booking' => $booking,
         'user' => $user,
         ]);
-    }
-
-    /*public function bookings()
-    {
-        
-    }*/
-
-    public function adminBookings()
-    {
-        return view('admin.bookings.index');
-    }
+    }    
     
 }

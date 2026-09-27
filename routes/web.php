@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\HousetypeController;
 use App\Http\Controllers\Admin\FacilityController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\Admin\BookingController as AdminBookingController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route; 
 
@@ -21,10 +22,6 @@ Route::get('/booking/{house}', [BookingController::class, 'index'])
 /*Route::get('/bookings', [BookingController::class, 'bookings'])
     ->middleware('auth')
     ->name('bookings.index');*/
-
-Route::get('/admin/bookings', [BookingController::class, 'adminBookings'])
-    ->middleware('auth')
-    ->name('admin.bookings.index');
 
 Route::post('/booking', [BookingController::class, 'store'])
     ->name('booking.store');
@@ -45,13 +42,15 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::prefix('admin-panel')->name('admin.')->middleware(['auth', 'admin'])->group(function() {
-    Route::get('/', [AdminDashboardController::class, 'index'])->name('dashboard');
+    Route::get('/', [AdminDashboardController::class, 'index'])->name('dashboard');    
     
     Route::resource('houses', HouseController::class);
     
     Route::resource('facilities', FacilityController::class);
     
-    Route::resource('housetypes', HousetypeController::class);    
+    Route::resource('housetypes', HousetypeController::class);
+    
+    Route::resource('bookings', AdminBookingController::class);
     
 });
 
