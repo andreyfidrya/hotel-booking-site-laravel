@@ -39,9 +39,9 @@
                     <td style="text-align: center; vertical-align: middle;">{{$booking->amount}}</td>
                     <td style="text-align: center; vertical-align: middle;">{{$booking->status}}</td>
                     <td style="text-align: center; vertical-align: middle;">
-                        <button type="button" class="btn btn-sm btn-success w-100 mb-2 house-calendar">
+                        <a href="{{ route('admin.bookings.show', [ $booking->id ]) }}" type="button" class="btn btn-sm btn-success w-100 mb-2 house-calendar">
                             Просмотр
-                        </button>
+                        </a>
                         <a href="{{ route('admin.bookings.edit', $booking) }}" class="btn btn-sm btn-primary w-100 mb-2">
                             Редактирование
                         </a>

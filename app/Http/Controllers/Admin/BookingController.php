@@ -26,14 +26,18 @@ class BookingController extends Controller
         //
     }
 
-    public function show(string $id)
+    public function show($id)
     {
-        //
+        $booking = Booking::findOrFail($id);
+
+        return view('admin.bookings.show', compact('booking'));
     }
 
-    public function edit(string $id)
+    public function edit($id)
     {
-        //
+        $booking = Booking::findOrFail($id);    
+
+        return view('admin.bookings.edit', compact('booking'));
     }
 
     public function update(Request $request, string $id)
