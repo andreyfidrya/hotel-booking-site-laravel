@@ -11,9 +11,11 @@ class BookingController extends Controller
 {
     public function index()
     {
-        $bookings = Booking::all();     
+        $bookings = Booking::all();
         
-        return view('admin.bookings.index', compact('bookings'));
+        $statuses = [ 'неоплаченный', 'оплачен', 'отменен' ];        
+        
+        return view('admin.bookings.index', compact('bookings', 'statuses'));
     }
 
      public function create()
