@@ -89,8 +89,7 @@
         <div>
             @foreach ($statuses as $status)
                 <div class="form-check">
-                    <input type="radio"
-                        id="status_unpaid"
+                    <input type="radio"                        
                         name="status"
                         value={{$status}}
                         class="form-check-input @error('status') is-invalid @enderror"
@@ -100,15 +99,14 @@
                         {{$status}}
                     </label>
                 </div>
-            @endforeach            
-        </div>
+            @endforeach      
 
-        @error('status')
-            <div class="invalid-feedback d-block">
-                {{ $message }}
-            </div>
-        @enderror
-    </div>
+            @error('status')
+                <div class="invalid-feedback d-block">
+                    {{ $message }}
+                </div>
+            @enderror
+        </div>
 
         <div class="d-flex gap-2">
             <button type="submit" 
