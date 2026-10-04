@@ -37,14 +37,20 @@ class BookingController extends Controller
     {
         $booking = Booking::findOrFail($id); 
         
-        $statuses = [ 'неоплаченный', 'оплачен', 'отменен' ];
+        $statuses = [ 'неоплаченный', 'оплачен'];
 
         return view('admin.bookings.edit', compact('booking', 'statuses'));
     }
 
     public function update(SaveRequest $request, Booking $booking)
     {
-        //
+        $data = $request->only(['full_name','phone', 'email', 'status']);
+
+        $booking->update($data);
+
+        return redirect()
+        ->route('admin.bookings.index')
+        ->with('success', 'Бронирование успешно обновлено');
     }
 
     public function destroy(string $id)
