@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Booking;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
-use App\Models\Booking;
+use App\Http\Requests\Admin\Booking\Save as SaveRequest;
 
 class BookingController extends Controller
 {
@@ -42,7 +42,7 @@ class BookingController extends Controller
         return view('admin.bookings.edit', compact('booking', 'statuses'));
     }
 
-    public function update(Request $request, string $id)
+    public function update(SaveRequest $request, Booking $booking)
     {
         //
     }

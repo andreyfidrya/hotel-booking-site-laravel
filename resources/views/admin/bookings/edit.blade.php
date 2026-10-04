@@ -17,8 +17,7 @@
     </div>
     @endif
 
-    <form action="{{ route('admin.bookings.update', $booking) }}" 
-          method="POST">
+    <form action="{{ route('admin.bookings.update', $booking) }}" method="POST">
 
         @csrf
         @method('PUT')
