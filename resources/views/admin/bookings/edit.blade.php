@@ -85,46 +85,22 @@
         <label class="form-label">
             Статус
         </label>
-
+        
         <div>
-            <div class="form-check">
-                <input type="radio"
-                    id="status_unpaid"
-                    name="status"
-                    value="неоплаченный"
-                    class="form-check-input @error('status') is-invalid @enderror"
-                    {{ old('status', $booking->status) === 'неоплаченный' ? 'checked' : '' }}>
+            @foreach ($statuses as $status)
+                <div class="form-check">
+                    <input type="radio"
+                        id="status_unpaid"
+                        name="status"
+                        value={{$status}}
+                        class="form-check-input @error('status') is-invalid @enderror"
+                        {{ old('status', $booking->status) === $status ? 'checked' : '' }}>
 
-                <label for="status_unpaid" class="form-check-label">
-                    Неоплаченный
-                </label>
-            </div>
-
-            <div class="form-check">
-                <input type="radio"
-                    id="status_paid"
-                    name="status"
-                    value="оплачен"
-                    class="form-check-input @error('status') is-invalid @enderror"
-                    {{ old('status', $booking->status) === 'оплачен' ? 'checked' : '' }}>
-
-                <label for="status_paid" class="form-check-label">
-                    Оплачен
-                </label>
-            </div>
-
-            <div class="form-check">
-                <input type="radio"
-                    id="status_cancelled"
-                    name="status"
-                    value="отменен"
-                    class="form-check-input @error('status') is-invalid @enderror"
-                    {{ old('status', $booking->status) === 'отменен' ? 'checked' : '' }}>
-
-                <label for="status_cancelled" class="form-check-label">
-                    Отменен
-                </label>
-            </div>
+                    <label for="status_unpaid" class="form-check-label">
+                        {{$status}}
+                    </label>
+                </div>
+            @endforeach            
         </div>
 
         @error('status')
