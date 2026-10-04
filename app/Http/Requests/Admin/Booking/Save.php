@@ -16,7 +16,7 @@ class Save extends FormRequest
         return [
             'full_name' => ['required', 'min:5', 'string', 'max:70'],
             'phone' => ['required', 'string', 'regex:/^\+380\d{9}$/'],
-            'email' => ['nullable', 'string', 'email', 'max:70'],
+            'email' => ['required', 'string', 'email:rfc,dns', 'max:70'],
         ];
     }
 
