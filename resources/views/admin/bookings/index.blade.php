@@ -49,10 +49,13 @@
                             @csrf
                             @method('PUT')
 
-                            <button type="submit" class="btn btn-sm btn-danger w-100">
+                            <button 
+                                type="submit" 
+                                class="btn btn-sm btn-danger w-100"
+                                onclick="return confirm('Вы действительно хотите отменить бронирование?')">
                                 Отмена
                             </button>
-                        </form>
+                        </form> 
                     </td>                                  
                 </tr>
 
