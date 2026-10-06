@@ -53,6 +53,16 @@ class BookingController extends Controller
         ->with('success', 'Бронирование успешно обновлено');
     }
 
+    public function updateStatus($id)
+    {
+        $booking = Booking::findOrFail($id);
+
+        $booking->status = 'отменен';
+        $booking->save();
+
+        return redirect()->route('admin.bookings.index'); 
+    }
+
     public function destroy(string $id)
     {
         //

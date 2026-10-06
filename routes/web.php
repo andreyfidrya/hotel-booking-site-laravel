@@ -51,6 +51,8 @@ Route::prefix('admin-panel')->name('admin.')->middleware(['auth', 'admin'])->gro
     Route::resource('housetypes', HousetypeController::class);
     
     Route::resource('bookings', AdminBookingController::class);
+
+    Route::put('/bookings/{booking}/status', [AdminBookingController::class, 'updateStatus'])->name('bookings.update-status');
     
 });
 

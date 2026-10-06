@@ -45,9 +45,14 @@
                         <a href="{{ route('admin.bookings.edit', $booking) }}" class="btn btn-sm btn-primary w-100 mb-2">
                             Редактирование
                         </a>
-                        <button type="submit" class="btn btn-sm btn-danger w-100">
-                            Отмена
-                        </button>
+                        <form action="{{ route('admin.bookings.update-status', $booking->id) }}" method="POST">
+                            @csrf
+                            @method('PUT')
+
+                            <button type="submit" class="btn btn-sm btn-danger w-100">
+                                Отмена
+                            </button>
+                        </form>
                     </td>                                  
                 </tr>
 
