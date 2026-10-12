@@ -19,6 +19,7 @@ class BookingController extends Controller
 
         $bookings = Booking::where('house_id', $house->id)
             ->where('departure_date', '>=', today())
+            ->where('status', '!=', 'отменен')
             ->get(['arrival_date', 'departure_date']);
 
         $bookedDates = [];        
