@@ -293,26 +293,26 @@
 				                    <li class="nav-parent">
 				                        <a class="nav-link">
 				                            <i class="bx bx-home-alt" aria-hidden="true"></i>
-				                            <span>Домики</span>
+				                            <span>Будинки (всі, типи, зручності)</span>
 				                        </a>
 										<ul class="nav nav-children">
 											<li>
 												<a class="nav-link" href="{{ route('admin.houses.index') }}">
-													Все домики
+													Всі будинки
 												</a>
 											</li>
 										</ul>									
 										<ul class="nav nav-children">
 											<li>
 												<a class="nav-link" href="{{ route('admin.housetypes.index') }}">
-													Типы домиков
+													Типи будинків
 												</a>
 											</li>
 										</ul>										
 										<ul class="nav nav-children">
 											<li>
 												<a class="nav-link" href="{{ route('admin.facilities.index') }}">
-													Удобства домиков
+													Зручності будинків
 												</a>
 											</li>
 										</ul>													                       
@@ -320,33 +320,45 @@
 				                    <li>
 				                        <a class="nav-link" href="{{ route('admin.bookings.index') }}">
 				                            <i class="bx bx-cart-alt" aria-hidden="true"></i>
-				                            <span>Бронирования</span>
+				                            <span>Бронювания будинків</span>
 				                        </a>				                        
 				                    </li>
 									<li>
 				                        <a class="nav-link" href="#">
-				                            <i class="bx bx-layout" aria-hidden="true"></i>
-				                            <span>Галерея</span>
+				                            <i class="bx bx-cart-alt" aria-hidden="true"></i>
+				                            <span>Бронювания бані</span>
 				                        </a>				                        
+				                    </li>
+									<li>
+				                        <a class="nav-link" href="#">
+				                            <i class="bx bx-images" aria-hidden="true"></i>
+				                            <span>Галерея</span>
+				                        </a> 				                        
 				                    </li>
 									<li>
 				                        <a class="nav-link" href="#">
 				                            <i class="bx bx-file" aria-hidden="true"></i>
-				                            <span>Акции</span>
+				                            <span>Новини</span>
 				                        </a>				                        
 				                    </li>				                                
 				                    <li>
 				                        <a class="nav-link" href="#">
-				                            <i class="bx bx-cube" aria-hidden="true"></i>
-				                            <span>Купоны на скидку</span>
-				                        </a>				                        
+				                            <i class="bx bx-gift" aria-hidden="true"></i>
+				                            <span>Купони на знижку</span>
+				                        </a> 				                        
 				                    </li>
 									<li>
 				                        <a class="nav-link" href="mailbox-folder.html">
 				                            <span class="float-end badge badge-primary">182</span>
 				                            <i class="bx bx-envelope" aria-hidden="true"></i>
-				                            <span>Сообщения</span>
+				                            <span>Повідомлення</span>
 				                        </a>                        
+				                    </li>
+									<li>
+				                        <a class="nav-link" href="#">
+				                            <i class="bx bx-dollar" aria-hidden="true"></i>
+				                            <span>Прибутки</span>
+				                        </a> 				                        
 				                    </li>
 				                </ul>
 				            </nav>
