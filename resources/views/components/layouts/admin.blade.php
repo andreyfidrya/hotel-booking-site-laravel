@@ -49,7 +49,7 @@
 			<!-- start: header -->
 			<header class="header">
 				<div class="logo-container">
-					<a href="../4.2.0" class="logo">
+					<a href="../" class="logo">
 						<img src="{{ asset('admin/img/logo.png') }}" width="75" height="35" alt="Porto Admin" />
 					</a>
 
