@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Models\Booking;
+use App\Models\House;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\Admin\Booking\Save as SaveRequest;
@@ -18,7 +19,9 @@ class BookingController extends Controller
 
      public function create()
     {
-        //
+        $houses = House::all();        
+        
+        return view('admin.bookings.create', compact('houses'));
     }
 
     public function store(Request $request)

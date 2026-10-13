@@ -5,7 +5,7 @@
 				<div class="container py-2">
 					<div class="row py-3">
 						<div class="col-md-12 align-self-center p-static text-center">
-							<h1 class="text-light mt-4 mb-0 pb-0 font-weight-bold text-8">Заказать сейчас</h1>
+							<h1 class="text-light mt-4 mb-0 pb-0 font-weight-bold text-8">Замовити зараз</h1>
 							<div class="divider divider-light divider-small my-3 text-center">
 								<hr class="mt-2 mx-auto">
 							</div>								
@@ -13,7 +13,7 @@
 						<div class="col-md-12 align-self-center">
 							<ul class="breadcrumb breadcrumb-light d-block mb-4 text-center">
 								<li><a href="{{ route('home.index')}}">Главная</a></li>
-								<li class="active">Заказать сейчас</li>
+								<li class="active">Замовити зараз</li>
 							</ul>
 						</div>
 					</div>
@@ -45,7 +45,7 @@
 
 							<div class="bg-color-quaternary p-5">
 
-								<h3 class="text-5 mt-0 mb-4 pb-0">Выбрать домик</h3>
+								<h3 class="text-5 mt-0 mb-4 pb-0">Обрати будинок</h3>
 								@foreach ($houses as $house)
 									<div class="row align-items-center mb-4">
 										<div class="col-md-1 text-center">
@@ -71,8 +71,7 @@
 											</label>
 										</div>
 									</div>								
-								@endforeach
-								
+								@endforeach								
 							</div>
 
 							<div class="bg-color-quaternary p-5 mt-4">
