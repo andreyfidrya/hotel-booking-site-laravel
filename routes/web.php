@@ -49,6 +49,8 @@ Route::prefix('admin-panel')->name('admin.')->middleware(['auth', 'admin'])->gro
     Route::resource('facilities', FacilityController::class);
     
     Route::resource('housetypes', HousetypeController::class);
+
+    Route::get('/bookings/create/{house}', [AdminBookingController::class, 'create'])->name('bookings.create-house');
     
     Route::resource('bookings', AdminBookingController::class);
 

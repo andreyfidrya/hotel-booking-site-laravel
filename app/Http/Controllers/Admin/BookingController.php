@@ -17,11 +17,14 @@ class BookingController extends Controller
         return view('admin.bookings.index', compact('bookings'));
     }
 
-     public function create()
+     public function create(House $house)
     {
         $houses = House::all();        
         
-        return view('admin.bookings.create', compact('houses'));
+        return view('admin.bookings.create', [
+            'houses' => $houses,
+            'selectedHouse' => $house,
+        ]);
     }
 
     public function store(Request $request)

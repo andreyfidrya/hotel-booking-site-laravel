@@ -5,8 +5,11 @@
         <h3>Обрати будинок</h3>
             @foreach ($houses as $house) 
             <div>                           
-                <input type="radio" name="house_id" value="{{ $house->id }}"
-                onchange="window.location.href='{{ route('admin.bookings.create', $house) }}'">
+                <input type="radio" 
+                name="house_id" 
+                value="{{ $house->id }}"
+                {{ $selectedHouse->id == $house->id ? 'checked' : '' }}
+                onchange="window.location.href='{{ route('admin.bookings.create-house', $house->id) }}'">
                 {{$house->name}}
             </div>
             @endforeach
