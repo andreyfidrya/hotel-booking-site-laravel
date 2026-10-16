@@ -58,5 +58,37 @@
 					<option value="10">10</option>
 				</select>
             </div>
+            <div class="row">
+				<div class="form-check">
+					<input
+						class="form-check-input"
+						type="checkbox"						
+						name="pets"
+						value="1">
+
+					<label class="form-check-label text-2" for="bookNowPets">
+						Проживання с домашніми улюбленцями (кошка або собака)
+					</label>
+				</div>
+		    </div>
+             
+            <div class="row mb-3">      
+                <input type="text" 
+                    class="form-control text-2" 
+                    placeholder="Дата заезда" 
+                    name="arrival_date" 
+                    id="bookNowArrival" 
+                    required>                    
+            </div>
+
+            <div class="row mb-3">    
+                <input type="text" 
+                    class="form-control text-2" 
+                    placeholder="Дата выезда" 
+                    name="departure_date" 
+                    id="bookNowDeparture" 
+                    required>                
+            </div>
+            
     </form>
 </x-layouts.admin>
