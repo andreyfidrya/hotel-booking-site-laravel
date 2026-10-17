@@ -245,7 +245,7 @@
 
         {{-- Кнопка --}}
         <button type="submit" class="btn btn-primary">
-            Сохранить
+            Додати будинок
         </button>
 
     </form>

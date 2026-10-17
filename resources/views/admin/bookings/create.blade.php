@@ -89,6 +89,11 @@
                     id="bookNowDeparture" 
                     required>                
             </div>
+
+            <div class="row mb-3">
+            <button type="submit" class="btn btn-primary">
+                Додати бронювання
+            </button>
             
     </form>
 </x-layouts.admin>
