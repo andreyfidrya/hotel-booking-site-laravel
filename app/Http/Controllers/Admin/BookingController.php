@@ -27,7 +27,7 @@ class BookingController extends Controller
         ]);
     }
 
-    public function store(Request $request)
+    public function store(SaveRequest $request)
     {
         //
     }

@@ -130,9 +130,7 @@
     </div>
     @endif
 
-    <form action="{{ route('admin.houses.store') }}"
-          method="POST"
-          enctype="multipart/form-data">
+    <form action="{{ route('admin.houses.store') }}" method="POST" enctype="multipart/form-data">
 
         @csrf
 
