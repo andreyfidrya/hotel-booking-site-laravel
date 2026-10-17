@@ -44,7 +44,7 @@
             </div>
             Кількість дітей
             <div class="row">
-                <select class="form-select form-control text-2" name="children" data-msg-required="This field is required." id="bookingAdults" required>
+                <select class="form-select form-control text-2" name="children" data-msg-required="This field is required." id="bookingChildren" required>
 					<option value="">Зробіть свій вибір</option>
 					<option value="1">1</option>
 					<option value="2">2</option>
@@ -92,3 +92,19 @@
             
     </form>
 </x-layouts.admin>
+
+<script>
+$(document).ready(function () {
+    $('#bookNowArrival').datepicker({
+        autoclose: true,
+        startDate: '+1d',
+        orientation: 'bottom'
+    });
+
+    $('#bookNowDeparture').datepicker({
+        autoclose: true,
+        startDate: '+2d',
+        orientation: 'bottom'
+    });
+});
+</script>
