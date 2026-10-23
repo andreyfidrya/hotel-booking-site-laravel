@@ -38,6 +38,7 @@ class Save extends FormRequest
     public function messages(): array
     {
         return [
+            'house_id.required' => 'Будь ласка, оберить будинок, який би Ви хотіли замовити',
             'arrival_date.after_or_equal' => 'Дата заезда не может быть в прошлом.',
             'departure_date.after' => 'Дата выезда должна быть позже даты заезда.',
             'full_name.required' => 'Введите фамилию, имя, отчество',

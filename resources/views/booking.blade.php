@@ -162,7 +162,7 @@
 										<div class="form-group col">
 											<div class="form-control-custom form-control-custom-dark">
 												<select class="form-select form-control text-2" name="adults" data-msg-required="This field is required." id="bookingAdults" required>
-													<option value="">Количество взрослых</option>
+													<option value="">Кількість дорослих</option>
 													<option value="1">1</option>
 													<option value="2">2</option>
 													<option value="3">3</option>
@@ -181,7 +181,7 @@
 										<div class="form-group col pb-0 mb-0">
 											<div class="form-control-custom form-control-custom-dark">
 												<select class="form-select form-control text-2" name="children" data-msg-required="This field is required." id="bookingKids" required>
-													<option value="">Количество детей</option>
+													<option value="">Кількість дітей</option>
 													<option value="0">0</option>
 													<option value="1">1</option>
 													<option value="2">2</option>

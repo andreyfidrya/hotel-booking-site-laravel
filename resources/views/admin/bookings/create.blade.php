@@ -13,7 +13,7 @@
 				@endforeach
 			</ul>
 		</div>
-		@endif
+	@endif
     <form action="{{ route('admin.bookings.store') }}" method="POST" enctype="multipart/form-data">
         @csrf               
         
@@ -27,23 +27,36 @@
                 onchange="window.location.href='{{ route('admin.bookings.create-house', $house->id) }}'">
                 {{$house->name}}
             </div>
-            @endforeach
+            @endforeach  
+            @error('house_id') <div class="text-danger mt-2"> {{ $message }} </div> @enderror          
         <h3>Подробиці бронювання</h3>
             Прізвище Ім'я та Побатькові
             <div class="row">
-                <input type="text" name="full_name" placeholder="Прізвище Ім'я та Побатькові">
+                <input type="text" 
+                name="full_name" 
+                placeholder="Прізвище Ім'я та Побатькові"
+                value="{{ old('full_name') }}">
             </div>
+            @error('full_name') <div class="text-danger mt-2"> {{ $message }} </div> @enderror           
             Телефон
             <div class="row">
-                <input type="tel" name="phone" placeholder="+380 XX XXX XX XX">
+                <input type="tel" 
+                name="phone" 
+                placeholder="+380 XX XXX XX XX"
+                value="{{ old('phone') }}">
             </div>
+            @error('phone') <div class="text-danger mt-2"> {{ $message }} </div> @enderror            
             Адреса электронної скриньки
             <div class="row">
-                <input type="email" name="email" placeholder="Адреса электронної скриньки">
+                <input type="email" 
+                name="email" 
+                placeholder="Адреса электронної скриньки"
+                value="{{ old('email') }}">
             </div>
+            @error('email') <div class="text-danger mt-2"> {{ $message }} </div> @enderror            
             Кількість дорослих
             <div class="row">
-                <select class="form-select form-control text-2" name="adults" data-msg-required="This field is required." id="bookingAdults" required>
+                <select class="form-select form-control text-2" name="adults" id="bookingAdults">
 					<option value="">Зробіть свій вибір</option>
 					<option value="1">1</option>
 					<option value="2">2</option>
@@ -59,8 +72,9 @@
             </div>
             Кількість дітей
             <div class="row">
-                <select class="form-select form-control text-2" name="children" data-msg-required="This field is required." id="bookingChildren" required>
+                <select class="form-select form-control text-2" name="children" id="bookingChildren">
 					<option value="">Зробіть свій вибір</option>
+                    <option value="0">0</option>
 					<option value="1">1</option>
 					<option value="2">2</option>
 					<option value="3">3</option>
@@ -92,8 +106,7 @@
                     class="form-control text-2" 
                     placeholder="Дата заезда" 
                     name="arrival_date" 
-                    id="bookNowArrival" 
-                    required>                    
+                    id="bookNowArrival">                    
             </div>
 
             <div class="row mb-3">    
@@ -101,8 +114,7 @@
                     class="form-control text-2" 
                     placeholder="Дата выезда" 
                     name="departure_date" 
-                    id="bookNowDeparture" 
-                    required>                
+                    id="bookNowDeparture">                
             </div>
 
             <div class="row mb-3">
