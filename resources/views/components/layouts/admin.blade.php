@@ -17,6 +17,8 @@
 		<!-- Web Fonts  -->
 		<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800|Shadows+Into+Light" rel="stylesheet" type="text/css">
 
+		<meta name="csrf-token" content="{{ csrf_token() }}">
+		
 		<!-- Vendor CSS -->
 		<link rel="stylesheet" href="{{ asset('admin/vendor/bootstrap/css/bootstrap.css') }}" />
 		<link rel="stylesheet" href="{{ asset('admin/vendor/animate/animate.compat.css') }}">

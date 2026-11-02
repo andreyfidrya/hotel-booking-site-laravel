@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Booking;
 use App\Models\House;
+use App\Services\BookingPriceCalculator;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\Admin\Booking\Save as SaveRequest;
@@ -25,6 +26,31 @@ class BookingController extends Controller
             'houses' => $houses,
             'selectedHouse' => $house,
         ]);
+    }
+
+    public function calculatePrice(Request $request,BookingPriceCalculator $calculator)
+    {
+        try {
+        $house = House::with('housetype')->findOrFail($request->house_id);
+
+        $result = $calculator->calculate(
+            $house,
+            $request->arrival_date,
+            $request->departure_date,
+            $request->adults,
+            $request->children,
+            $request->boolean('pets')
+        );
+
+        return response()->json($result);
+
+        } catch (\InvalidArgumentException $e) {
+
+        return response()->json([
+            'error' => $e->getMessage()
+        ], 422);
+
+        }
     }
 
     public function store(SaveRequest $request)

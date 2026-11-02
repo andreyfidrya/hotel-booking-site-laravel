@@ -30,6 +30,15 @@
             @endforeach  
             @error('house_id') <div class="text-danger mt-2"> {{ $message }} </div> @enderror          
         <h3>Подробиці бронювання</h3>
+            <div id="date-error-content">
+            Заполните параметры бронирования
+            </div>								
+            <div class="alert alert-light border mt-3 mb-0">
+                <i class="fas fa-clock me-2"></i>
+                    Заезд: <strong>с 14:00</strong><br>
+                    <i class="fas fa-sign-out-alt me-2"></i>
+                    Выезд: <strong>до 12:00</strong>
+            </div>
             Прізвище Ім'я та Побатькові
             <div class="row">
                 <input type="text" 
@@ -47,13 +56,30 @@
             </div>
             @error('phone') <div class="text-danger mt-2"> {{ $message }} </div> @enderror            
             Адреса электронної скриньки
-            <div class="row">
+            <div class="row mb-3">
                 <input type="email" 
                 name="email" 
                 placeholder="Адреса электронної скриньки"
                 value="{{ old('email') }}">
             </div>
-            @error('email') <div class="text-danger mt-2"> {{ $message }} </div> @enderror            
+            @error('email') <div class="text-danger mt-2"> {{ $message }} </div> @enderror
+            
+            <div class="row mb-3">      
+                <input type="text" 
+                    class="form-control text-2" 
+                    placeholder="Дата заезда" 
+                    name="arrival_date" 
+                    id="bookNowArrival">                    
+            </div>
+
+            <div class="row mb-3">    
+                <input type="text" 
+                    class="form-control text-2" 
+                    placeholder="Дата выезда" 
+                    name="departure_date" 
+                    id="bookNowDeparture">                
+            </div>
+
             Кількість дорослих
             <div class="row">
                 <select class="form-select form-control text-2" name="adults" id="bookingAdults">
@@ -99,23 +125,15 @@
 						Проживання с домашніми улюбленцями (кошка або собака)
 					</label>
 				</div>
-		    </div>
-             
-            <div class="row mb-3">      
-                <input type="text" 
-                    class="form-control text-2" 
-                    placeholder="Дата заезда" 
-                    name="arrival_date" 
-                    id="bookNowArrival">                    
-            </div>
+		    </div> 
+           
+            <div class="mt-4" id="price-details">
+				<h4>Стоимость проживания</h4>
 
-            <div class="row mb-3">    
-                <input type="text" 
-                    class="form-control text-2" 
-                    placeholder="Дата выезда" 
-                    name="departure_date" 
-                    id="bookNowDeparture">                
-            </div>
+				<div id="price-content">
+					Заполните параметры бронирования
+				</div>
+			</div>
 
             <div class="row mb-3">
             <button type="submit" class="btn btn-primary">
@@ -138,5 +156,22 @@ $(document).ready(function () {
         startDate: '+2d',
         orientation: 'bottom'
     });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+
+    const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+    function calculatePrice() {
+
+    const selectedHouse = document.querySelector('input[name="house_id"]:checked')?.value;
+    const arrival = document.getElementById('bookNowArrival').value;
+    const departure = document.getElementById('bookNowDeparture').value;
+    const adults = document.getElementById('bookingAdults').value;		
+    const children = document.getElementById('bookingChildren').value;		
+    const pets = document.getElementById('bookingPets').checked;
+
+    };
+
 });
 </script>
