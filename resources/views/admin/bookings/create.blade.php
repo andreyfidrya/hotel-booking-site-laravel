@@ -31,7 +31,7 @@
             @error('house_id') <div class="text-danger mt-2"> {{ $message }} </div> @enderror          
         <h3>Подробиці бронювання</h3>
             <div id="date-error-content">
-            Заполните параметры бронирования
+                Вкажіть параметри бронюровання
             </div>								
             <div class="alert alert-light border mt-3 mb-0">
                 <i class="fas fa-clock me-2"></i>
@@ -117,7 +117,8 @@
 				<div class="form-check">
 					<input
 						class="form-check-input"
-						type="checkbox"						
+						type="checkbox"
+                        id="bookingPets"						
 						name="pets"
 						value="1">
 
@@ -169,9 +170,49 @@ document.addEventListener('DOMContentLoaded', function () {
     const departure = document.getElementById('bookNowDeparture').value;
     const adults = document.getElementById('bookingAdults').value;		
     const children = document.getElementById('bookingChildren').value;		
-    const pets = document.getElementById('bookingPets').checked;
+    const pets = document.getElementById('bookingPets').check;
 
-    };
+    if (arrival && departure && departure <= arrival) {
+
+        document.getElementById('date-error-content').innerHTML =
+            `<div class="alert alert-danger">
+                Дата виїзду не може бути меньше дати заїзду!
+            </div>`;
+
+        return;
+    }
+    
+    if (!selectedHouse || !arrival || !departure || !adults || children === "") {
+			
+		document.getElementById('date-error-content').innerHTML = 
+            `<div class="alert alert-danger">
+                Не вистачає данних!
+            </div>`;        
+
+		return;
+	}
+
+    fetch('admin-panel/booking/calculate', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': csrfToken
+        },
+        body: JSON.stringify({
+            house_id: selectedHouse,
+            arrival_date: arrival,
+            departure_date: departure,
+            adults: adults,
+            children: children,
+            pets: pets
+        })
+    })
+
+    }
+
+    document.getElementById('bookingAdults').addEventListener('change', function () {    
+    calculatePrice();
+	});
 
 });
 </script>
