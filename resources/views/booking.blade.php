@@ -327,7 +327,7 @@ document.addEventListener('DOMContentLoaded', function () {
 						${error.message}
 					</div>`;
 
-			});
+		});
         
     	}
 

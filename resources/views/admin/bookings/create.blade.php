@@ -210,11 +210,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     .then(async response => {
 
-        console.log(response);
-
-		const data = await response.json();
-
-        console.log(data);
+        const data = await response.json();        
 
 		if (!response.ok) {
 			throw new Error(data.error);
@@ -223,7 +219,31 @@ document.addEventListener('DOMContentLoaded', function () {
 		return data;
 	})
 
-     
+    .then(data => {
+    
+    let html = `
+		<p><strong>Всего суток:</strong> ${data.total_days}</p>
+		<p><strong>Итого:</strong> ${data.total_price} грн</p>
+		<hr>
+	`;
+
+    data.details.forEach(day => {
+			html += `
+				<div class="mb-2">
+					<strong>${day.date}</strong> (${day.day_type})<br>
+					Базовая цена: ${day.base_price} грн<br>
+					Доп. взрослые: ${day.extra_adults_price} грн<br>
+					Доп. дети: ${day.extra_children_price} грн<br>
+					Животные: ${day.pets_price} грн<br>
+					<strong>За день: ${day.total_price} грн</strong>
+						</div>
+						<hr>
+					`;
+				});
+    
+    document.getElementById('price-content').innerHTML = html;
+    
+    });
 
     }
 
