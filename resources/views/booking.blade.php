@@ -316,7 +316,7 @@ document.addEventListener('DOMContentLoaded', function () {
 						</div>
 						<hr>
 					`;
-				});
+		});
 
 				document.getElementById('price-content').innerHTML = html;
 			})
