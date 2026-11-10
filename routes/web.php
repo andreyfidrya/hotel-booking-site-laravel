@@ -56,7 +56,7 @@ Route::prefix('admin-panel')->name('admin.')->middleware(['auth', 'admin'])->gro
 
     Route::put('/bookings/{booking}/status', [AdminBookingController::class, 'updateStatus'])->name('bookings.update-status');
     
-    Route::post('/booking/calculate', [AdminBookingController::class, 'calculatePrice'])->name('booking.calculate');
+    Route::post('bookings/create/booking/calculate', [AdminBookingController::class, 'calculatePrice'])->name('booking.calculate');
 });
 
 require __DIR__.'/auth.php';

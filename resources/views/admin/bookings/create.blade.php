@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		return;
 	}
 
-    fetch('admin-panel/booking/calculate', {
+    fetch('booking/calculate', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -207,6 +207,23 @@ document.addEventListener('DOMContentLoaded', function () {
             pets: pets
         })
     })
+
+    .then(async response => {
+
+        console.log(response);
+
+		const data = await response.json();
+
+        console.log(data);
+
+		if (!response.ok) {
+			throw new Error(data.error);
+		}
+
+		return data;
+	})
+
+     
 
     }
 
