@@ -256,7 +256,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     }
 
-    document.getElementById('bookingAdults').addEventListener('change', function () {    
+    document.getElementById('bookingChildren').addEventListener('change', function () {    
     calculatePrice();
 	});
 
