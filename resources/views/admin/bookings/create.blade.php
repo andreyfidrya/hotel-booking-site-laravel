@@ -168,9 +168,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const selectedHouse = document.querySelector('input[name="house_id"]:checked')?.value;
     const arrival = document.getElementById('bookNowArrival').value;
     const departure = document.getElementById('bookNowDeparture').value;
-    const adults = document.getElementById('bookingAdults').value;		
-    const children = document.getElementById('bookingChildren').value;		
-    const pets = document.getElementById('bookingPets').check;
+    const adults = document.getElementById('bookingAdults').value || 0;		
+    const children = document.getElementById('bookingChildren').value || 0;		
+    const pets = document.getElementById('bookingPets').checked || 0;
+
+    if (!arrival || !departure) {
+    return;
+    }
 
     if (arrival && departure && departure <= arrival) {
 
@@ -182,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function () {
         return;
     }
     
-    if (!selectedHouse || !arrival || !departure || !adults || children === "") {
+    /*if (!selectedHouse || !arrival || !departure || !adults || children === "") {
 			
 		document.getElementById('date-error-content').innerHTML = 
             `<div class="alert alert-danger">
@@ -190,9 +194,9 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>`;        
 
 		return;
-	}
+	}*/
 
-    fetch('booking/calculate', {
+    fetch('/booking/calculate', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -210,14 +214,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     .then(async response => {
 
-        const data = await response.json();        
+    const text = await response.text();
 
-		if (!response.ok) {
-			throw new Error(data.error);
-		}
+    const data = JSON.parse(text);
 
-		return data;
-	})
+    if (!response.ok) {
+        throw new Error(data.error);
+    }
+
+    return data;
+    })
 
     .then(data => {
     
@@ -236,9 +242,9 @@ document.addEventListener('DOMContentLoaded', function () {
                         Доп. дети: ${day.extra_children_price} грн<br>
                         Животные: ${day.pets_price} грн<br>
                         <strong>За день: ${day.total_price} грн</strong>
-                            </div>
-                            <hr>
-                        `;
+                    </div>
+                    <hr>
+                `;
         });
         
         document.getElementById('price-content').innerHTML = html;
@@ -258,7 +264,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     document.getElementById('bookingChildren').addEventListener('change', function () {    
     calculatePrice();
+	}); 
+
+    document.getElementById('bookingAdults').addEventListener('change', function () {    
+    calculatePrice();
 	});
+    
+    document.getElementById('bookingPets').addEventListener('change', calculatePrice);
+
+    $('#bookNowArrival').on('change', calculatePrice);
+    $('#bookNowDeparture').on('change', calculatePrice);
 
 });
 </script>
