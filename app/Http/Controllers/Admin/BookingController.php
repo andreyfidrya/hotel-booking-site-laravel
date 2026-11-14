@@ -71,6 +71,8 @@ class BookingController extends Controller
             $validated['departure_date']
         )->format('Y-m-d');
 
+        $user_email = $validated['email'];
+
         dd($validated);
     }
 
