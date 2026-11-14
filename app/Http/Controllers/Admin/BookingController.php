@@ -90,6 +90,8 @@ class BookingController extends Controller
 
         if ($user) {
             $userId = $user->id;
+        }else{
+            $userId = null;
         }
 
         $booking = Booking::create([
