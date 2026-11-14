@@ -133,7 +133,7 @@ class BookingController extends Controller
         return view('admin.bookings.edit', compact('booking', 'statuses'));
     }
 
-    public function update(SaveRequest $request, Booking $booking)
+    public function update(Request $request, Booking $booking)
     {
         $data = $request->only(['full_name','phone', 'email', 'status']);
 

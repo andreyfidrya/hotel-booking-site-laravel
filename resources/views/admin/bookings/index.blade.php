@@ -1,9 +1,9 @@
 <x-layouts.admin>
-    <h1 class="mb-4">Все бронирования</h1>
+    <h1 class="mb-4">Всі бронювания</h1>
 
     <a href="{{ route('admin.bookings.create') }}" 
        class="btn btn-success mb-4">
-        Добавить бронирование
+        Додати бронювання
     </a>
 
     <table class="table table-bordered">
