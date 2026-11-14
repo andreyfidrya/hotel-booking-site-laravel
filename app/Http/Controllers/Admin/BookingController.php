@@ -4,11 +4,13 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Booking;
 use App\Models\House;
+use App\Models\User;
 use App\Services\BookingPriceCalculator;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\Admin\Booking\Save as SaveRequest;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class BookingController extends Controller
 {
@@ -71,9 +73,46 @@ class BookingController extends Controller
             $validated['departure_date']
         )->format('Y-m-d');
 
-        $user_email = $validated['email'];
+        $house = House::with('housetype')->findOrFail($validated['house_id']);
+        
+        $result = $calculator->calculate(
+            $house,
+            $validated['arrival_date'],
+            $validated['departure_date'],
+            $validated['adults'],
+            $validated['children'],
+            $request->boolean('pets')
+        );        
 
-        dd($validated);
+        $user_email = $validated['email'];         
+
+        $user = User::where('email', $user_email)->first();        
+
+        if ($user) {
+            $userId = $user->id;
+        }
+
+        $booking = Booking::create([
+            'house_id' => $validated['house_id'],
+            'user_id' => $userId,
+            'arrival_date' => $validated['arrival_date'],
+            'departure_date' => $validated['departure_date'],
+            'adults' => $validated['adults'],
+            'children' => $validated['children'],
+            'pets' => $request->boolean('pets'),
+
+            'coupon_id' => null,
+
+            'amount' => $result['total_price'],
+
+            'full_name' => $validated['full_name'],
+            'phone' => $validated['phone'],
+            'email' => $validated['email'],
+
+            'status' => 'неоплаченный',
+        ]);
+
+        return redirect()->route('admin.bookings.index');
     }
 
     public function show($id)
