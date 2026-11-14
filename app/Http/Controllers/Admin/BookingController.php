@@ -8,6 +8,7 @@ use App\Services\BookingPriceCalculator;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Http\Requests\Admin\Booking\Save as SaveRequest;
+use Carbon\Carbon;
 
 class BookingController extends Controller
 {
@@ -53,9 +54,24 @@ class BookingController extends Controller
         }
     }
 
-    public function store(SaveRequest $request)
+    public function store(
+        SaveRequest $request,
+        BookingPriceCalculator $calculator
+    )
     {
-        //
+        $validated = $request->validated();
+
+        $validated['arrival_date'] = Carbon::createFromFormat(
+            'm/d/Y',
+            $validated['arrival_date']
+        )->format('Y-m-d');
+
+        $validated['departure_date'] = Carbon::createFromFormat(
+            'm/d/Y',
+            $validated['departure_date']
+        )->format('Y-m-d');
+
+        dd($validated);
     }
 
     public function show($id)

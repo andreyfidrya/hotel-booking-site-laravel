@@ -67,7 +67,7 @@
             <div class="row mb-3">      
                 <input type="text" 
                     class="form-control text-2" 
-                    placeholder="Дата заезда" 
+                    placeholder="Дата заїзду" 
                     name="arrival_date" 
                     id="bookNowArrival">                    
             </div>
@@ -75,7 +75,7 @@
             <div class="row mb-3">    
                 <input type="text" 
                     class="form-control text-2" 
-                    placeholder="Дата выезда" 
+                    placeholder="Дата виїзду" 
                     name="departure_date" 
                     id="bookNowDeparture">                
             </div>
@@ -129,10 +129,10 @@
 		    </div> 
            
             <div class="mt-4" id="price-details">
-				<h4>Стоимость проживания</h4>
+				<h4>Вартість проживання</h4>
 
 				<div id="price-content">
-					Заполните параметры бронирования
+					Заповніть параметри бронювания
 				</div>
 			</div>
 
