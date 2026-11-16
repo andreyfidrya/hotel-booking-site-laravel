@@ -44,11 +44,11 @@
 
         <div id="current-bookings">
 
-            @if($currentBookings->count())
+            @if($current_user_bookings->count())
 
                 <div class="space-y-4">
 
-                    @foreach($currentBookings as $booking)
+                    @foreach($current_user_bookings as $booking)
 
                         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg border border-gray-200">
 
@@ -146,11 +146,11 @@
 
         <div id="archive-bookings" class="hidden">
 
-            @if($archiveBookings->count())
+            @if($archive_user_bookings->count())
 
                 <div class="space-y-4">
 
-                    @foreach($archiveBookings as $booking)
+                    @foreach($archive_user_bookings as $booking)
 
                         <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg border border-gray-200">
 
