@@ -32,6 +32,13 @@
 		<link rel="stylesheet" href="{{ asset('admin/vendor/bootstrap-multiselect/css/bootstrap-multiselect.css') }}" />
 		<link rel="stylesheet" href="{{ asset('admin/vendor/morris/morris.css') }}" />
 
+		@if (isset($bookedDates))
+		<script>
+			const bookedDates = @json($bookedDates);
+			console.log('Забронированные даты:', bookedDates);
+		</script>
+		@endif
+
 		<!-- Theme CSS -->
 		<link rel="stylesheet" href="{{ asset('admin/css/theme.css') }}" />
 
@@ -472,13 +479,13 @@
 		<script src="{{ asset('admin/vendor/jqvmap/maps/continents/jquery.vmap.south-america.js') }}"></script>
 
 		<!-- Theme Base, Components and Settings -->
-		<script src="{{ asset('admin/js/theme.js') }}"></script>
+		<script src="{{ asset('admin/js/theme.js') }}"></script>		
 
 		<!-- Theme Custom -->
 		<script src="{{ asset('admin/js/custom.js') }}"></script>
 
 		<!-- Theme Initialization Files -->
-		<script src="{{ asset('admin/js/theme.init.js') }}"></script>
+		<script src="{{ asset('admin/js/theme.init.js') }}"></script>		
 
 		<!-- Examples -->
 		<script src="{{ asset('admin/js/examples/examples.dashboard.js') }}"></script>		

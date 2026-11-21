@@ -62,7 +62,7 @@
                 </div>
 
                 <div class="text-center mt-3">
-                    <a href="{{ route('bookings.index') }}" class="btn btn-primary">
+                    <a href="{{ route('dashboard') }}" class="btn btn-primary">
                         Мои бронирования
                     </a>
                 </div>

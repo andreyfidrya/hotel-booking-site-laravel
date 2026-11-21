@@ -21,13 +21,35 @@ class BookingController extends Controller
         return view('admin.bookings.index', compact('bookings'));
     }
 
-     public function create(House $house)
+    public function create(?House $house = null)
     {
-        $houses = House::all();        
+        $houses = House::all();
+
+        $bookedDates = [];
+        
+        if($house)
+        {
+            $bookings = Booking::where('house_id', $house->id)
+            ->where('departure_date', '>=', today())
+            ->where('status', '!=', 'отменен')
+            ->get(['arrival_date', 'departure_date']);            
+
+            foreach ($bookings as $booking) {
+                $date = Carbon::parse($booking->arrival_date);
+                $departure = Carbon::parse($booking->departure_date);
+
+                while ($date->lt($departure)) {
+                    $bookedDates[] = $date->format('Y-m-d');
+
+                    $date->addDay();
+                }
+            }
+        }
         
         return view('admin.bookings.create', [
             'houses' => $houses,
             'selectedHouse' => $house,
+            'bookedDates' => $bookedDates,
         ]);
     }
 

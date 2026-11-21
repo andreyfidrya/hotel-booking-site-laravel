@@ -1,4 +1,4 @@
-<x-layouts.admin>
+<x-layouts.admin :booked-dates="$bookedDates">
     @if ($errors->any())
 		<div class="alert alert-danger alert-dismissible fade show text-center" role="alert">
 			<button type="button"
@@ -23,7 +23,7 @@
                 <input type="radio" 
                 name="house_id" 
                 value="{{ $house->id }}"
-                {{ $selectedHouse->id == $house->id ? 'checked' : '' }}
+                {{ $selectedHouse?->id == $house->id ? 'checked' : '' }}
                 onchange="window.location.href='{{ route('admin.bookings.create-house', $house->id) }}'">
                 {{$house->name}}
             </div>
@@ -145,17 +145,33 @@
 </x-layouts.admin>
 
 <script>
+
+function isDateBooked(date) {
+
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+
+    const dateString = `${year}-${month}-${day}`;
+
+    if (bookedDates.includes(dateString)) {
+        return [false, '', 'Забронировано'];
+    }
+
+    return [true, '', 'Свободно'];
+}
+
 $(document).ready(function () {
     $('#bookNowArrival').datepicker({
-        autoclose: true,
-        startDate: '+1d',
-        orientation: 'bottom'
+    dateFormat: 'yy-mm-dd',
+    minDate: 1,
+    beforeShowDay: isDateBooked
     });
 
     $('#bookNowDeparture').datepicker({
-        autoclose: true,
-        startDate: '+2d',
-        orientation: 'bottom'
+    dateFormat: 'yy-mm-dd',
+    minDate: 2,
+    beforeShowDay: isDateBooked
     });
 });
 
@@ -184,17 +200,7 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>`;
 
         return;
-    }
-    
-    /*if (!selectedHouse || !arrival || !departure || !adults || children === "") {
-			
-		document.getElementById('date-error-content').innerHTML = 
-            `<div class="alert alert-danger">
-                Не вистачає данних!
-            </div>`;        
-
-		return;
-	}*/
+    }    
 
     fetch('/booking/calculate', {
         method: 'POST',
