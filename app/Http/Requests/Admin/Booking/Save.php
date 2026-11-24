@@ -21,7 +21,7 @@ class Save extends FormRequest
             'adults' => ['required', 'integer', 'min:1'],
             'children' => ['required', 'integer', 'min:0'],
             'arrival_date' => ['required', 'date', 'after_or_equal:today'],
-            'departure_date' => ['required', 'date', 'after:arrival_date'],
+            'departure_date' => ['required', 'date', 'after_or_equal:today', 'after:arrival_date'],
         ];
     }
 
@@ -30,18 +30,18 @@ class Save extends FormRequest
         return [            
             'house_id.required' => 'Будь ласка, оберить будинок, який би Ви хотіли замовити',
 
-            'full_name.required' => 'Название обязательно для заполнения.', 
-            'full_name.string' => 'Имя должно быть текстом.',           
-            'full_name.max' => 'Название не должно превышать 70 символов.',
-            'full_name.min' => 'Название не должно быть меньше чем 5 символов.',
+            'full_name.required' => "Прізвище Ім'я та Побатькові обв'язкове для заповнення", 
+            'full_name.string' => "Прізвище Ім'я та Побатькові повино бути текстом.",           
+            'full_name.max' => "Прізвище Ім'я та Побатькові повино бути не більше 70 символів.",
+            'full_name.min' => "Прізвище Ім'я та Побатькові не повино бути менше 5 символов.",
             
-            'phone.required' => 'Поле телефон обязательно для заполнения.',
-            'phone.string' => 'Телефон должен быть строкой.',
-            'phone.regex' => 'Телефон должен быть в формате +380XXXXXXXXX.',            
+            'phone.required' => "Поле телефон обов'язкове для заповнения.",
+            'phone.string' => 'Телефон повинен бути строкою.',
+            'phone.regex' => 'Телефон повинен бути в форматі +380XXXXXXXXX.',            
             
-            'email.required' => 'Поле адрес электронной почты обязательно для заполнения.',
-            'email.email' => 'Введите корректный адрес электронной почты.',
-            'email.max' => 'Адрес электронной почты не должен превышать 70 символов.',
+            'email.required' => "Поле адреса электронної скриньки обв'язкове для заполнения.",
+            'email.email' => 'Введіть корректну адресу электронної скриньки.',
+            'email.max' => 'Адреса электронної скриньки повино бути не більше 70 символов.',
 
             'adults.required' => 'Будь ласка, оберіть кількість дорослих.',
 
@@ -51,7 +51,8 @@ class Save extends FormRequest
             'arrival_date.after_or_equal' => 'Дата заїзду не може бути в минулому.',
 
             'departure_date.required' => 'Будь ласка, оберіть дату виїзду.', 
-            'departure_date.after' => 'Дата виїзду не може бути в минулому.',
+            'departure_date.after' => 'Дата виїзду не може бути раніше дати виїзду.',
+            'departure_date.after_or_equal' => 'Дата виїзду не може бути в минулому.',
         ];
     }
 }
