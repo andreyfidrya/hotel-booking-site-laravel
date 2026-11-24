@@ -32,7 +32,7 @@
         <h3>Подробиці бронювання</h3>
             <div id="date-error-content">
                 Вкажіть параметри бронюровання
-            </div>								
+            </div>            								
             <div class="alert alert-light border mt-3 mb-0">
                 <i class="fas fa-clock me-2"></i>
                     Заезд: <strong>с 14:00</strong><br>

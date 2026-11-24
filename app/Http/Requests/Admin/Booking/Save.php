@@ -51,7 +51,7 @@ class Save extends FormRequest
             'arrival_date.after_or_equal' => 'Дата заїзду не може бути в минулому.',
 
             'departure_date.required' => 'Будь ласка, оберіть дату виїзду.', 
-            'departure_date.after' => 'Дата виїзду не може бути раніше дати виїзду.',
+            'departure_date.after' => 'Дата виїзду не може бути раніше дати заїзду.',
             'departure_date.after_or_equal' => 'Дата виїзду не може бути в минулому.',
         ];
     }

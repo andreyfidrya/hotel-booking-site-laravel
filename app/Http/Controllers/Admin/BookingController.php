@@ -83,17 +83,7 @@ class BookingController extends Controller
         BookingPriceCalculator $calculator
     )
     {
-        $validated = $request->validated();
-
-        $validated['arrival_date'] = Carbon::createFromFormat(
-            'm/d/Y',
-            $validated['arrival_date']
-        )->format('Y-m-d');
-
-        $validated['departure_date'] = Carbon::createFromFormat(
-            'm/d/Y',
-            $validated['departure_date']
-        )->format('Y-m-d');
+        $validated = $request->validated();        
 
         $house = House::with('housetype')->findOrFail($validated['house_id']);
         
@@ -104,7 +94,20 @@ class BookingController extends Controller
             $validated['adults'],
             $validated['children'],
             $request->boolean('pets')
-        );        
+        );
+        
+        $exists = Booking::where('house_id', $validated['house_id'])
+        ->where('arrival_date', '<', $validated['departure_date'])
+        ->where('departure_date', '>', $validated['arrival_date'])
+        ->exists();
+
+        if ($exists) {
+            return back()
+                ->withErrors([
+                    'wrong_date' => 'Цей будинок вже заброньован на ці дати.'
+                ])
+                ->withInput();
+        }
 
         $user_email = $validated['email'];         
 

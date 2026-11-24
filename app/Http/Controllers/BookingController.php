@@ -73,7 +73,7 @@ class BookingController extends Controller
         BookingPriceCalculator $calculator
     ) {
         $validated = $request->validated();
-
+        
         $validated['arrival_date'] = Carbon::createFromFormat(
             'm/d/Y',
             $validated['arrival_date']
