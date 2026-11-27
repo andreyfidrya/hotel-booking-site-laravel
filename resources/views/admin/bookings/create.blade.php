@@ -162,17 +162,40 @@ function isDateBooked(date) {
 }
 
 $(document).ready(function () {
+
     $('#bookNowArrival').datepicker({
-    dateFormat: 'yy-mm-dd',
-    minDate: 1,
-    beforeShowDay: isDateBooked
+        dateFormat: 'yy-mm-dd',
+        minDate: 1,
+        beforeShowDay: isDateBooked,
+
+        onSelect: function (dateText, inst) {
+
+            const arrivalDate = $(this).datepicker('getDate');
+
+            const minDeparture = new Date(arrivalDate);
+
+            minDeparture.setDate(minDeparture.getDate() + 1);
+
+            $('#bookNowDeparture').datepicker(
+                'option',
+                'minDate',
+                minDeparture
+            );
+
+            $('#bookNowDeparture').datepicker(
+                'setDate',
+                minDeparture
+            );
+
+        }
     });
 
     $('#bookNowDeparture').datepicker({
-    dateFormat: 'yy-mm-dd',
-    minDate: 2,
-    beforeShowDay: isDateBooked
+        dateFormat: 'yy-mm-dd',
+        minDate: 2,
+        beforeShowDay: isDateBooked
     });
+
 });
 
 document.addEventListener('DOMContentLoaded', function () {
